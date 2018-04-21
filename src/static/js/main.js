@@ -31,7 +31,7 @@ $(function () {
         var documentScroll = $(this).scrollTop();
 
 
-        if(documentScroll > mainHeaderH) {
+        if(documentScroll > mainHeaderH -32) {
             navOther.addClass("it--fixed");
             mainHeader.css("paddingTop", navOtherH);
         } else {

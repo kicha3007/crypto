@@ -48,8 +48,83 @@
 @import "crypto/breadcrumbs";
 @import "crypto/card";
 @import "crypto/overview";
+@import "crypto/team";
 
 
+
+/******************* all-style *******************/
+
+.it-main-page__half--right a {
+  text-decoration: underline;
+}
+
+.it-main-page__half--right a:active,
+.it-main-page__half--right a:hover {
+  color: $main-color;
+  text-decoration: underline;
+}
+
+
+.it-main-page__content:visited {
+  color: #1E1E1E;
+
+}
+
+.it-main-page__content p,
+.it-main-page__all-text {
+  color: #6D6D6D;
+  font-size: rem(16px);
+  padding: 0;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.it-main-page__all-title {
+  color: #1E1E1E;
+  font-size: rem(16px);
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.it-main-page__all-video {
+  margin-bottom: 20px;
+}
+
+.it-main-page__all-subtitle {
+  font-size: rem(20px);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.it-main-page__all-more {
+  color: #3EC7C6;
+  text-decoration: underline;
+  font-size: rem(18px);
+  margin-bottom: 40px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding-right: 23px;
+}
+
+.it-main-page__all-more:after {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  right: 0;
+  margin-top: -4px;
+  transition: .2s;
+  background: url("../img/crypto/base/arrow.png") center no-repeat;
+}
+
+.it-main-page__all-more:hover:after {
+  transform: rotate(-90deg);
+  top: 48% !important;
+
+}
 
 
 /******************* it-all-style *******************/
@@ -68,12 +143,12 @@
 }
 
 .it-all-title {
-  padding-top: 35px;
-  padding-bottom: 15px;
+  margin-top: 35px;
+  margin-bottom: 15px;
   font-size: rem(24px);
   font-weight: 500;
   color: #1E1E1E;
-  margin: 0;
+  padding: 0;
 }
 
 .it-all-subtitle {
@@ -158,17 +233,20 @@
   background-color: transparent;
   color: $main-color;
   border: 1px solid $main-color;
+  text-decoration: none;
 }
 
 .it-btn--transparent:active,
 .it-btn--transparent:visited {
   color: $main-color;
+  text-decoration: none;
 }
 
 .it-btn--transparent:hover {
-  border: 1px solid #ffffff;
+  border: 1px solid $main-color;
   color: #ffffff;
-  background: $main-color;
+  background-color: $main-color;
+  text-decoration: none;
 }
 
 
@@ -197,43 +275,6 @@
 }
 
 
-/******************* all-style *******************/
-
-.it-main-page__content a {
-  text-decoration: underline;
-}
-
-.it-main-page__content:hover {
-	color: $main-color;
-	text-decoration: none;
-}
-
-.it-main-page__content:active,
-.it-main-page__content:visited {
-	color: #1E1E1E;
-	text-decoration: none;
-}
-
-.it-main-page__content p,
-.it-main-page__all-text {
-  color: #6D6D6D;
-  font-size: rem(16px);
-  padding: 0;
-  margin-bottom: 20px;
-  margin-top: 5px;
-}
-
-.it-main-page__all-title {
-  color: #1E1E1E;
-  font-size: rem(16px);
-  font-weight: 500;
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-.it-main-page__all-video {
-  margin-bottom: 20px;
-}
 
 /******************* media *******************/
 
