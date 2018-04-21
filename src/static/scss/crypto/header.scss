@@ -8,8 +8,11 @@
   margin-bottom: 40px;
 }
 
+.it-header__top-wrap {
+  padding: 1.7% 0 1.7% 0;
+}
+
 .it-header__top {
-  padding: 2.5% 0 2.5% 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -21,7 +24,6 @@
 }
 
 .it-header__bottom {
-  padding: 2.5% 0 2.5% 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -79,6 +81,21 @@
 
 .it-header__bottom-wrap {
   border: 1px solid #DEDEDE;
+  background-color: #ffffff;
+  transition: 0.2s;
+  padding: 1.7% 0 1.7% 0;
+  @include phones {
+    padding: 3px 0;
+  }
+}
+
+.it-header__bottom-wrap.it--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+ 
 }
 
 

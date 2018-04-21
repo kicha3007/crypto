@@ -1,0 +1,28 @@
+@import "../__vars";
+@import "../__mixins";
+@import "../smart-grid";
+
+.it-overview {
+  padding-bottom: 50px;
+}
+
+.it-overview__category-list {
+  margin: 0;
+  padding: 0;
+}
+
+.it-overview__category-item {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.it-overview__category-key {
+  font-weight: 300;
+  font-size: rem(16px);
+  margin-right: 5px;
+}
+
+.it-overview__category-value {
+  font-size: rem(16px);
+}

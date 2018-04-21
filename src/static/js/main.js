@@ -1,9 +1,60 @@
 
+/* ------------------- scroll to nav item ------------------- */
+
+$(function () {
+
+    var  $scrollNav = $("[data-scroll-nav]");
+
+    $scrollNav.on("click", function (e) {
+        e.preventDefault();
+        var $scrollNavLinkValue = $(this).attr("href");
+        var $scrollNavItem = $($scrollNavLinkValue);
+        var $scrollNavItemPosition = $scrollNavItem.offset().top;
+        $("html, body").animate({
+            scrollTop: $scrollNavItemPosition
+        }, 500)
+
+    });
+
+
+    /* ------------------- Fixed nav ------------------- */
+
+    var mainHeader = $("[data-main-header]"),
+        navOther = $("[data-nav-other]"),
+        navOtherH = navOther.outerHeight(),
+        mainHeaderH = mainHeader.outerHeight();
+    console.log(navOtherH);
+
+
+    $(document).on("scroll", function () {
+
+        var documentScroll = $(this).scrollTop();
+
+
+        if(documentScroll > mainHeaderH) {
+            navOther.addClass("it--fixed");
+            mainHeader.css("paddingTop", navOtherH);
+        } else {
+            navOther.removeClass("it--fixed");
+            mainHeader.css("paddingTop", 0);
+        }
+
+    });
+
+
+
+
+
+});
+
+
+
+
 /* ------------------- hide-scroll ------------------- */
 
 var parent = document.querySelector('.it-main-nav-2__wrap');
 var child = document.querySelector('.it-main-nav-2__list');
-console.log(child.clientHeight);
+
 child.style.paddingBottom = child.offsetHeight - child.clientHeight + "px";
 
 
@@ -215,7 +266,6 @@ $("[data-phone]").mask("+7 (999) 99-99-999");
 
 
 
-        console.log(showCalcSum);
     }
 
 

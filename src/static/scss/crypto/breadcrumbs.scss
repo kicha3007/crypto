@@ -8,6 +8,9 @@
   display: flex;
   flex-wrap: wrap;
   padding: 5px 0;
+  @include phones {
+    display: none;
+  }
 }
 
 .it-breadcrumbs a {

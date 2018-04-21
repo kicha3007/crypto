@@ -27,6 +27,7 @@
 
 //@import 'vetklinika72/header';
 //@import "vetklinika72/nav";
+/*
 @import "vetklinika72/base-offer";
 @import "vetklinika72/service";
 @import "vetklinika72/symptoms";
@@ -37,6 +38,7 @@
 @import "vetklinika72/reviews";
 @import "vetklinika72/help";
 @import "vetklinika72/footer";
+*/
 
 /******************* crypto *******************/
 
@@ -45,6 +47,7 @@
 @import "crypto/nav2";
 @import "crypto/breadcrumbs";
 @import "crypto/card";
+@import "crypto/overview";
 
 
 
@@ -65,23 +68,12 @@
 }
 
 .it-all-title {
-  padding-top: 80px;
-  padding-bottom: 60px;
-  font-size: rem(30px);
-  line-height: 1.4;
-  font-weight: 700;
-  position: relative;
-  color: #333333;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  font-size: rem(24px);
+  font-weight: 500;
+  color: #1E1E1E;
   margin: 0;
-  @include tablets {
-    padding-top: 60px;
-    padding-bottom: 40px;
-  }
-  @include phones {
-    font-size: rem(32px);
-    padding-top: 40px;
-    padding-bottom: 20px;
-  }
 }
 
 .it-all-subtitle {
@@ -98,8 +90,6 @@
   }
 }
 
-
-
 .it-all--indent {
   margin-bottom: 80px;
   @include phones {
@@ -111,12 +101,6 @@
   margin-bottom: 40px;
 }
 
-.it-main-page__wrapper {
-  position: relative;
-  min-height: 100%;
-  margin-bottom: -103px;
-  overflow: hidden;
-}
 
 .it-link {
   color: #333333;
@@ -213,6 +197,43 @@
 }
 
 
+/******************* all-style *******************/
+
+.it-main-page__content a {
+  text-decoration: underline;
+}
+
+.it-main-page__content:hover {
+	color: $main-color;
+	text-decoration: none;
+}
+
+.it-main-page__content:active,
+.it-main-page__content:visited {
+	color: #1E1E1E;
+	text-decoration: none;
+}
+
+.it-main-page__content p,
+.it-main-page__all-text {
+  color: #6D6D6D;
+  font-size: rem(16px);
+  padding: 0;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.it-main-page__all-title {
+  color: #1E1E1E;
+  font-size: rem(16px);
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.it-main-page__all-video {
+  margin-bottom: 20px;
+}
 
 /******************* media *******************/
 
