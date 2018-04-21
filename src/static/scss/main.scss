@@ -118,6 +118,26 @@
   overflow: hidden;
 }
 
+.it-link {
+  color: #333333;
+  font-size: rem(16px);
+  padding-left: 30px;
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.it-link:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: url("../img/crypto/base/link.png") no-repeat center;
+}
+
 .it-btn {
   display: inline-block;
   vertical-align: middle;
@@ -152,20 +172,22 @@
 
 .it-btn--transparent {
   background-color: transparent;
-  color: #000000;
+  color: $main-color;
   border: 1px solid $main-color;
 }
 
 .it-btn--transparent:active,
 .it-btn--transparent:visited {
-  color: #000000;
+  color: $main-color;
 }
 
 .it-btn--transparent:hover {
-  border: 1px solid $main-color;
+  border: 1px solid #ffffff;
   color: #ffffff;
   background: $main-color;
 }
+
+
 
 .it-main-page__inner-wrap {
   display: flex;
