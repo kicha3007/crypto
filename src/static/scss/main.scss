@@ -1,7 +1,7 @@
 @import '__vars';
 @import '__mixins';
 @import "smart-grid";
-/*@import "base";*/
+@import "base";
 
 /******************* sportmpro *******************/
 
@@ -25,8 +25,8 @@
 
 /******************* vetklinika72 *******************/
 
-@import 'vetklinika72/header';
-@import "vetklinika72/nav";
+//@import 'vetklinika72/header';
+//@import "vetklinika72/nav";
 @import "vetklinika72/base-offer";
 @import "vetklinika72/service";
 @import "vetklinika72/symptoms";
@@ -38,6 +38,11 @@
 @import "vetklinika72/help";
 @import "vetklinika72/footer";
 
+/******************* crypto *******************/
+
+@import 'crypto/header';
+@import "crypto/nav";
+
 
 
 
@@ -46,26 +51,15 @@
 
 
 .it-container {
-  max-width: 990px;
+  max-width: 1170px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 30px;
   margin: 0 auto;
 }
 
 .it-container * {
   box-sizing: border-box;
 }
-
-
-//.it-container--big {
-//  max-width: 1920px;
-//  width: 100%;
-//  padding: 0 30px;
-//  margin: 0 auto;
-//  @include tablets {
-//    padding: 0 15px;
-//  }
-//}
 
 .it-all-title {
   padding-top: 80px;
@@ -101,29 +95,7 @@
   }
 }
 
-//.it-all-title:before,
-//.it-all-title:after {
-//  content: '';
-//  display: block;
-//  position: absolute;
-//  top: 37%;
-//  left: 50%;
-//  margin-left: -64px;
-//  width: 128px;
-//  height: 3px;
-//  background-color: $main-color;
-//  @include phones {
-//    top: 30%;
-//  }
-//}
 
-//.it-all-title:after {
-//  top: auto;
-//  bottom: 25%;
-//  @include phones {
-//    bottom: 18%;
-//  }
-//}
 
 .it-all--indent {
   margin-bottom: 80px;
@@ -192,9 +164,27 @@
   background: $main-color;
 }
 
-.it-btn--arrow {
-  display: inline-block;
-  padding-left: 15px;
+.it-main-page__inner-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.it-main-page__half--left {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: calc(33.33333% - 40px);
+}
+
+.it-main-page__half--right {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: calc(66.66667% - 40px);
 }
 
 
@@ -210,6 +200,10 @@
   html {
     font-size: 15px;
   }
+
+  .it-container {
+    padding: 0 15px;
+  }
 }
 
 @media (max-width: 720px) { /* tablets*/
@@ -221,6 +215,14 @@
 @media (max-width: 576px) { /*phones*/
   html {
     font-size: 13px;
+  }
+
+  .it-main-page__half--left {
+    width: calc(100% - 40px);
+  }
+
+  .it-main-page__half--right {
+    width: calc(100% - 40px);
   }
 
 }
