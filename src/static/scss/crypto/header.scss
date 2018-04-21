@@ -4,6 +4,9 @@
 
 /******************* it-header *******************/
 
+.it-header {
+  margin-bottom: 40px;
+}
 
 .it-header__top {
   padding: 2.5% 0 2.5% 0;
@@ -15,6 +18,14 @@
   @include phones {
     padding: 9.5px 0;
   }
+}
+
+.it-header__bottom {
+  padding: 2.5% 0 2.5% 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 -20px 0;
 }
 
 .it-header__half {

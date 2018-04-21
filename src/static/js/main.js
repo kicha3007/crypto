@@ -1,4 +1,10 @@
 
+/* ------------------- hide-scroll ------------------- */
+
+var parent = document.querySelector('.it-main-nav-2__wrap');
+var child = document.querySelector('.it-main-nav-2__list');
+console.log(child.clientHeight);
+child.style.paddingBottom = child.offsetHeight - child.clientHeight + "px";
 
 
 /* ------------------- fancybox ------------------- */
