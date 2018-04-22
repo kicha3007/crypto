@@ -21,7 +21,7 @@ body {
 
 body * {
   font-family: "Roboto", sans-serif;
-  color: #000000;
+  color: #1E1E1E;
   line-height: 1.42;
   box-sizing: border-box;
 
@@ -32,6 +32,9 @@ body * {
   min-height: 100%;
   margin-bottom: -90px;
   overflow: hidden;
+  @include phones {
+    margin-bottom: 0;
+  }
 }
 
 .it-main-page__wrapper * {
@@ -42,6 +45,9 @@ body * {
   content: "";
   display: block;
   height: 90px;
+  @include phones {
+    display: none;
+  }
 }
 
 select {

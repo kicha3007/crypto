@@ -1,3 +1,59 @@
 @import "../__vars";
 @import "../__mixins";
 @import "../smart-grid";
+
+.it-footer {
+  border-top: 1px solid #E5E5E5;
+  padding: 21.5px 0;
+  background-color: #ffffff;
+  @include phones {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 9px 0;
+  }
+}
+
+.it-footer__inner-wrap {
+  text-align: center;
+  @include phones {
+    display: none;
+  }
+}
+
+.it-footer__logo {
+  min-width: 270px;
+}
+
+.it-footer__desc {
+  color: #828282;
+  font-size: 16px;
+}
+
+.it-footer-mobile {
+  display: none;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+  overflow: hidden;
+  @include phones {
+    display: flex;
+
+  }
+}
+
+.it-footer-mobile__half {
+  flex-grow: 1;
+  margin: 0 5px;
+}
+
+.it-footer-mobile__date,
+.it-footer-mobile__date span {
+  color: #333333;
+  font-size: 13px;
+}
+
+.it-footer  .it-footer-mobile__btn {
+  padding: 11.5px 10px;
+}

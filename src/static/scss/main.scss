@@ -124,9 +124,9 @@
   background: url("../img/crypto/base/arrow.png") center no-repeat;
 }
 
-.it-main-page__all-more:hover:after {
+.it-main-page__all-more.active:after {
   transform: rotate(-90deg);
-  top: 48% !important;
+  top: 48%;
 
 }
 
