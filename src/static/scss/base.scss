@@ -30,7 +30,7 @@ body * {
 .it-main-page__wrapper {
   position: relative;
   min-height: 100%;
-  margin-bottom: -103px;
+  margin-bottom: -90px;
   overflow: hidden;
 }
 
@@ -41,7 +41,7 @@ body * {
 .it-main-page__wrapper:after {
   content: "";
   display: block;
-  height: 88px;
+  height: 90px;
 }
 
 select {

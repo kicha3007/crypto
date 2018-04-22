@@ -1,9 +1,83 @@
-
-/* ------------------- scroll to nav item ------------------- */
-
 $(function () {
 
-    var  $scrollNav = $("[data-scroll-nav]");
+    /* ------------------- steps ------------------- */
+
+    $(document).on("scroll", function () {
+
+        $("[data-step-item]").each(function () {
+            if (window.scrollY > this.offsetTop - 700) {
+
+                $(this).addClass("active");
+            }
+
+        })
+    });
+
+
+
+
+    /* ------------------- show-prompt ------------------- */
+
+
+    var promtButton = $("[data-token-list]").find("[data-prompt-button]");
+    var tokenPromt = $("[data-token-promt]");
+
+
+    function promtShow () {
+        var $this = $(this);
+        var tokenItem = $this.closest("[data-token-item]");
+        tokenItem.find("[data-token-promt]").toggle();
+        $this.toggleClass("active");
+
+    }
+
+    promtButton.on("click", promtShow);
+
+
+    $(document).mouseup(function (e) {// обрабатываем клик в любой точке
+        if (jQuery(e.target).closest(tokenPromt).length > 0) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
+            return false; // клик по элементу игнорируем
+        }
+
+        else { // клик вне элемента
+            tokenPromt.hide();
+            promtButton.removeClass("active");
+        }
+
+
+    });
+
+
+/*
+    $(document).on("click",  function(e){
+        if( $(event.target).closest(tokenPromt).length ) {
+            return;
+        } else {
+console.log(1);
+                e.stopPropagation();
+
+        }
+    });
+*/
+
+
+
+  /*  function removeTest(e) {
+        if(!e.target.matches('.it-token__details-prompt, .it-token__details-prompt *')) {
+            tokenPromt.hide();
+            this.removeEventListener('click', removeTest);
+            console.log(sfds);
+        }
+    }
+
+    window.addEventListener('click', removeTest);
+
+*/
+
+
+    /* ------------------- scroll to nav item ------------------- */
+
+    var $scrollNav = $("[data-scroll-nav]");
 
     $scrollNav.on("click", function (e) {
         e.preventDefault();
@@ -17,29 +91,45 @@ $(function () {
     });
 
 
-    /* ------------------- Fixed nav ------------------- */
-
-    var mainHeader = $("[data-main-header]"),
-        navOther = $("[data-nav-other]"),
-        navOtherH = navOther.outerHeight(),
-        mainHeaderH = mainHeader.outerHeight();
-    console.log(navOtherH);
 
 
-    $(document).on("scroll", function () {
-
-        var documentScroll = $(this).scrollTop();
 
 
-        if(documentScroll > mainHeaderH -32) {
-            navOther.addClass("it--fixed");
-            mainHeader.css("paddingTop", navOtherH);
-        } else {
-            navOther.removeClass("it--fixed");
-            mainHeader.css("paddingTop", 0);
-        }
 
-    });
+
+
+
+    var window_size = window.matchMedia('(max-width: 576px)');
+
+    if (window.matchMedia('(max-width: 576px)').matches) {
+
+
+        /* ------------------- Fixed nav ------------------- */
+
+        var mainHeader = $("[data-main-header]"),
+            navOther = $("[data-nav-other]"),
+            navOtherH = navOther.outerHeight(),
+            mainHeaderH = mainHeader.outerHeight();
+        console.log(navOtherH);
+
+        $(document).on("scroll", function () {
+
+            var documentScroll = $(this).scrollTop();
+
+            if (documentScroll > mainHeaderH - 32) {
+                navOther.addClass("it--fixed");
+                mainHeader.css("paddingTop", navOtherH);
+            } else {
+                navOther.removeClass("it--fixed");
+                mainHeader.css("paddingTop", 0);
+            }
+
+        });
+
+
+    }
+
+
 
 
 
@@ -47,16 +137,12 @@ $(function () {
 
 });
 
-
-
-
 /* ------------------- hide-scroll ------------------- */
 
 var parent = document.querySelector('.it-main-nav-2__wrap');
 var child = document.querySelector('.it-main-nav-2__list');
 
 child.style.paddingBottom = child.offsetHeight - child.clientHeight + "px";
-
 
 /* ------------------- fancybox ------------------- */
 
@@ -70,11 +156,7 @@ $("[data-fancybox]").fancybox({
 
 });
 
-
-
-
 /* ****************************** accordion ****************************** */
-
 
 $(function () {
     var $accordWrap = $("[data-it-accord-wrap]");
@@ -100,48 +182,42 @@ $(function () {
          $(this).parent().find("[]").toggle();*/
     });
 
-
     /* ------------------- carousel ------------------- */
 
+    $('[data-owl-carousel]').each(function () {
+        var $this = $(this);
+        var itemsCount = $this.data("owlItems");
+        var itemsCountPad = $this.data("owlItemsPad");
+        var itemsMargin = $this.data("owlItemsMargin");
+        var itemsDots = $this.data("owlItemsDots");
+        var itemsLoop = $this.data("owlItemsLoop");
+        var itemsNav = $this.data("owlItemsNav");
+        var itemsAutoplay = $this.data("owlItemsAutoplay");
+        var itemsAutoplayTimeout = $this.data("owlItemsAutoplayTimeout");
+        var itemsAutoplayHoverPause = $this.data("owlItemsAutoplayHoverPause");
 
-
-
-        $('[data-owl-carousel]').each(function () {
-            var $this = $(this);
-            var itemsCount = $this.data("owlItems");
-            var itemsCountPad = $this.data("owlItemsPad");
-            var itemsMargin = $this.data("owlItemsMargin");
-            var itemsDots = $this.data("owlItemsDots");
-            var itemsLoop = $this.data("owlItemsLoop");
-            var itemsNav = $this.data("owlItemsNav");
-            var itemsAutoplay = $this.data("owlItemsAutoplay");
-            var itemsAutoplayTimeout = $this.data("owlItemsAutoplayTimeout");
-            var itemsAutoplayHoverPause = $this.data("owlItemsAutoplayHoverPause");
-
-            $this.owlCarousel({
-                items: (itemsCount ? itemsCount : 1),
-                margin: (itemsMargin ? itemsMargin : 20),
-                nav: (itemsNav ? itemsNav : true),
-                loop: (itemsLoop ? itemsLoop : true),
-                autoplay: (itemsAutoplay ? itemsAutoplay : true),
-                autoplayTimeout: (itemsAutoplayTimeout ? itemsAutoplayTimeout : 3000),
-                autoplayHoverPause: (itemsAutoplayHoverPause ? itemsAutoplayHoverPause : true),
-                dots: (itemsDots ? itemsDots : false),
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: itemsCountPad ? itemsCountPad : (itemsCount ? itemsCount : 1)
-                    },
-                    1000: {
-                        items: itemsCount ? itemsCount : 1
-                    }
+        $this.owlCarousel({
+            items: (itemsCount ? itemsCount : 1),
+            margin: (itemsMargin ? itemsMargin : 20),
+            nav: (itemsNav ? itemsNav : true),
+            loop: (itemsLoop ? itemsLoop : true),
+            autoplay: (itemsAutoplay ? itemsAutoplay : true),
+            autoplayTimeout: (itemsAutoplayTimeout ? itemsAutoplayTimeout : 3000),
+            autoplayHoverPause: (itemsAutoplayHoverPause ? itemsAutoplayHoverPause : true),
+            dots: (itemsDots ? itemsDots : false),
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: itemsCountPad ? itemsCountPad : (itemsCount ? itemsCount : 1)
+                },
+                1000: {
+                    items: itemsCount ? itemsCount : 1
                 }
-            });
+            }
         });
-
-
+    });
 
     /* ------------------- ajax ------------------- */
 
@@ -162,7 +238,7 @@ $(function () {
                     $form.find($(".it-form__success")).html(data.message);
                 },
 
-                error: function() {
+                error: function () {
                     $form.addClass("success");
                     $form.find($(".it-form__success")).html("Извините, временные проблемы на сервере, попробуйте ещё раз!");
 
@@ -170,7 +246,6 @@ $(function () {
             }
         )
     });
-
 
     /* ------------------- switcher ------------------- */
 
@@ -201,7 +276,6 @@ $(function () {
 
     /* ------------------- показываем выпадающее меню в табах ------------------- */
 
-
     $("[data-min-nav]").on("click", function () {
         $("[data-min-nav-dropdown]").toggle();
     });
@@ -213,65 +287,46 @@ $(function () {
 
     })
 
-
-
-
 });
 
 /* ------------------- mask ------------------- */
 
 $("[data-phone]").mask("+7 (999) 99-99-999");
 
-
-
-
 /* ****************************** calculation-new ****************************** */
 
+function getCalculationValue() {
+    var getCalcSize = $("[data-calc-size]:selected");
+    var getCalcSizeValue = getCalcSize.data("calcSize");
 
+    var getCalcQuantity = $("[data-sign-value]");
+    var getCalcQuantityValue = getCalcQuantity.val();
 
+    var getCalcPrint = $("[data-calc-print]:selected");
+    var getCalcPrintValue = getCalcPrint.data("calcPrint");
 
-    function  getCalculationValue () {
-        var getCalcSize = $("[data-calc-size]:selected");
-        var getCalcSizeValue = getCalcSize.data("calcSize");
+    var getCalcSewingArea = $("[data-calc-sewing-area]:selected");
+    var getCalcSewingAreaValue = getCalcSewingArea.data("calcSewingArea");
 
+    var getCalcSewingDesigner = $("[data-calc-designer]:selected");
+    var getCalcSewingDesignerValue = getCalcSewingDesigner.data("calcDesigner");
 
-        var getCalcQuantity = $("[data-sign-value]");
-        var getCalcQuantityValue = getCalcQuantity.val();
+    var calcSizeAndQuantity = (+getCalcSizeValue * +getCalcQuantityValue * getCalcPrintValue);
 
+    var calcPrint;
 
-        var getCalcPrint = $("[data-calc-print]:selected");
-        var getCalcPrintValue = getCalcPrint.data("calcPrint");
-
-        var getCalcSewingArea = $("[data-calc-sewing-area]:selected");
-        var getCalcSewingAreaValue = getCalcSewingArea.data("calcSewingArea");
-
-        var getCalcSewingDesigner = $("[data-calc-designer]:selected");
-        var getCalcSewingDesignerValue = getCalcSewingDesigner.data("calcDesigner");
-
-        var calcSizeAndQuantity = (+getCalcSizeValue * +getCalcQuantityValue * getCalcPrintValue) ;
-
-        var calcPrint;
-
-        if (+getCalcSewingAreaValue === 1) {
-            calcPrint = Math.round(calcSizeAndQuantity * 10 /100) ;
-        }  else {
-            calcPrint = 0;
-        }
-
-        var calcSum = calcSizeAndQuantity + calcPrint + getCalcSewingDesignerValue;
-        var  showCalcSum =  $("[data-calc-sum]");
-
-        showCalcSum.text(calcSum) ;
-
-
-
-
+    if (+getCalcSewingAreaValue === 1) {
+        calcPrint = Math.round(calcSizeAndQuantity * 10 / 100);
+    } else {
+        calcPrint = 0;
     }
 
+    var calcSum = calcSizeAndQuantity + calcPrint + getCalcSewingDesignerValue;
+    var showCalcSum = $("[data-calc-sum]");
 
+    showCalcSum.text(calcSum);
 
-
-
+}
 
 /* ------------------- calculation ----------------------- */
 
@@ -281,7 +336,6 @@ var btnPrev = $("[data-it-btn='prev']");
 var btnNext = $("[data-it-btn='next']");
 var btnSend = $("[data-it-btn='send']");
 var calcTitle = $("[data-calculation-title]");
-
 
 function calculation() {
 
@@ -320,7 +374,6 @@ function calculation() {
     }
 }
 
-
 btnNext.on("click", function (e) {
     $(".it-validate-color").removeClass("it-validate-color");
     $(".it-validate-error").removeClass("active");
@@ -346,7 +399,6 @@ btnPrev.on("click", function (e) {
     calculation();
 });
 
-
 /* ------------------- протестить когда выкачу на сервер ----------------------- */
 
 btnSend.on("click", function (e) {
@@ -357,12 +409,6 @@ btnSend.on("click", function (e) {
     }
 
 });
-
-
-
-
-
-
 
 /* ****************************** add-file ****************************** */
 
@@ -376,23 +422,21 @@ $("[data-file-default]").change(function () {
     $(this).parent().find("[data-file-name]").text(f_name.join(', '));
 });
 
-
 /* ****************************** dropdown-menu ****************************** */
 
-    var $trigger = $('[data-trigger="1"]');
-    var $nav = $('[data-it-nav]');
-    var $this = $(this);
+var $trigger = $('[data-trigger="1"]');
+var $nav = $('[data-it-nav]');
+var $this = $(this);
 
-
-    $trigger.on("click", function () {
-        $trigger.toggleClass('active');
-        $nav.slideToggle(600, function () {
-            if ($(this).css("display") === "none") {
-                $(this).removeAttr("style");
-            }
-        });
-
+$trigger.on("click", function () {
+    $trigger.toggleClass('active');
+    $nav.slideToggle(600, function () {
+        if ($(this).css("display") === "none") {
+            $(this).removeAttr("style");
+        }
     });
+
+});
 
 
 

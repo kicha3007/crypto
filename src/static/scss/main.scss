@@ -49,6 +49,10 @@
 @import "crypto/card";
 @import "crypto/overview";
 @import "crypto/team";
+@import "crypto/token";
+@import "crypto/sale-schedule";
+@import "crypto/roadmap";
+@import "crypto/footer";
 
 
 
@@ -99,7 +103,7 @@
 
 .it-main-page__all-more {
   color: #3EC7C6;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: rem(18px);
   margin-bottom: 40px;
   cursor: pointer;
@@ -274,7 +278,9 @@
   width: calc(66.66667% - 40px);
 }
 
-
+.it-main-page__all-more + .it-all-title {
+  margin-top: 0;
+}
 
 /******************* media *******************/
 
