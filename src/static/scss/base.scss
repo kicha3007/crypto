@@ -23,6 +23,7 @@ body * {
   font-family: "Roboto", sans-serif;
   color: #1E1E1E;
   line-height: 1.42;
+  font-size: rem(16px);
   box-sizing: border-box;
 
 }
@@ -50,8 +51,3 @@ body * {
   }
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}

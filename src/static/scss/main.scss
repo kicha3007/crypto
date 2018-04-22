@@ -2,9 +2,7 @@
 @import '__mixins';
 @import "smart-grid";
 @import "base";
-
 /******************* sportmpro *******************/
-
 /*@import 'sportmpro/header';
 @import "sportmpro/nav";
 @import "sportmpro/breadcrumbs";
@@ -21,10 +19,7 @@
 @import "sportmpro/examples";
 @import "sportmpro/base-steps";
 @import "sportmpro/seo-text";*/
-
-
 /******************* vetklinika72 *******************/
-
 //@import 'vetklinika72/header';
 //@import "vetklinika72/nav";
 /*
@@ -39,9 +34,7 @@
 @import "vetklinika72/help";
 @import "vetklinika72/footer";
 */
-
 /******************* crypto *******************/
-
 @import 'crypto/header';
 @import "crypto/nav";
 @import "crypto/nav2";
@@ -53,8 +46,7 @@
 @import "crypto/sale-schedule";
 @import "crypto/roadmap";
 @import "crypto/footer";
-
-
+@import "crypto/activity";
 
 /******************* all-style *******************/
 
@@ -67,7 +59,6 @@
   color: $main-color;
   text-decoration: underline;
 }
-
 
 .it-main-page__content:visited {
   color: #1E1E1E;
@@ -103,13 +94,26 @@
 
 .it-main-page__all-more {
   color: #3EC7C6;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: rem(18px);
   margin-bottom: 40px;
+  margin-top: 15px;
   cursor: pointer;
   position: relative;
-  display: inline-block;
+  display: inline-block ;
   padding-right: 23px;
+
+}
+
+.it-main-page__all-more:hover {
+  color: #3EC7C6;
+  text-decoration: none !important;
+}
+
+.it-main-page__all-more:active,
+.it-main-page__all-more:visited {
+  color: #3EC7C6;
+  text-decoration: none !important;
 }
 
 .it-main-page__all-more:after {
@@ -130,10 +134,7 @@
 
 }
 
-
 /******************* it-all-style *******************/
-
-
 
 .it-container {
   max-width: 1170px;
@@ -180,7 +181,6 @@
   margin-bottom: 40px;
 }
 
-
 .it-link {
   color: #333333;
   font-size: rem(16px);
@@ -191,14 +191,14 @@
 }
 
 .it-link:before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	background: url("../img/crypto/base/link.png") no-repeat center;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: url("../img/crypto/base/link.png") no-repeat center;
 }
 
 .it-btn {
@@ -253,8 +253,6 @@
   text-decoration: none;
 }
 
-
-
 .it-main-page__inner-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -276,16 +274,20 @@
   margin-left: 20px;
   margin-right: 20px;
   width: calc(66.66667% - 40px);
+  padding-bottom: 5%;
 }
 
 .it-main-page__all-more + .it-all-title {
   margin-top: 0;
 }
 
+.it-hidden {
+  display: none;
+}
+
 /******************* media *******************/
 
 @media (max-width: 1200px) { /*desctop*/
-
 
 }
 
