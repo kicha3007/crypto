@@ -1,28 +1,54 @@
 $(function () {
 
+    /* ------------------- google charts ------------------- */
+
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Miners', ""     ],
+            ['Developers',      2],
+            ['Presale',  2],
+            ['Bounty campaign', 2],
+            ['Crowdsale',    7],
+            ['Partnership',    7]
+        ]);
+
+        var options = {
+            title: '',
+            pieHole: 0.6,
+            width: 570,
+            height: 200,
+            pieSliceText: 'none'
+        };
+
+        var chart = new google.visualization.PieChart(document.querySelector('[data-it-donutchart]'));
+        chart.draw(data, options);
+    }
+
     /* ------------------- show-more ------------------- */
 
-    var showMoreButtonText;
+    var showMoreButtonText = $("[data-show-more-button]");
 
-    $("[data-show-more-button]").on("click", function (e) {
+    showMoreButtonText.on("click", function (e) {
         e.preventDefault();
+
         var $this = $(this);
+
         var showMoreButtonCloseText = $this.data("showMoreButton");
+        var showMoreButtonCloseTextToButton = $this.text();
+
+        $this.text(showMoreButtonCloseText);
+        $this.data("showMoreButton", showMoreButtonCloseTextToButton );
+
         var showMoreButtonValue = $this.attr("href");
         var showMoreText = $(showMoreButtonValue);
         showMoreText.toggleClass("it-hidden");
-        if (showMoreButtonText !== showMoreButtonCloseText) {
-            showMoreButtonText = $this.text();
-        }
-       if (showMoreButtonText !== showMoreButtonCloseText) {
-
-           $this.text(showMoreButtonCloseText);
-       } else {
-            $this.text(showMoreButtonText)
-       }
+        $this.toggleClass("active");
 
     });
-
 
     /* ------------------- steps ------------------- */
 
@@ -79,22 +105,23 @@ $(function () {
 
     });
 
-    var window_size = window.matchMedia('(max-width: 576px)');
+    /* ------------------- Fixed all var ------------------- */
 
-    if (window.matchMedia('(max-width: 576px)').matches) {
+    var mainHeader = $("[data-main-header]"),
+        navOther = $("[data-nav-other]"),
+        navOtherH = navOther.outerHeight(),
+        mainHeaderH = mainHeader.outerHeight(),
+        mainSidebar = $("[data-main-sidebar]");
 
+    var windowSizeMax = window.matchMedia('all and (max-width: 576px)');
+   var windowSizeMaxAll = window.matchMedia('(min-width: 1200px)');
 
-        /* ------------------- Fixed nav ------------------- */
+    $(document).on("scroll", function () {
+        var documentScroll = $(this).scrollTop();
 
-        var mainHeader = $("[data-main-header]"),
-            navOther = $("[data-nav-other]"),
-            navOtherH = navOther.outerHeight(),
-            mainHeaderH = mainHeader.outerHeight();
-        console.log(navOtherH);
+        if (windowSizeMax.matches) {
 
-        $(document).on("scroll", function () {
-
-            var documentScroll = $(this).scrollTop();
+            /* ------------------- Fixed nav and sidebar ------------------- */
 
             if (documentScroll > mainHeaderH - 32) {
                 navOther.addClass("it--fixed");
@@ -104,16 +131,30 @@ $(function () {
                 mainHeader.css("paddingTop", 0);
             }
 
-        });
+        }
 
-    }
+        if (windowSizeMaxAll.matches) {
+
+            if (documentScroll > mainHeaderH - 32) {
+                mainSidebar.addClass("it--fixed");
+                // mainHeader.css("paddingTop", navOtherH);
+            } else {
+                mainSidebar.removeClass("it--fixed");
+                // mainHeader.css("paddingTop", 0);
+            }
+
+        }
+
+    });
 
     /* ------------------- hide-scroll ------------------- */
 
-    var parent = document.querySelector('.it-main-nav-2__wrap');
-    var child = document.querySelector('.it-main-nav-2__list');
+    var parentScrollHide = document.querySelector('[data-scroll-hide]');
+    var childScrollHide = document.querySelector('.it-main-nav-2__list');
+    childP = child.offsetHeight - child.clientHeight;
+    parent.style.height = parent.clientHeight - childP + "px";
 
-    child.style.paddingBottom = child.offsetHeight - child.clientHeight + "px";
+
 
     /* ****************************** dropdown-menu ****************************** */
 

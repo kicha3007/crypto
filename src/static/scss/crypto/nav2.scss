@@ -8,19 +8,17 @@
 
 .it-main-nav-2__wrap {
   overflow: hidden;
-  height: 100%;
   width: 100%;
-
 }
 
 
 .it-main-nav-2__list {
-  padding: 0;
   display: flex;
   z-index: 1000;
   margin: 0;
   max-width: 500px;
   overflow-x: auto;
+
 
 }
 
@@ -29,9 +27,6 @@
   display: none !important;
 
 }
-
-
-
 
 
 .it-main-nav-2__list > li {

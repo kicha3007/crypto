@@ -52,6 +52,7 @@
 
 .it-main-page__half--right a {
   text-decoration: underline;
+  color: #1E1E1E;
 }
 
 .it-main-page__half--right a:active,
@@ -90,6 +91,7 @@
   font-size: rem(20px);
   margin-bottom: 10px;
   font-weight: 500;
+  color: #1E1E1E;
 }
 
 .it-main-page__all-more {
@@ -97,10 +99,10 @@
   text-decoration: none !important;
   font-size: rem(18px);
   margin-bottom: 40px;
-  margin-top: 15px;
+  margin-top: 2px;
   cursor: pointer;
   position: relative;
-  display: inline-block ;
+  display: inline-block;
   padding-right: 23px;
 
 }
@@ -129,10 +131,11 @@
 }
 
 .it-main-page__all-more.active:after {
-  transform: rotate(-90deg);
+  transform: rotate(-180deg);
   top: 48%;
-
 }
+
+
 
 /******************* it-all-style *******************/
 
@@ -156,30 +159,9 @@
   padding: 0;
 }
 
-.it-all-subtitle {
-  font-size: rem(16px);
-  font-weight: 300;
-  text-align: center;
-  padding-bottom: 30px;
-}
 
-.it-all-title + .it-all-subtitle {
-  margin-top: -25px;
-  @include phones {
-    margin-top: -10px;
-  }
-}
 
-.it-all--indent {
-  margin-bottom: 80px;
-  @include phones {
-    margin-bottom: 40px;
-  }
-}
 
-.it-all--min-indent {
-  margin-bottom: 40px;
-}
 
 .it-link {
   color: #333333;
@@ -288,7 +270,9 @@
 /******************* media *******************/
 
 @media (max-width: 1200px) { /*desctop*/
-
+  .it-main-page__half {
+    width: calc(100% - 40px);
+  }
 }
 
 @media (max-width: 992px) { /*laptop*/
@@ -312,13 +296,8 @@
     font-size: 13px;
   }
 
-  .it-main-page__half--left {
-    width: calc(100% - 40px);
-  }
 
-  .it-main-page__half--right {
-    width: calc(100% - 40px);
-  }
+
 
 }
 

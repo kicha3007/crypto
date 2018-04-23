@@ -70,7 +70,10 @@
 
 .it-token__details-prompt {
   position: absolute;
-  top: 100%;
+  top: -87px;
+  right: 10px;
+  width: 390px;
+
   background-color: #F2F2F2;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.14);
   padding: 15px 15px;
@@ -92,30 +95,30 @@
 }
 
 .it-token__card-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -30px;
-  overflow: hidden;
+/*  display: flex;
+  flex-wrap: wrap;*/
+  //margin: 0 -30px;
+  //overflow: hidden;
 }
 
 .it-token__card-half {
-  margin: 0 30px;
+  //margin: 0 30px;
 
 }
 
-.it-token__card-half--right {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 350px;
-  align-items: center;
-}
+//.it-token__card-half--right {
+//  display: flex;
+//  flex-wrap: wrap;
+//  max-width: 350px;
+//  align-items: center;
+//}
 
-.it-token__card-img-box {
-  max-width: 138px;
-  width: 100%;
-  max-height: 138px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
+.it-token__card-chart {
+  /*max-width: 138px;
+  width: 100%;*/
+  //max-height: 138px;
+  //box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  //border-radius: 50%;
 }
 
 .it-token__card-list {

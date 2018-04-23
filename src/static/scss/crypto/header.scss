@@ -10,6 +10,9 @@
 
 .it-header__top-wrap {
   padding: 29px 0;
+  @include phones {
+    padding: 0;
+  }
 }
 
 .it-header__top {
