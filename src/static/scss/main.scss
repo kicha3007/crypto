@@ -63,7 +63,6 @@
 
 .it-main-page__content:visited {
   color: #1E1E1E;
-
 }
 
 .it-main-page__content p,
@@ -248,6 +247,7 @@
   margin-left: 20px;
   margin-right: 20px;
   width: calc(33.33333% - 40px);
+  position: relative;
 }
 
 .it-main-page__half--right {

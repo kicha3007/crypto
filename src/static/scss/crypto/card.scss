@@ -241,13 +241,28 @@
 
 }
 
-.it-card.it--fixed {
-  position: fixed;
-  top: 40px;
-  left: 0;
-  width: 344px;
-  max-width: 1170px;
+//.it-card.it--fixed {
+//  position: fixed;
+//  top: 40px;
+//  left: 0;
+//  width: 344px;
+//  max-width: 1170px;
+//
+//  padding: 0 30px;
+//  margin: 0 auto;
+//}
 
-  padding: 0 30px;
-  margin: 0 auto;
+
+.demo-item {
+  position: fixed;
+  top: 250px;
+  left: 50px;
+  width: 240px;
+  height: 90px;
+  background-color: #ffffff;
+}
+
+#demoItem2 {
+  top: 150px;
+  left: 50px;
 }
