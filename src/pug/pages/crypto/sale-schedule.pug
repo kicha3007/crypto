@@ -1,8 +1,8 @@
 section.it-sale-schedule
 	.it-all-title
 		|    Sale schedule
-	.it-sale-schedule__wrap
-		table.it-sale-schedule__table
+	.it-sale-schedule__wrap(data-scroll-hide-wrap)
+		table.it-sale-schedule__table(data-scroll-hide)
 			tbody
 				tr.it-sale-schedule__row
 					th
@@ -89,5 +89,8 @@ section.it-sale-schedule
 						|	25%
 						br
 						|    1 300 000 WTF
-		span.it-main-page__all-more
-			|    Read more about vesting and bonus
+	.it-hidden#it-vesting-and-bonus-text(data-show-more-text)
+		|    lorem ipsummlmksjvfljslkdjfvlksjdfvkjs jsdfhsljkdfjlksn fdsdljkfhsvlkjn  sdfjslkjdhflskjf ahdfljksdhdfljhs afjdhajklshfljkhas ashdfkjhkj
+	a(href="#it-vesting-and-bonus-text").it-main-page__all-more(data-show-more-button="Close vesting and bonus" )
+		span.it-main-page__all-more-text(data-show-more-text)
+			|   Read more about vesting and bonus

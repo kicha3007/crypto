@@ -6,7 +6,8 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0 0 0 9px;
+  padding: 0 0 38px 9px;
+  border-bottom: 1px solid #DEDEDE;
 }
 
 .it-roadmap__item {
@@ -14,7 +15,11 @@
   position: relative;
   max-width: 530px;
   width: 100%;
-  padding: 0 0 35px 31px;
+  padding: 0 0 38px 31px;
+}
+
+.it-roadmap__item:last-child {
+  padding-bottom: 0;
 }
 
 .it-roadmap__title {
@@ -62,7 +67,7 @@
   left: 0;
   width: 1px;
   height: 100%;
-  background: url("../img/crypto/roadmap/line.png") no-repeat center;
+  background: url("../img/crypto/roadmap/line.png")   center 10px;
 }
 
 .it-roadmap__item.active:after {

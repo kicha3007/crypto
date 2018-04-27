@@ -93,7 +93,8 @@
   color: #1E1E1E;
 }
 
-.it-main-page__all-more {
+.it-main-page__all-more,
+.it-main-page__all-more span {
   color: #3EC7C6;
   text-decoration: none !important;
   font-size: rem(18px);
@@ -101,9 +102,13 @@
   margin-top: 2px;
   cursor: pointer;
   position: relative;
-  display: inline-block;
   padding-right: 23px;
 
+
+}
+
+.it-main-page__all-more {
+  display: block;
 }
 
 .it-main-page__all-more:hover {
@@ -117,7 +122,7 @@
   text-decoration: none !important;
 }
 
-.it-main-page__all-more:after {
+.it-main-page__all-more-text:after {
   position: absolute;
   content: "";
   width: 12px;
@@ -129,9 +134,8 @@
   background: url("../img/crypto/base/arrow.png") center no-repeat;
 }
 
-.it-main-page__all-more.active:after {
+.it-main-page__all-more.active .it-main-page__all-more-text:after {
   transform: rotate(-180deg);
-  top: 48%;
 }
 
 
@@ -259,9 +263,6 @@
   padding-bottom: 5%;
 }
 
-.it-main-page__all-more + .it-all-title {
-  margin-top: 0;
-}
 
 .it-hidden {
   display: none;
