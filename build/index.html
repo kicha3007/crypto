@@ -24,6 +24,8 @@
                         <li><a href="#">	ICOs</a>
                           <ul>
                             <li><a href="#">	More</a></li>
+                            <li><a href="#">	More</a></li>
+                            <li><a href="#">	More</a></li>
                           </ul>
                         </li>
                         <li><a href="#">	Stats</a></li>
@@ -47,6 +49,7 @@
                   <nav class="it-main-nav-2">
                     <div class="it-main-nav-2__wrap" data-scroll-hide-wrap>
                       <ul class="it-main-nav-2__list" data-scroll-hide>
+                        <li class="it-main-nav-2__scroll-line"></li>
                         <li><a href="#it-overview" data-scroll-nav>	Overview</a></li>
                         <li><a href="#it-token" data-scroll-nav>	Token</a></li>
                         <li><a href="#it-team" data-scroll-nav>	Team</a></li>
@@ -64,45 +67,7 @@
         <div class="it-container">
           <div class="it-main-page__inner-wrap">
             <aside class="it-main-page__half it-main-page__half--left">
-              <section class="it-card" data-main-sidebar>
-                <div class="it-card__wrap">
-                  <div class="it-card__item">
-                    <div class="it-card__top">
-                      <div class="it-card__top-half it-card__top-half--left">
-                        <div class="it-card__img-box"><img class="it-card__img" src="static/img/crypto/card/1.png" alt=""></div>
-                      </div>
-                      <div class="it-card__top-half it-card__top-half--right">
-                        <div class="it-card__top-content">
-                          <div class="it-card__model-title">	Simply Vital Health (WTF)</div>
-                          <div class="it-card__subtitle">	upcoming presale</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="it-card__center">
-                      <div class="it-card__center-half it-card__center-half--left">
-                        <div class="it-card__diagram"><img class="it-card__diagram-img" src="static/img/crypto/card/3.png" alt=""><span class="it-card__diagram-text">	8.8</span></div>
-                        <div class="it-card__center-content">
-                          <div class="it-card__center-title">	Norm ++</div><a class="it-card__center-subtitle" href="#">	Details</a>
-                        </div>
-                      </div>
-                      <div class="it-card__center-half it-card__center-half--right">
-                        <div class="it-card__start">	Presale Start</div>
-                        <div class="it-card__start-date">	31 Apr, 14:00 UTC</div>
-                        <div class="it-card__end">	Ends</div>
-                        <div class="it-card__end-date">	15 Jun, 00:00 UTC</div>
-                      </div>
-                    </div>
-                    <div class="it-card__bottom">
-                      <div class="it-card__line-title">	Sold<span class="it-card__line-percent">	13%</span></div>
-                      <div class="it-card__line">
-                        <div class="it-card__inner-line"></div>
-                        <div class="it-card__line-numeric"><span data-card-number>	325.000</span><span>	/ 2.500.000 USD</span></div>
-                      </div>
-                    </div><a class="it-card__link it-link" href="#">Beta live demo</a>
-                    <div class="it-card__buttons"><a class="it-card__btn it-btn it-btn--transparent" href="#">   Whitepaper</a></div>
-                  </div>
-                </div>
-              </section>
+              <!--  include crypto/card-->
             </aside>
             <div class="it-main-page__half it-main-page__half--right">
               <section class="it-overview" id="it-overview">
@@ -461,16 +426,14 @@
                 <div class="it-all-title">	Activity</div>
                 <div class="it-activity__wrap">
                   <div class="it-main-page__all-subtitle">   Social</div>
-                  <svg>
-                    <defs>
-                      <filter id="it-svg-filter--grey">
-                        <feColorMatrix type="saturate" values="0"></feColorMatrix>
-                      </filter>
-                    </defs>
-                  </svg>
                   <ul class="it-activity__social-list">
                     <li class="it-activity__social-item"><a class="it-activity__social-link" href="#">
                         <svg class="it-activity__social-img-box" width="39" height="30">
+                          <defs>
+                            <filter id="it-svg-filter--grey">
+                              <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                            </filter>
+                          </defs>
                           <image class="it-activity__social-img" xlink:href="static/img/crypto/activity/social/1.svg"></image>
                         </svg></a></li>
                     <li class="it-activity__social-item"><a class="it-activity__social-link" href="#"><img class="it-activity__social-img" src="static/img/crypto/activity/social/2.svg" alt=""></a></li>
@@ -550,6 +513,87 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <footer class="it-footer" data-main-footer>
+      <div class="it-container">
+        <div class="it-footer__wrap">
+          <div class="it-footer__inner-wrap"><a class="it-logo it-footer__logo" href="/">
+              <div class="it-logo__img-box"><img class="it-logo__img it-logo__img--desktop" src="static/img/crypto/header/logo.svg" alt=""></div></a>
+            <div class="it-footer__desc">	All rights reserved</div>
+          </div>
+          <div class="it-footer-mobile">
+            <div class="it-footer-mobile__half it-footer-mobile__half--left">
+              <div class="it-footer-mobile__date">   Presale Start<br><span>   31 Apr</span>   Ends<span>   15 Jun.</span></div>
+            </div>
+            <div class="it-footer-mobile__half it-footer-mobile__half--right">
+              <div class="it-footer-mobile__buttons"><a class="it-footer-mobile__btn it-btn" href="#">   Go  to website</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="it-seporator">  Cryptocurrency</div>
+    <div class="it-main-page__wrapper">
+      <div class="it-main-page__content">
+        <header class="it-header" data-main-header>
+          <div class="it-header__top-wrap">
+            <div class="it-container">
+              <div class="it-header__top">
+                <div class="it-header__half it-header__half--left"><a class="it-logo" href="/">
+                    <div class="it-logo__img-box"><img class="it-logo__img it-logo__img--desktop" src="static/img/crypto/header/logo.svg" alt=""><img class="it-logo__img it-logo__img--phone" src="static/img/crypto/header/logo-phone.svg" alt=""></div></a></div>
+                <div class="it-header__half it-header__half--right">
+                  <nav class="it-main-nav">
+                    <div class="it-nav__trigger" data-trigger="1"><span class="it-nav__trigger-line it-nav__trigger-line--top"></span><span class="it-nav__trigger-line it-nav__trigger-line--middle"></span><span class="it-nav__trigger-line it-nav__trigger-line--bottom"></span></div>
+                    <div class="it-main-nav__wrap" data-it-nav>
+                      <ul class="it-main-nav__list">
+                        <li><a href="#">	ICOs</a>
+                          <ul>
+                            <li><a href="#">	More</a></li>
+                            <li><a href="#">	More</a></li>
+                            <li><a href="#">	More</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">	Stats</a></li>
+                        <li><a href="#">	Guide</a></li>
+                        <li><a href="#">	Premium</a></li>
+                        <li><a href="#">	About</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="it-header__bottom-wrap">
+            <div class="it-container">
+              <div class="it-header__bottom">
+                <div class="it-header__half it-header__half--left it-header__half--size">
+                  <nav class="it-main-nav-3">
+                    <div class="it-main-nav-3__wrap">
+                      <ul class="it-main-nav-3__list">
+                        <li><a href="#it-overview">	ICOs</a></li>
+                        <li><a href="#it-token">	Cryptocurrency</a></li>
+                        <li><a href="#it-team">	Other filters</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+                <div class="it-header__half it-header__half--right it-header__half--size">
+                  <section class="it-filter-options">
+                    <div class="it-filter-options__wrap"><span class="it-filter-options__title">	Sort by</span>
+                      <ul class="it-filter-options__list">
+                        <li class="active"><a href="#it-overview">   Goal</a></li>
+                        <li><a href="#it-token">   Price</a></li>
+                        <li><a href="#it-team">   Show</a></li>
+                      </ul>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
       </div>
     </div>
     <footer class="it-footer" data-main-footer>

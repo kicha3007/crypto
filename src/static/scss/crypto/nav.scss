@@ -7,10 +7,12 @@
   @include phones {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 101%;
     left: 0;
     z-index: 1000;
     width: 100%;
+    background-color: #ffffff;
+
   }
 
 }
@@ -30,11 +32,15 @@
   overflow: visible;
   @include tablets {
     padding-left: 35px;
+
   }
   @include phones {
     display: block;
     padding-bottom: 10px;
     padding-left: 0;
+    height: 100%;
+    padding-top: 25px;
+
   }
 
 }
@@ -52,26 +58,33 @@
 
   @include phones {
     display: block;
-    background-color: $main-color;
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    padding-left: 20px;
+    overflow: hidden;
+    padding-left: 25px;
+
+
   }
 }
 
 
 .it-main-nav__list ul {
   z-index: 1000;
+
 }
 
 .it-main-nav__list > li > a {
   padding: 5px 36px 5px 0;
   display: block;
-  font-size: rem(16px);
+  font-size: 16px;
   font-weight: 300;
   color: #6D6D6D;
   transition: .2s;
   @include tablets {
     padding-right: 28px;
+  }
+  @include phones {
+    color: #4F4F4F;
+    font-weight: 500;
   }
 
 }
@@ -107,6 +120,7 @@
   /*opacity: 0;*/
   transition: opacity .1s;
   padding: 0;
+
   background-color: #ffffff;
   @include phones {
 
@@ -118,18 +132,24 @@
   top: -1000px;
   left: 0;
   min-width: 312px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 3111;
+  background-color: #ffffff;
+
   @include phones {
     top: 100%;
     position: static;
-    margin-bottom: 8px;
-    margin-left: 10px;
+    margin-bottom: 0;
+    min-width: 100%;
+    margin-bottom: 10px;
+
+
+
   }
 }
 
 .it-main-nav__list > li > ul > li {
   list-style-type: none;
+
+
 }
 
 .it-main-nav__list > li > ul > li > a,
@@ -139,11 +159,19 @@
   font-size: .875rem;
   color: rgba(0, 0, 0, .87);
   display: block;
+  background-color: #ffffff;
 }
 
 .it-main-nav__list > li > ul > li > a {
   position: relative;
   padding: 10px 40px 10px 20px;
+
+  @include phones {
+    font-size: 16px;
+    color: #4F4F4F;
+    font-weight: 500;
+    padding: 10px 20px 0 20px;
+  }
 }
 
 .it-main-nav__list > li > ul > li.active > a,
@@ -169,8 +197,10 @@
   top: -1100px;
   left: 100%;
   min-width: 312px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 10px 0;
+  @include phones {
+    min-width: 100%;
+  }
 
 }
 

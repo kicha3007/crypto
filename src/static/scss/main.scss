@@ -2,38 +2,7 @@
 @import '__mixins';
 @import "smart-grid";
 @import "base";
-/******************* sportmpro *******************/
-/*@import 'sportmpro/header';
-@import "sportmpro/nav";
-@import "sportmpro/breadcrumbs";
-@import "sportmpro/card";
-@import "sportmpro/partners";
-@import "sportmpro/about-us";
-@import "sportmpro/photo";
-@import "sportmpro/callback";
-@import "sportmpro/modal";
-@import "sportmpro/tabs";
-@import "sportmpro/advantages";
-@import "sportmpro/base-offer";
-@import "sportmpro/base-card";
-@import "sportmpro/examples";
-@import "sportmpro/base-steps";
-@import "sportmpro/seo-text";*/
-/******************* vetklinika72 *******************/
-//@import 'vetklinika72/header';
-//@import "vetklinika72/nav";
-/*
-@import "vetklinika72/base-offer";
-@import "vetklinika72/service";
-@import "vetklinika72/symptoms";
-@import "vetklinika72/callback";
-@import "vetklinika72/about-us";
-@import "vetklinika72/gallery";
-@import "vetklinika72/doctors";
-@import "vetklinika72/reviews";
-@import "vetklinika72/help";
-@import "vetklinika72/footer";
-*/
+
 /******************* crypto *******************/
 @import 'crypto/header';
 @import "crypto/nav";
@@ -47,8 +16,21 @@
 @import "crypto/roadmap";
 @import "crypto/footer";
 @import "crypto/activity";
+@import "crypto/nav3";
+@import "crypto/filter-options";
 
 /******************* all-style *******************/
+
+
+.it-seporator  {
+  width: 100%;
+  background-color: $main-color;
+  color: #ffffff;
+  font-size: 46px;
+  text-align: center;
+  font-weight: 500;
+  padding: 100px 10px ;
+}
 
 .it-main-page__half--right a {
   text-decoration: underline;

@@ -13,7 +13,7 @@ html(lang="ru-RU")
                 .it-container
                     .it-main-page__inner-wrap
                         aside.it-main-page__half.it-main-page__half--left
-                            include crypto/card
+                          //  include crypto/card
                         .it-main-page__half.it-main-page__half--right
                             include crypto/overview
                             include crypto/token
@@ -22,8 +22,12 @@ html(lang="ru-RU")
                             include crypto/roadmap
                             include crypto/activity
         include crypto/footer
-
-
+        .it-seporator
+            |   Cryptocurrency
+        .it-main-page__wrapper
+            .it-main-page__content
+                include crypto/сryptocurrency-header
+        include crypto/footer
 
         script(src='static/js/jquery.min.js', type='text/javascript')
         script(src='static/js/jquery.sticky.js', type='text/javascript' )

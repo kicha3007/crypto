@@ -1,0 +1,67 @@
+@import "../__vars";
+@import "../__mixins";
+@import "../smart-grid";
+
+.it-filter-options__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.it-filter-options__title {
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #828282;
+  line-height: 1.5;
+}
+
+.it-filter-options__list {
+  margin: 0;
+  padding: 0;
+
+}
+
+.it-filter-options__list li {
+  list-style-type: none;
+  padding-left: 0;
+  padding-right: 23px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+
+}
+
+.it-filter-options__list li.active {
+  display: block;
+}
+
+.it-filter-options__list li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3EC7C6;
+  text-decoration: none;
+
+}
+
+.it-filter-options__list li a:hover {
+    color: #3EC7C6;
+	text-decoration: none;
+}
+
+.it-filter-options__list li a:active,
+.it-filter-options__list li a:visited {
+  color: #3EC7C6;
+	text-decoration: none;
+}
+
+.it-filter-options__list li:after {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  right: 0;
+  margin-top: -4px;
+  transition: .2s;
+  background: url(../img/crypto/base/arrow.png) center no-repeat;
+}

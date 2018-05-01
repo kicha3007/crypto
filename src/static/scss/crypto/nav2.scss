@@ -9,7 +9,9 @@
 .it-main-nav-2__wrap {
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
+
 
 
 .it-main-nav-2__list {
@@ -18,12 +20,15 @@
   margin: 0;
   //max-width: 500px;
   overflow-x: auto;
+  position: relative;
+  padding-left: 0;
   @include laptop {
     max-width: 500px;
   }
 
 
 }
+
 
 .it-main-nav-2__list::-webkit-scrollbar {
   width: 0 !important;
@@ -199,3 +204,18 @@
   transform: rotate(-90deg);
   top: 45% !important;
 }
+
+
+
+.it-main-nav-2__scroll-line {
+  display: block;
+  position: absolute !important;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  padding-left: 0;
+  margin-left: 25px;
+  background-color: #BDBDBD !important;
+}
+

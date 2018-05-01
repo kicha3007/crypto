@@ -4,14 +4,13 @@ section.it-activity#it-activity
 	.it-activity__wrap
 		.it-main-page__all-subtitle
 			|    Social
-		svg
-			defs
-				filter#it-svg-filter--grey
-					feColorMatrix(type="saturate" values="0")
 		ul.it-activity__social-list
 			li.it-activity__social-item
 				a(href="#").it-activity__social-link
 					svg(width="39" height="30").it-activity__social-img-box
+						defs
+							filter#it-svg-filter--grey
+								feColorMatrix(type="saturate" values="0")
 						image.it-activity__social-img(  xlink:href="static/img/crypto/activity/social/1.svg")
 			li.it-activity__social-item
 				a(href="#").it-activity__social-link

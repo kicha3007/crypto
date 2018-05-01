@@ -1,6 +1,7 @@
-$(document).ready(function () {
-    svg4everybody({});
-});
+
+
+
+
 
 
 $(function () {
@@ -166,10 +167,10 @@ $(function () {
 
             if (documentScroll > mainHeaderH - 32) {
                 navOther.addClass("it--fixed");
-                mainHeader.css("paddingTop", navOtherH);
+
+
             } else {
                 navOther.removeClass("it--fixed");
-                mainHeader.css("paddingTop", 0);
             }
 
         }
@@ -180,7 +181,7 @@ $(function () {
             var bottomOffser = $("[data-main-footer]").outerHeight();
 
            $("[data-main-sidebar]").sticky({
-                   topSpacing: 40,
+                   topSpacing: 35,
                    bottomSpacing: bottomOffser + 5
                }
            );
@@ -217,7 +218,9 @@ $(function () {
 
     $trigger.on("click", function () {
         $trigger.toggleClass('active');
-        $nav.slideToggle(600, function () {
+        mainHeader.toggleClass("it-header--bg");
+
+    $nav.slideToggle(600, function () {
             if ($(this).css("display") === "none") {
                 $(this).removeAttr("style");
             }
