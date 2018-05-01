@@ -461,8 +461,18 @@
                 <div class="it-all-title">	Activity</div>
                 <div class="it-activity__wrap">
                   <div class="it-main-page__all-subtitle">   Social</div>
+                  <svg>
+                    <defs>
+                      <filter id="it-svg-filter--grey">
+                        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+                      </filter>
+                    </defs>
+                  </svg>
                   <ul class="it-activity__social-list">
-                    <li class="it-activity__social-item"><a class="it-activity__social-link" href="#"><img class="it-activity__social-img" src="static/img/crypto/activity/social/1.svg" alt=""></a></li>
+                    <li class="it-activity__social-item"><a class="it-activity__social-link" href="#">
+                        <svg class="it-activity__social-img-box" width="39" height="30">
+                          <image class="it-activity__social-img" xlink:href="static/img/crypto/activity/social/1.svg"></image>
+                        </svg></a></li>
                     <li class="it-activity__social-item"><a class="it-activity__social-link" href="#"><img class="it-activity__social-img" src="static/img/crypto/activity/social/2.svg" alt=""></a></li>
                     <li class="it-activity__social-item"><a class="it-activity__social-link" href="#"><img class="it-activity__social-img" src="static/img/crypto/activity/social/3.svg" alt=""></a></li>
                     <li class="it-activity__social-item"><a class="it-activity__social-link" href="#"><img class="it-activity__social-img" src="static/img/crypto/activity/social/4.svg" alt=""></a></li>
@@ -562,6 +572,7 @@
     </footer>
     <script src="static/js/jquery.min.js" type="text/javascript"></script>
     <script src="static/js/jquery.sticky.js" type="text/javascript"></script>
+    <script src="static/js/svg4everybody.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="static/js/main.js" type="text/javascript"></script>
   </body>

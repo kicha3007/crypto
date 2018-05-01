@@ -1,3 +1,8 @@
+$(document).ready(function () {
+    svg4everybody({});
+});
+
+
 $(function () {
 
 
@@ -169,7 +174,7 @@ $(function () {
 
         }
 
-       if (windowSizeMaxAll.matches ) {
+       if (windowSizeMaxAll.matches) {
 
 
             var bottomOffser = $("[data-main-footer]").outerHeight();
