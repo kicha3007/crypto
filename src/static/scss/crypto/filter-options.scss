@@ -5,6 +5,7 @@
 .it-filter-options__wrap {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .it-filter-options__title {
@@ -18,21 +19,27 @@
 .it-filter-options__list {
   margin: 0;
   padding: 0;
+  position: relative;
+  cursor: pointer;
 
 }
+
 
 .it-filter-options__list li {
   list-style-type: none;
   padding-left: 0;
   padding-right: 23px;
-  position: relative;
-  cursor: pointer;
   display: none;
+  position: absolute;
+  top: 10px;
+  left: 0;
 
 }
 
 .it-filter-options__list li.active {
   display: block;
+  position: static;
+
 }
 
 .it-filter-options__list li a {
@@ -54,14 +61,18 @@
 	text-decoration: none;
 }
 
-.it-filter-options__list li:after {
+.it-filter-options__list:after {
   position: absolute;
   content: "";
   width: 12px;
   height: 8px;
-  top: 50%;
+  top: 12px;
   right: 0;
   margin-top: -4px;
   transition: .2s;
   background: url(../img/crypto/base/arrow.png) center no-repeat;
+}
+
+.it-filter-options__list.it-filter--show li {
+  display: block;
 }

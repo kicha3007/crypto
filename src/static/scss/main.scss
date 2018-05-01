@@ -18,6 +18,7 @@
 @import "crypto/activity";
 @import "crypto/nav3";
 @import "crypto/filter-options";
+@import "crypto/currency";
 
 /******************* all-style *******************/
 
@@ -120,9 +121,12 @@
   transform: rotate(-180deg);
 }
 
-
+.it-main-page__content--bg {
+  background-color: #F2F2F2;
+}
 
 /******************* it-all-style *******************/
+
 
 .it-container {
   max-width: 1170px;
