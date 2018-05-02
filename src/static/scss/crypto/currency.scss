@@ -3,7 +3,8 @@
 @import "../smart-grid";
 
 .it-currency__wrap {
-  margin: 0;
+  margin: 0 0 -20px;
+  overflow: hidden;
   padding: 0;
 }
 
@@ -17,6 +18,7 @@
   border: 1px solid #E5E5E5;
   border-bottom: none;
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 .it-currency__half {
@@ -30,12 +32,9 @@
 
 }
 
-
-
 .it-currency__half--size-1 {
-  max-width: 630px ;
+  max-width: 630px;
   flex-basis: 540px;
-
 
 }
 
@@ -55,18 +54,23 @@
   flex-basis: 185px;
   background-color: #E5E5E5;
   justify-content: center;
+  border-right: 1px solid #E5E5E5;
 }
 
 .it-currency__half--size-5 {
-
+  max-width: 540px;
+  flex-basis: 400px;
 }
 
 .it-currency__half--size-6 {
+  max-width: 5345px;
+  flex-basis: 520px;
+  align-items: flex-start;
 
 }
 
 .it-currency__img-box {
-  max-width: 80px ;
+  max-width: 80px;
   width: 100%;
   height: 85px;
 
@@ -123,15 +127,15 @@
 }
 
 .it-currency__status-title:before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 6px;
-	left: 0;
-	width: 6px;
-	height: 6px;
-    background-color: #F2C94C;
-    margin-bottom: 10px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #F2C94C;
+  margin-bottom: 10px;
   border-radius: 50%;
 }
 
@@ -164,11 +168,125 @@
 .it-currency__rank-top {
   margin-bottom: 1px;
 
-
 }
 
 .it-currency__rank-img-box {
   max-width: 130px;
   width: 100%;
   height: 20px;
+
+}
+
+.it-currency__info-list {
+  margin: 0;
+  padding: 0;
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.it-currency__info-item {
+  margin-bottom: 10px;
+  list-style-type: none;
+  padding-left: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+}
+
+.it-currency__info-key {
+  color: #828282;
+  font-size: 14px;
+  margin-right: 5px;
+  display: flex;
+
+
+}
+
+.it-currency__info-value {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+
+
+}
+
+.it-currency__top {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.it-currency__more-buttons {
+  display: inline-block;
+}
+
+.it-currency__more-btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  user-select: none;
+  border: none;
+  padding: 0 15px 0 10px;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  color: $main-color;
+  text-transform: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 3px;
+  position: relative;
+}
+
+
+.it-currency__more-btn:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 10px;
+  height: 7px;
+  margin-top: -3px;
+  background: url("../img/crypto/currency/arrow.png") no-repeat center;
+  transition: 0.2s;
+}
+
+.it-currency__more-btn:hover:before {
+  opacity: 0.7;
+}
+
+.it-currency__more-btn:hover,
+.it-currency__more-btn:hover span {
+  color: $main-color-hover;
+  text-decoration: none;
+}
+
+.it-currency__more-btn:active,
+.it-currency__more-btn:visited {
+  color: $main-color;
+  text-decoration: none;
+}
+
+.it-currency__tags-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2px -4px;
+  justify-content: flex-end;
+}
+
+.it-currency__tags-item {
+  list-style-type: none;
+  background-color: #F2F2F2;
+  border-radius: 2px;
+  padding: 3px 8px;
+  font-size: 14px;
+  color: #4F4F4F;
+  margin: 0 2px 4px;
 }

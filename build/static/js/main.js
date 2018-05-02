@@ -1,76 +1,32 @@
-
-
-
-
-
-
 $(function () {
 
+    google.charts.load('current', {'packages': ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
-    /* ------------------- google charts ------------------- */
+    function drawChart() {
 
-    // Load the Visualization API and the piechart package.
-    /*    google.load('visualization', '1.0', {'packages':['corechart']});
+        var jsonData = $.ajax({
+            url: "data.php",
+            dataType: "json",
+            async: false
+        }).responseText;
 
- // Set a callback to run when the Google Visualization API is loaded.
-     google.setOnLoadCallback(drawChart);
+        var data = google.visualization.arrayToDataTable(jsonData);
 
- // Callback that creates and populates a data table,
- // instantiates the pie chart, passes in the data and
- // draws it.
-     function drawChart() {
-         var res;
-         var jsonData = $.ajax({
-             url: "data.php",
-             // dataType:"json",
-             async: false,
-             success: function(response){
-                 res = response;
-             }
-         }).responseText;
+        var options = {
+            height: 138,
+            chartArea: {left: 1, top: 0, width: '420', height: '100%'},
+            pieHole: 0.7,
+            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 2},
+            colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
+        };
 
-         // Create the data table.
-         var data = new google.visualization.DataTable(jsonData);
+        var chart = new google.visualization.PieChart(document.querySelector('[data-it-donutchart]'));
 
-         // Set chart options
-         var options = {
-             'title':'Кол-во населения',
-             'width':650,
-             'height':350,
-             'backgroundColor': {
-                 'strokeWidth': 2
-             },
-             'animation': {
-                 'duration': 1000,
-                 'easing': 'out'
-             },
-             'vAxis': {
-                 'minValue': 0,
-                 'maxValue': 130000000
-             }
-         };
+        chart.draw(data, options);
+    }
 
-         // Instantiate and draw our chart, passing in some options.
-         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-         chart.draw(data, options);
-
-         setTimeout(function(){
-             res = JSON.parse(res);
-             var length = res['rows'].length;
-             for(var i = 0; i < length; i++){
-                 data.setValue( i, 1, res['rows'][i]['c'][1]['res'] );
-             }
-             chart.draw(data, options);
-         }, 500);
-     }
-
- */
-
-
-
-
-
-     /* ------------------- show-more ------------------- */
+    /* ------------------- show-more ------------------- */
 
     var showMoreButtonText = $("[data-show-more-button]");
 
@@ -168,34 +124,32 @@ $(function () {
             if (documentScroll > mainHeaderH - 32) {
                 navOther.addClass("it--fixed");
 
-
             } else {
                 navOther.removeClass("it--fixed");
             }
 
         }
 
-       if (windowSizeMaxAll.matches) {
-
+        if (windowSizeMaxAll.matches) {
 
             var bottomOffser = $("[data-main-footer]").outerHeight();
 
-           $("[data-main-sidebar]").sticky({
-                   topSpacing: 35,
-                   bottomSpacing: bottomOffser + 5
-               }
-           );
+            $("[data-main-sidebar]").sticky({
+                    topSpacing: 35,
+                    bottomSpacing: bottomOffser + 5
+                }
+            );
 
-        //
-        //     if (documentScroll > mainHeaderH - 32) {
-        //         mainSidebar.addClass("it--fixed");
-        //         fixSidebar();
-        //         // mainHeader.css("paddingTop", navOtherH);
-        //     } else {
-        //         mainSidebar.removeClass("it--fixed");
-        //         // mainHeader.css("paddingTop", 0);
-        //     }
-        //
+            //
+            //     if (documentScroll > mainHeaderH - 32) {
+            //         mainSidebar.addClass("it--fixed");
+            //         fixSidebar();
+            //         // mainHeader.css("paddingTop", navOtherH);
+            //     } else {
+            //         mainSidebar.removeClass("it--fixed");
+            //         // mainHeader.css("paddingTop", 0);
+            //     }
+            //
         }
 
     });
@@ -220,7 +174,7 @@ $(function () {
         $trigger.toggleClass('active');
         mainHeader.toggleClass("it-header--bg");
 
-    $nav.slideToggle(600, function () {
+        $nav.slideToggle(600, function () {
             if ($(this).css("display") === "none") {
                 $(this).removeAttr("style");
             }
