@@ -14,6 +14,7 @@ $(function () {
         var jsonDataParse = JSON.parse(jsonData);
 
         var chartWrapList = document.querySelectorAll('[data-it-donutchart]');
+        var chartCardWrapList = document.querySelectorAll('[data-it-cardchart]');
 
         var options = {
             height: 138,
@@ -23,20 +24,30 @@ $(function () {
             colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
         };
 
+        var optionsCard = {
+            height: 800,
+            chartArea: {left: 1, top: 0, width: '800', height: '800'},
+            pieHole: 0.7,
+            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 2},
+            colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
+        };
+
 
         for(var i=0; i<jsonDataParse.length; i++ ) {
 
             var data = new google.visualization.DataTable(jsonDataParse[i]);
-
             var chartWrapItem = chartWrapList[i];
-
             var chart = new google.visualization.PieChart(chartWrapItem);
-
             chart.draw(data, options);
+
+            var dataCard = new google.visualization.DataTable(jsonDataParse[i]);
+            var chartCardWrapItem = chartCardWrapList[i];
+            var chartCard = new google.visualization.PieChart(chartCardWrapItem);
+            chartCard.draw(dataCard, optionsCard);
+
         }
 
     }
-
 
 
     /* ------------------- show-more ------------------- */
