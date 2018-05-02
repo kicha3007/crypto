@@ -7,11 +7,13 @@ $(function () {
 
         var jsonData = $.ajax({
             url: "data.php",
-            dataType: "json",
+            // dataType: "json",
             async: false
         }).responseText;
 
-        var data = google.visualization.arrayToDataTable(jsonData);
+        var jsonDataParse = JSON.parse(jsonData);
+
+        var chartWrapList = document.querySelectorAll('[data-it-donutchart]');
 
         var options = {
             height: 138,
@@ -21,10 +23,21 @@ $(function () {
             colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
         };
 
-        var chart = new google.visualization.PieChart(document.querySelector('[data-it-donutchart]'));
 
-        chart.draw(data, options);
+        for(var i=0; i<jsonDataParse.length; i++ ) {
+
+            var data = new google.visualization.DataTable(jsonDataParse[i]);
+
+            var chartWrapItem = chartWrapList[i];
+
+            var chart = new google.visualization.PieChart(chartWrapItem);
+
+            chart.draw(data, options);
+        }
+
     }
+
+
 
     /* ------------------- show-more ------------------- */
 
