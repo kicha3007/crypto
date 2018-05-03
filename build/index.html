@@ -575,7 +575,7 @@
           <div class="it-header__bottom-wrap">
             <div class="it-container">
               <div class="it-header__bottom">
-                <div class="it-header__half it-header__half--left it-header__half--size">
+                <div class="it-header__half it-header__half--left it-header__half--size-1">
                   <nav class="it-main-nav-3">
                     <div class="it-main-nav-3__wrap">
                       <ul class="it-main-nav-3__list">
@@ -586,14 +586,16 @@
                     </div>
                   </nav>
                 </div>
-                <div class="it-header__half it-header__half--right it-header__half--size">
+                <div class="it-header__half it-header__half--right it-header__half--size-2">
                   <section class="it-filter-options">
                     <div class="it-filter-options__wrap"><span class="it-filter-options__title">	Sort by</span>
-                      <ul class="it-filter-options__list it-filter--show">
-                        <li><a href="#it-overview">   Goal</a></li>
-                        <li><a href="#it-token">   Price</a></li>
-                        <li class="active"><a href="#it-team">   Show</a></li>
-                      </ul>
+                      <div class="it-filter-options__inner-wrap">
+                        <ul class="it-filter-options__list" data-filter-wrap>
+                          <li class="active" data-filter-item>   Goal</li>
+                          <li data-filter-item>   Price</li>
+                          <li data-filter-item>   Show</li>
+                        </ul>
+                      </div>
                     </div>
                   </section>
                 </div>
@@ -604,7 +606,7 @@
         <section class="it-currency">
           <div class="it-container">
             <ul class="it-currency__wrap">
-              <li class="it-currency__item">
+              <li class="it-currency__item" data-hide-wrap>
                 <div class="it-currency__half it-currency__half--size-1">
                   <div class="it-currency__img-box"><img class="it-currency__img" src="static/img/crypto/currency/1.png" alt=""></div>
                   <div class="it-currency__content">
@@ -630,7 +632,7 @@
                     <div class="it-currency__rank-img-box"><img class="it-currency__rank-img" src="static/img/crypto/currency/logo.png" alt=""></div>
                   </div>
                 </div>
-                <div class="it-currency__half it-currency__half--size-5">
+                <div class="it-currency__half it-currency__half--size-5" data-hide-half>
                   <div class="it-currency__info">
                     <ul class="it-currency__info-list">
                       <li class="it-currency__info-item">
@@ -660,7 +662,7 @@
                     </ul>
                   </div>
                 </div>
-                <div class="it-currency__half it-currency__half--size-6">
+                <div class="it-currency__half it-currency__half--size-6" data-hide-half>
                   <div class="it-currency__more-content">
                     <div class="it-currency__top">
                       <div class="it-currency__more-buttons"><a class="it-currency__more-btn" href="#">	More details</a></div>
@@ -677,6 +679,13 @@
                       </ul>
                     </div>
                   </div>
+                </div>
+                <div class="it-currency__half it-currency__half--size-7">
+                  <div class="it-currency__hide-btn" data-hide-btn="Hide infomation"><span class="it-currency__hide-btn-text" data-hide-btn-text>	Show key iformation</span></div>
+                </div>
+                <div class="it-currency__half it-currency__half--size-8">
+                  <div class="it-currency__buttons"><a class="it-currency__btn it-btn" href="#">   Visit website</a></div>
+                  <div class="it-currency__more-buttons"><a class="it-currency__more-btn" href="#">   More details</a></div>
                 </div>
               </li>
             </ul>

@@ -94,6 +94,40 @@
 }
 
 
+.it-token__card-outer-item div div svg  rect+ g {
+
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.it-token__card-outer-item div div svg>   g>  rect {
+
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.it-token__card-outer-item div div svg>   g g {
+  display: inline-block !important;
+  align-items: center !important;
+  width: 80px !important;
+  max-width: 80px !important;
+  flex-grow: 1!important;
+
+  margin-bottom: 20px !important;
+}
+
+
+.it-token__card-outer-item div div svg>   g  {
+
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+
+
 .it-token__card-list {
   display: flex;
   flex-wrap: wrap;

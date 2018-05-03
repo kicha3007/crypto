@@ -2,13 +2,11 @@ section.it-filter-options
 	.it-filter-options__wrap
 		span.it-filter-options__title
 			|	Sort by
-		ul.it-filter-options__list.it-filter--show
-			li
-				a(href="#it-overview" )
+		.it-filter-options__inner-wrap
+			ul.it-filter-options__list(data-filter-wrap)
+				li(data-filter-item).active
 					|    Goal
-			li
-				a(href="#it-token" )
+				li(data-filter-item)
 					|    Price
-			li.active
-				a(href="#it-team" )
+				li(data-filter-item)
 					|    Show

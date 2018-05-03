@@ -29,12 +29,24 @@
   width: 100%;
   border-bottom: 1px solid #E5E5E5;
   padding: 20px 20px;
+  @include desktop {
+    padding: 10px 20px;
+  }
+  @include laptop {
+    padding: 10px 10px;
+  }
 
 }
 
 .it-currency__half--size-1 {
   max-width: 630px;
   flex-basis: 540px;
+  order: 1;
+  align-items: flex-start;
+  @include desktop {
+    flex-basis: 100%;
+    max-width: 100% ;
+  }
 
 }
 
@@ -42,11 +54,22 @@
   max-width: 260px;
   justify-content: flex-end;
   flex-basis: 210px;
+  order: 2;
+  @include desktop {
+    order: 3;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
 }
 
 .it-currency__half--size-3 {
   max-width: 220px;
   flex-basis: 200px;
+  order: 3;
+  @include desktop {
+    display: none;
+
+  }
 }
 
 .it-currency__half--size-4 {
@@ -55,18 +78,56 @@
   background-color: #E5E5E5;
   justify-content: center;
   border-right: 1px solid #E5E5E5;
+  order: 4;
+  @include desktop {
+    order: 2;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
 }
 
 .it-currency__half--size-5 {
   max-width: 540px;
   flex-basis: 400px;
+  order: 5;
+  @include desktop {
+    flex-basis: 100%;
+    max-width: 100%;
+    border-bottom: none;
+  }
 }
 
 .it-currency__half--size-6 {
   max-width: 5345px;
   flex-basis: 520px;
   align-items: flex-start;
+  order: 6;
+  display: flex;
+}
 
+.it-currency__half.it-hide {
+  @include desktop {
+    display: none;
+  }
+
+}
+
+.it-currency__half.it-currency__half--size-7 {
+  order: 7;
+  justify-content: center;
+  display: none;
+  @include desktop {
+    display: flex;
+  }
+}
+
+.it-currency__half--size-8 {
+  order:8;
+  justify-content: center;
+  display: none;
+  @include desktop {
+    display: flex;
+  }
 }
 
 .it-currency__img-box {
@@ -79,6 +140,11 @@
   justify-content: center;
   align-items: center;
   margin-right: 20px;
+  @include phones {
+    max-width: 60px;
+    height: 60px;
+    margin-right: 8px;
+  }
 }
 
 .it-currency__img {
@@ -89,6 +155,9 @@
 
 .it-currency__content {
   max-width: 480px;
+  @include phones {
+    max-width: 200px;
+  }
 }
 
 .it-currency__title {
@@ -113,6 +182,9 @@
 
 .it-currency__status {
   text-align: right;
+  @include desktop {
+      text-align: left;
+  }
 }
 
 .it-currency__status-title {
@@ -139,10 +211,15 @@
   border-radius: 50%;
 }
 
+.it-currency__status-date {
+  margin: 0 -1px;
+  overflow: hidden;
+}
+
 .it-currency__status-date span {
   color: #1F1F1F;
   font-size: 14px;
-  margin-left: 3px;
+  margin: 0 1px;
 }
 
 .it-currency__buttons {
@@ -216,6 +293,9 @@
   width: 100%;
   margin-bottom: 15px;
   text-align: right;
+  @include desktop {
+    display: none;
+  }
 }
 
 .it-currency__more-buttons {
@@ -231,7 +311,7 @@
   text-align: center;
   user-select: none;
   border: none;
-  padding: 0 15px 0 10px;
+  padding: 0 15px 0 20px;
   font-size: 18px;
   transition: all 0.2s ease-in-out;
   color: $main-color;
@@ -279,6 +359,9 @@
   flex-wrap: wrap;
   margin: 0 -2px -4px;
   justify-content: flex-end;
+  @include phones {
+    justify-content: flex-start;
+  }
 }
 
 .it-currency__tags-item {
@@ -289,4 +372,34 @@
   font-size: 14px;
   color: #4F4F4F;
   margin: 0 2px 4px;
+}
+
+.it-currency__hide-btn {
+  max-width: 145px;
+  width: 100%;
+  cursor: pointer;
+
+}
+
+.it-currency__hide-btn-text {
+  position: relative;
+  color: #1F1F1F;
+  font-size: rem(16px);
+  padding-right: 17px;
+}
+
+.it-currency__hide-btn-text:after {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  right: 0;
+  margin-top: -4px;
+  transition: .2s;
+  background: url("../img/crypto/currency/arrow2.png") center no-repeat;
+}
+
+.it-currency__hide-btn.active .it-currency__hide-btn-text:after {
+  transform: rotate(-180deg);
 }

@@ -136,8 +136,18 @@
   z-index: 1001;
 }
 
-.it-header__half--size {
-  width: calc(50% - 40px);
+.it-header__half--size-1 {
+  width: calc(70% - 40px);
+  @include phones {
+    padding-left: 0;
+  }
+
+
+}
+
+.it-header__half--size-2 {
+ width: calc(30%  - 40px);
+
 }
 
 

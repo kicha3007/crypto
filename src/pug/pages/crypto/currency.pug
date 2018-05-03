@@ -1,7 +1,7 @@
 section.it-currency
 	.it-container
 		ul.it-currency__wrap
-			li.it-currency__item
+			li.it-currency__item(data-hide-wrap)
 				.it-currency__half.it-currency__half--size-1
 					.it-currency__img-box
 						img(src="static/img/crypto/currency/1.png", alt='').it-currency__img
@@ -38,7 +38,7 @@ section.it-currency
 								|	ICO RANK
 						.it-currency__rank-img-box
 							img(src="static/img/crypto/currency/logo.png", alt='').it-currency__rank-img
-				.it-currency__half.it-currency__half--size-5
+				.it-currency__half.it-currency__half--size-5(data-hide-half)
 					.it-currency__info
 						ul.it-currency__info-list
 							li.it-currency__info-item
@@ -73,7 +73,7 @@ section.it-currency
 									|	Min purchasre
 								.it-currency__info-value
 									|	180 USD
-				.it-currency__half.it-currency__half--size-6
+				.it-currency__half.it-currency__half--size-6(data-hide-half)
 					.it-currency__more-content
 						.it-currency__top
 							.it-currency__more-buttons
@@ -95,3 +95,14 @@ section.it-currency
 									|	Escrow: No
 								li.it-currency__tags-item
 									|	Banned 9 countries
+				.it-currency__half.it-currency__half--size-7
+					.it-currency__hide-btn(data-hide-btn="Hide infomation")
+						span.it-currency__hide-btn-text(data-hide-btn-text)
+							|	Show key iformation
+				.it-currency__half.it-currency__half--size-8
+					.it-currency__buttons
+						a(href="#").it-currency__btn.it-btn
+							|    Visit website
+					.it-currency__more-buttons
+						a(href="#").it-currency__more-btn
+							|    More details

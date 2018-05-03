@@ -1,5 +1,65 @@
 $(function () {
 
+
+    /* ------------------- filter-options ------------------- */
+
+    var filterWrap = $("[data-filter-wrap]");
+    var filterItem = $("[data-filter-item]");
+
+    filterItem.on("click", function () {
+        var $this = $(this);
+
+        filterWrap.toggleClass("active");
+
+        if ($("[data-filter-item].active").length > 1 ) {
+            $this.closest(filterWrap).find("[data-filter-item]").removeClass("active");
+            $this.addClass("active");
+        } else {
+            $this.closest("[data-filter-wrap]").find("[data-filter-item]").addClass("active");
+        }
+
+    });
+
+/*
+    $(document).mouseup(function (e) {// обрабатываем клик в любой точке
+        if (jQuery(e.target).closest(filterWrap).length > 0) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
+            return false; // клик по элементу игнорируем
+        }
+
+        else { // клик вне элемента
+            $this.closest(filterWrap).find("[data-filter-item]").removeClass("active");
+        }
+
+    });
+*/
+
+
+
+
+    /* ------------------- show-more ------------------- */
+
+    var hideBtn = $("[data-hide-btn]");
+
+    hideBtn.on("click", function (e) {
+
+        var $this = $(this);
+
+        $this.toggleClass("active");
+
+        var hideBtnCloseText = $this.data("hideBtn");
+        var hideBtnCloseTextToButton = $this.children("[data-hide-btn-text]").text();
+
+        $this.children("[data-hide-btn-text]").text(hideBtnCloseText);
+        $this.data("hideBtn", hideBtnCloseTextToButton);
+
+        $this.closest("[data-hide-wrap]").find("[data-hide-half]").toggleClass("it-hide");
+
+    });
+
+
+    /* ------------------- google-charts ------------------- */
+
+
     google.charts.load('current', {'packages': ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -16,28 +76,39 @@ $(function () {
 
         var jsonData = '[{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners"},{"v":3}]},{"c":[{"v":"Presale"},{"v":1}]},{"c":[{"v":"Crowdsale"},{"v":1}]},{"c":[{"v":"Developers"},{"v":1}]},{"c":[{"v":"Bounty campaign"},{"v":2}]},{"c":[{"v":"Partnership"},{"v":2}]}]},{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
 
-
+        var jsonData2 = '[{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners"},{"v":3}]},{"c":[{"v":"Presale"},{"v":1}]},{"c":[{"v":"Crowdsale"},{"v":1}]},{"c":[{"v":"Developers"},{"v":1}]},{"c":[{"v":"Bounty campaign"},{"v":2}]},{"c":[{"v":"Partnership"},{"v":2}]}]},{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
         var jsonDataParse = JSON.parse(jsonData);
+        var jsonDataParse2 = JSON.parse(jsonData2);
 
         var chartList = document.querySelectorAll('[data-it-donutchart]');
         var chartCardList = document.querySelectorAll('[data-it-cardchart]');
 
+        // var options = {
+        //     height: 160,
+        //     chartArea: {left: 0, top: 10, width: '350', height: '140', fontSize: 0},
+        //     pieHole: 0.7,
+        //     legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center"},
+        //     colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"],
+        //     pieSliceText: "none"
+        //
+        // };
+
         var options = {
             height: 160,
-            chartArea: {left: 0, top: 10, width: '350', height: '140', fontSize: 0},
+            chartArea: {left: 0, top: 10, width: '380', height: '140', fontSize: 0},
             pieHole: 0.7,
-            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center"},
+            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center",  maxLines: 3},
             colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"],
             pieSliceText: "none"
 
         };
 
         var optionsCard = {
-            height: 100,
-            chartArea: {left: 1, top: 0, width: '100', height: '100'},
+            height: 78,
+            chartArea: {left: 0, top: 10, width: '58', height: '58'},
             pieHole: 0.7,
-            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 2},
-            colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
+            legend: "none",
+            colors: ["#3EC7C6"]
         };
 
 
@@ -48,7 +119,7 @@ $(function () {
             var chart = new google.visualization.PieChart(chartItem);
             chart.draw(data, options);
 
-            var dataCard = new google.visualization.DataTable(jsonDataParse[i]);
+            var dataCard = new google.visualization.DataTable(jsonDataParse2[i]);
             var chartCardItem = chartCardList[i];
             var chartCard = new google.visualization.PieChart(chartCardItem);
             chartCard.draw(dataCard, optionsCard);

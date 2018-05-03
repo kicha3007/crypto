@@ -3,6 +3,9 @@
 @import "../smart-grid";
 
 .it-main-nav-3 {
+  @include phones {
+    display: none;
+  }
 
 }
 
@@ -20,6 +23,10 @@
   margin: 0 -13px;
   overflow: hidden;
   align-items: flex-start;
+  @include tablets {
+    margin: 0 -5px;
+  }
+
 }
 
 
@@ -28,6 +35,9 @@
   background-color: transparent;
   margin: 0 13px;
   padding: 10px 0;
+@include tablets {
+  margin: 0 5px;
+}
 
 
 }
@@ -47,6 +57,9 @@
   transition: .2s;
   border: 1px solid #828282;
   border-radius: 25px;
+  @include tablets {
+    padding: 8px 15px;
+  }
 
 }
 
