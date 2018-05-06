@@ -1,4 +1,12 @@
 $(function () {
+    /* ------------------- filter-niceScroll ------------------- */
+
+
+
+
+            var nice = $("[data-scroll-hide1]").niceScroll();
+
+
 
 
     /* ------------------- filter-options ------------------- */
@@ -171,6 +179,10 @@ $(function () {
 
     function promtShow() {
         var $this = $(this);
+        var tokenList = $this.closest("[data-token-list]");
+        tokenList.find("[data-token-promt]").css("display", "none");
+        tokenList.find(promtButton).removeClass("active");
+
         var tokenItem = $this.closest("[data-token-item]");
         tokenItem.find("[data-token-promt]").toggle();
         $this.toggleClass("active");
@@ -214,13 +226,13 @@ $(function () {
         mainHeaderH = mainHeader.outerHeight(),
         mainSidebar = $("[data-main-sidebar]");
 
-    var windowSizeMax = window.matchMedia('all and (max-width: 576px)');
+//    var windowSizeMax = window.matchMedia('all and (max-width: 576px)');
     var windowSizeMaxAll = window.matchMedia('(min-width: 1200px)');
 
     $(document).on("scroll", function () {
         var documentScroll = $(this).scrollTop();
 
-        if (windowSizeMax.matches) {
+
 
             /* ------------------- Fixed nav and sidebar ------------------- */
 
@@ -231,14 +243,14 @@ $(function () {
                 navOther.removeClass("it--fixed");
             }
 
-        }
+
 
         if (windowSizeMaxAll.matches) {
 
             var bottomOffser = $("[data-main-footer]").outerHeight();
 
             $("[data-main-sidebar]").sticky({
-                    topSpacing: 35,
+                    topSpacing: 85,
                     bottomSpacing: bottomOffser + 5
                 }
             );

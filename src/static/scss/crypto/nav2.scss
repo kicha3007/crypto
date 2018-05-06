@@ -12,8 +12,6 @@
   position: relative;
 }
 
-
-
 .it-main-nav-2__list {
   display: flex;
   z-index: 1000;
@@ -25,26 +23,19 @@
   @include laptop {
     max-width: 500px;
   }
-
-
 }
-
 
 .it-main-nav-2__list::-webkit-scrollbar {
   width: 0 !important;
   display: none !important;
-
 }
-
 
 .it-main-nav-2__list > li {
   list-style-type: none;
   position: relative;
   background-color: transparent;
   margin: 0 0;
-
 }
-
 
 .it-main-nav-2__list ul {
   z-index: 1000;
@@ -54,10 +45,9 @@
   padding: 5px 36px 5px 0;
   display: block;
   font-size: rem(16px);
-  font-weight: 300;
+  font-weight: 400;
   color: #6D6D6D;
   transition: .2s;
-
 }
 
 .it-main-nav-2__list > li:last-child > a {
@@ -74,15 +64,11 @@
   color: $main-color;
   font-weight: 400;
   text-decoration: none;
-
 }
-
 
 /*.it-main-nav-2__list > li > a:visited {
   color: #6D6D6D;
 }*/
-
-
 
 .it-main-nav-2__list > li > ul,
 .it-main-nav-2__list > li > ul > li > ul {
@@ -127,7 +113,6 @@
   font-weight: 400;
   text-decoration: none;
   color: $main-color;
-
 }
 
 .it-main-nav-2__list > li > ul > li.active > a {

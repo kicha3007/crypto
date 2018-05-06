@@ -4,9 +4,11 @@
 
 .it-card {
   background-color: #ffffff;
-  margin-bottom: 40px;
-
-
+  @include desktop {
+      position: static !important;
+      padding-bottom: 40px !important;
+      z-index: 0 !important;
+  }
 }
 
 .it-card__item {
