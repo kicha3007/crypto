@@ -290,8 +290,8 @@ $(function () {
         mainHeader.toggleClass("it-header--bg");
 
         $nav.slideToggle(600, function () {
-            if ($(this).css("display") === "none") {
-                $(this).removeAttr("style");
+            if ($this.css("display") === "none") {
+                $this.removeAttr("style");
             }
         });
 
