@@ -279,15 +279,41 @@ $(function () {
         parent.style.height = parent.clientHeight - childP + "px";
     }
 
+
+
+
+
+
+    var target = $('[data-pseudo-scroll-line]');
+
+ /*   $("[data-scroll-nav]").on("touchstart", function() {
+
+    });
+*/
+
+
+    var moove = function (obj, x){
+        $(obj).css({"left" : x - 50 });
+    };
+
+    $("[data-scroll-nav]").on("touchmove", function(e) {
+    moove(target, event.targetTouches[0].clientX);
+
+    });
+
+
+
     /* ****************************** dropdown-menu ****************************** */
 
     var $trigger = $('[data-trigger="1"]');
     var $nav = $('[data-it-nav]');
-    var $this = $(this);
 
     $trigger.on("click", function () {
         $trigger.toggleClass('active');
         mainHeader.toggleClass("it-header--bg");
+        $("html").prepend("<div class='it-body--bg-shadow acive'></div>")
+
+
 
         $nav.slideToggle(600, function () {
             if ($(this).css("display") === "none") {

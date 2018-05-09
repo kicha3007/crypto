@@ -23,16 +23,21 @@
 }
 
 
-.it-header.it-header--bg:before {
-	content: '';
+.it-body--bg-shadow.active {
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 150%;
-	height: 1000%;
-   z-index: 100;
+    right: 0;
+    bottom: 0;
+	width: 100%;
+	height: 3000%;
+    z-index: 100;
     background-color: rgba(51, 51, 51, 0.45);
+}
+
+.it-body--bg-shadow.active {
+
 }
 
 .it-header__top-wrap {
