@@ -311,9 +311,14 @@ $(function () {
     $trigger.on("click", function () {
         $trigger.toggleClass('active');
         mainHeader.toggleClass("it-header--bg");
-        $("html").prepend("<div class='it-body--bg-shadow acive'></div>")
 
+        if ($("div").is("#it-body--bg-shadow")) {
+               $("#it-body--bg-shadow").remove();
 
+        } else {
+           $("body").prepend("<div id='it-body--bg-shadow'></div>");
+
+        }
 
         $nav.slideToggle(600, function () {
             if ($(this).css("display") === "none") {

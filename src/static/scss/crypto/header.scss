@@ -23,7 +23,7 @@
 }
 
 
-.it-body--bg-shadow.active {
+#it-body--bg-shadow {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -36,9 +36,7 @@
     background-color: rgba(51, 51, 51, 0.45);
 }
 
-.it-body--bg-shadow.active {
 
-}
 
 .it-header__top-wrap {
   padding: 29px 0;
