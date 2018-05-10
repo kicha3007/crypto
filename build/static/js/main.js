@@ -308,15 +308,17 @@ $(function () {
     var $trigger = $('[data-trigger="1"]');
     var $nav = $('[data-it-nav]');
 
-    $trigger.on("click", function () {
+
+
+    function showMobileMenu () {
         $trigger.toggleClass('active');
         mainHeader.toggleClass("it-header--bg");
 
         if ($("div").is("#it-body--bg-shadow")) {
-               $("#it-body--bg-shadow").remove();
+            $("#it-body--bg-shadow").remove();
 
         } else {
-           $("body").prepend("<div id='it-body--bg-shadow'></div>");
+            $("body").prepend("<div id='it-body--bg-shadow'></div>");
 
         }
 
@@ -326,6 +328,16 @@ $(function () {
             }
         });
 
-    });
+        $("#it-body--bg-shadow").on("click", showMobileMenu);
+
+    }
+
+
+    $trigger.on("click", showMobileMenu);
+
+
+
 
 });
+
+
