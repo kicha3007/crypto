@@ -183,7 +183,7 @@
   border: none;
   padding: 16.5px 10px;
   font-size: 14px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   background-color: $main-color;
   color: #ffffff;
   text-transform: none;
@@ -194,8 +194,9 @@
 }
 
 .it-btn:hover {
-  background: $main-color-hover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .it-btn:hover,
 .it-btn:active,

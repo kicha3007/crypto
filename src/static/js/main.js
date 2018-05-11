@@ -1,12 +1,4 @@
 $(function () {
-    /* ------------------- filter-niceScroll ------------------- */
-
-
-
-
-            var nice = $("[data-scroll-hide1]").niceScroll();
-
-
 
 
     /* ------------------- filter-options ------------------- */
@@ -283,13 +275,9 @@ $(function () {
 
 
 
+/*
 
     var target = $('[data-pseudo-scroll-line]');
-
- /*   $("[data-scroll-nav]").on("touchstart", function() {
-
-    });
-*/
 
 
     var moove = function (obj, x){
@@ -301,6 +289,7 @@ $(function () {
 
     });
 
+*/
 
 
     /* ****************************** dropdown-menu ****************************** */
@@ -336,8 +325,13 @@ $(function () {
     $trigger.on("click", showMobileMenu);
 
 
+    /* ****************************** ct-scrollbar****************************** */
+
+
+
+
 
 
 });
 
-
+$("[data-scroll-hide-wrap]").perfectScrollbar();
