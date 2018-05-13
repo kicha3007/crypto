@@ -3,7 +3,7 @@
 @import "../smart-grid";
 
 .it-article-more {
-  padding-top: 80px;
+  padding: 80px 0 40px;
 }
 
 .it-article-more__wrap {
@@ -50,7 +50,7 @@
 .it-article-more__nav-list li {
   list-style-type: none;
   padding-left: 0;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .it-article-more__nav-list li a {
@@ -60,7 +60,7 @@
   display: block;
 }
 
-.it-article-more__content:first-child .it-all-title {
+.it-article-more__content > .it-all-title:first-child {
   margin-top: 0;
 }
 
@@ -144,4 +144,42 @@
   text-align: center;
   padding: 10px 20px;
   color: #000000;
+}
+
+.it-article-more__next-list {
+  margin: 0;
+  padding: 0;
+}
+
+.it-article-more__next-list li {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+.it-article-more__next-list {
+  margin: 0;
+  padding: 0;
+}
+
+.it-article-more__next-list li {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 3px;
+}
+
+.it-article-more__next-list li a {
+  text-decoration: none;
+  color: $main-color;
+  padding: 5px 0 5px;
+  display: block;
+}
+
+.it-article-more__buttons {
+  max-width: 233px;
+  width: 100%;
+}
+
+.it-all-title + .it-article-more__buttons {
+  margin-top: 25px;
 }

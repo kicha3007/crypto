@@ -135,6 +135,22 @@ p {
 /******************* it-all-style *******************/
 
 
+figure {
+  margin: 0 0 30px;
+}
+
+figure img {
+  margin-bottom: 10px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  color: #828282;
+  font-size: 16px;
+}
+
 .it-article-more cite {
   padding-left: 15px;
   border-left: 3px solid $main-color ;
