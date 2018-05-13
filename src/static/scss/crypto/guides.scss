@@ -1,0 +1,140 @@
+@import "../__vars";
+@import "../__mixins";
+@import "../smart-grid";
+
+.it-guides {
+  padding-top: 60px;
+}
+
+.it-guides__main-title {
+  font-size: rem(27px);
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #1E1E1E;
+}
+
+.it-guides__wrap {
+  @include row-flex();
+  margin-bottom: -20px;
+  padding: 0 0 30px;
+  align-items: flex-start;
+
+
+}
+
+.it-guides__item {
+  @include col();
+  @include size(4);
+  @include size-xs(12);
+  margin-bottom: 20px;
+  list-style-type: none;
+  padding-left: 0;
+  align-self: flex-start;
+
+}
+
+.it-guides__img-box {
+  max-height: 179px;
+  overflow: hidden;
+
+}
+
+.it-guides__img {
+  display: block;
+
+}
+
+.it-guides__content {
+  padding: 25px;
+  border: 1px solid #DEDEDE;
+}
+
+.it-guides__title {
+  color: #1E1E1E;
+  font-size: rem(20px);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.it-guides__desc {
+  color: #4F4F4F;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.it-guides__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -5px;
+  justify-content: space-between;
+
+}
+
+.it-guides__bottom-half {
+  margin-bottom: 5px;
+}
+
+
+.it-guides__time {
+  padding-left: 30px;
+  position: relative;
+  @include laptop {
+    padding-left: 15px;
+  }
+
+}
+
+.it-guides__time:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  @include laptop {
+    width: 10px;
+    height: 10px;
+    top: 4px;
+  }
+
+}
+
+.it-article__time--icon-1:before {
+  background: url("../img/crypto/article/time/1.svg") no-repeat center;
+  background-size: 100%;
+}
+
+
+.it-guides__time-title {
+  font-weight: 300;
+  font-size: 15px;
+  color: #000000;
+  margin-right: 3px;
+}
+
+
+.it-guides__time-value {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1E1E1E;
+  @include laptop {
+    font-size: 14px;
+  }
+}

@@ -2,37 +2,10 @@ section.it-activity#it-activity
 	.it-all-title
 		|	Activity
 	.it-activity__wrap
-		.it-main-page__all-subtitle
-			|    Social
-		ul.it-activity__social-list
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					svg(width="39" height="30").it-activity__social-img-box
-						defs
-							filter#it-svg-filter--grey
-								feColorMatrix(type="saturate" values="0")
-						image.it-activity__social-img(  xlink:href="static/img/crypto/activity/social/1.svg")
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/2.svg", alt='').it-activity__social-img
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/3.svg", alt='').it-activity__social-img
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/4.svg", alt='').it-activity__social-img
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/5.svg", alt='').it-activity__social-img
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/6.svg", alt='').it-activity__social-img
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/7.svg", alt='').it-activity__social-img
-			li.it-activity__social-item
-				a(href="#").it-activity__social-link
-					img(src="static/img/crypto/activity/social/8.svg", alt='').it-activity__social-img
+		.it-social
+			.it-main-page__all-subtitle
+				|    Social
+				include social
 		.it-main-page__all-subtitle
 			|    Events
 		.it-main-page__all-text

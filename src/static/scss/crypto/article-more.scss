@@ -8,6 +8,9 @@
 
 .it-article-more__wrap {
   @include row-flex();
+  padding-bottom: 50px;
+  border-bottom: 1px solid #DEDEDE;
+
 }
 
 .it-article-more__half {
