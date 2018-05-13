@@ -19,8 +19,12 @@
 @import "crypto/nav3";
 @import "crypto/filter-options";
 @import "crypto/currency";
+@import "crypto/article";
+@import "crypto/article-more";
 
 /******************* all-style *******************/
+
+
 
 
 .it-seporator  {
@@ -31,6 +35,8 @@
   text-align: center;
   font-weight: 500;
   padding: 100px 10px ;
+  position: relative;
+  z-index: 999999;
 }
 
 .it-main-page__half--right a {
@@ -49,8 +55,9 @@
 }
 
 .it-main-page__content p,
-.it-main-page__all-text {
-  color: #6D6D6D;
+.it-main-page__all-text,
+p {
+  color: #4F4F4F;
   font-size: rem(16px);
   padding: 0;
   margin-bottom: 20px;
@@ -128,8 +135,18 @@
 /******************* it-all-style *******************/
 
 
+.it-article-more cite {
+  padding-left: 15px;
+  border-left: 3px solid $main-color ;
+  color: #1E1E1E;
+  font-size: 16px;
+  margin-bottom: 30px;
+  display: block;
+  max-width: 520px;
+}
+
 .it-container {
-  max-width: 1170px;
+  max-width: 1230px;
   width: 100%;
   padding: 0 30px;
   margin: 0 auto;
@@ -147,7 +164,6 @@
   color: #1E1E1E;
   padding: 0;
 }
-
 
 
 

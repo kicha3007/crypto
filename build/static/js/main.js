@@ -247,6 +247,9 @@ $(function () {
                 }
             );
 
+
+            
+
             //
             //     if (documentScroll > mainHeaderH - 32) {
             //         mainSidebar.addClass("it--fixed");
@@ -333,5 +336,5 @@ $(function () {
 
 
 });
-
-$("[data-scroll-hide-wrap]").perfectScrollbar();
+//
+// $("[data-scroll-hide-wrap]").perfectScrollbar();

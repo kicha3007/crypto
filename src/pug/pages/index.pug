@@ -13,7 +13,7 @@ html(lang="ru-RU")
                 .it-container
                     .it-main-page__inner-wrap
                         aside.it-main-page__half.it-main-page__half--left
-                          include crypto/card
+                         // include crypto/card
                         .it-main-page__half.it-main-page__half--right
                             include crypto/overview
                             include crypto/token
@@ -28,6 +28,13 @@ html(lang="ru-RU")
             .it-main-page__content.it-main-page__content--bg
                 include crypto/сryptocurrency-header
                 include crypto/currency
+        include crypto/footer
+        .it-seporator
+            |   Simply Vital Health
+        .it-main-page__wrapper
+            .it-main-page__content
+                include crypto/article
+                include crypto/article-more
         include crypto/footer
 
         script(src='static/js/jquery.min.js', type='text/javascript')

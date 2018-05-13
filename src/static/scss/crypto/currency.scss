@@ -40,7 +40,7 @@
 
 .it-currency__half--size-1 {
   max-width: 630px;
-  flex-basis: 540px;
+  flex-basis: 580px;
   order: 1;
   align-items: flex-start;
   @include desktop {
@@ -51,7 +51,7 @@
 }
 
 .it-currency__half--size-2 {
-  max-width: 260px;
+  max-width: 310px;
   justify-content: flex-end;
   flex-basis: 210px;
   order: 2;
@@ -223,7 +223,7 @@
 }
 
 .it-currency__buttons {
-  max-width: 175px;
+  //max-width: 175px;
   width: 100%;
 }
 
@@ -236,7 +236,7 @@
 }
 
 .it-currency__rank-text {
-  color: #333333;
+  color: #4f4f4f;
   font-size: 16px;
   text-transform: uppercase;
   display: inline-block;
@@ -287,6 +287,10 @@
   font-weight: 500;
 
 
+}
+
+.it-currency__info-value b {
+  color: #333333;
 }
 
 .it-currency__top {
@@ -408,6 +412,14 @@
   max-width: 126px ;
 }
 
-.it-currency__info-item--size:first-child {
-  margin-bottom: 5px;
+.it-currency__info-item:first-child {
+  margin-bottom: 7px;
+}
+
+.it-currency__info-item:last-child {
+  margin-bottom: 0;
+}
+
+.it-currency .it-currency__btn {
+  text-transform: uppercase;
 }
