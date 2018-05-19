@@ -4,6 +4,7 @@
 
 .it-card {
   background-color: #ffffff;
+  max-width: 363px;
   @include desktop {
       position: static !important;
       padding-bottom: 40px !important;
@@ -226,23 +227,10 @@
   color: #6D6D6D;
 }
 
-.it-card.it--fixed {
-  position: fixed;
-  top: 100px;
-  left: 20%;
-  z-index: 3;
-
-}
 
 .it-card.it--fixed {
   position: fixed;
-  top: 40px;
-  left: 0;
-  width: 344px;
-  max-width: 1170px;
 
-  padding: 0 30px;
-  margin: 0 auto;
 }
 
 
@@ -304,6 +292,3 @@
   font-weight: 500;
 }
 
-.it-card__goal-wrap {
-
-}
