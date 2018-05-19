@@ -248,7 +248,7 @@ $(function () {
             );
 
 
-            
+
 
             //
             //     if (documentScroll > mainHeaderH - 32) {
@@ -336,5 +336,35 @@ $(function () {
 
 
 });
-//
-// $("[data-scroll-hide-wrap]").perfectScrollbar();
+
+/*
+var container = document.querySelector("[data-scroll-hide-wrap]");
+
+// var  ps = new PerfectScrollbar(container);
+
+
+
+const ps = new PerfectScrollbar(container, {
+    wheelSpeed: 2,
+    wheelPropagation: true,
+    minScrollbarLength: 20
+});
+
+ps.perfectScrollbar('update');
+// $("[data-scroll-hide-wrap]").perfectScrollbar(
+*/
+
+
+/*
+new PerfectScrollbar('#it-main-nav-2__wrap', {
+    minScrollbarLength: 200
+});
+*/
+
+
+var container = document.querySelector('[data-scroll-hide-wrap]');
+
+
+new PerfectScrollbar(container, {
+    minScrollbarLength: 20
+});

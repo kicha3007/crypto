@@ -7,9 +7,10 @@
 }
 
 .it-main-nav-2__wrap {
-  overflow: hidden;
-  width: 100%;
+/*  overflow: hidden;
+  width: 100%;*/
  position: relative;
+  overflow: auto;
 }
 
 .it-main-nav-2__list {
@@ -21,7 +22,7 @@
   //position: relative;
   padding-left: 0;
   @include laptop {
-    max-width: 500px;
+    width: 450px;
   }
 }
 
@@ -192,17 +193,17 @@
 
 
 
-.it-main-nav-2__scroll-line {
-  display: none;
-  position: absolute ;
-/*  top: 0;
-  left: 50%;*/
-  bottom: 0;
-  right: 0;
-  width: 50px;
-  height: 2px;
-  padding-left: 0;
-  margin-left: 25px;
-  background-color: #BDBDBD !important;
+.ps__rail-x,
+.ps__rail-y {
+  opacity: 1;
+/*  width: 50px !important;*/
+/*  margin: 0 auto;*/
+}
+
+#it-main-nav-2__wrap .ps__rail-x .ps__thumb-x {
+
+  height: 3px;
+  background-color: $main-color;
+
 }
 

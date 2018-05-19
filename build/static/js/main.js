@@ -1,6 +1,5 @@
 $(function () {
 
-
     /* ------------------- filter-options ------------------- */
 
     var filterWrap = $("[data-filter-wrap]");
@@ -11,7 +10,7 @@ $(function () {
 
         filterWrap.toggleClass("active");
 
-        if ($("[data-filter-item].active").length > 1 ) {
+        if ($("[data-filter-item].active").length > 1) {
             $this.closest(filterWrap).find("[data-filter-item]").removeClass("active");
             $this.addClass("active");
         } else {
@@ -19,22 +18,6 @@ $(function () {
         }
 
     });
-
-/*
-    $(document).mouseup(function (e) {// обрабатываем клик в любой точке
-        if (jQuery(e.target).closest(filterWrap).length > 0) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
-            return false; // клик по элементу игнорируем
-        }
-
-        else { // клик вне элемента
-            $this.closest(filterWrap).find("[data-filter-item]").removeClass("active");
-        }
-
-    });
-*/
-
-
-
 
     /* ------------------- show-more ------------------- */
 
@@ -56,9 +39,7 @@ $(function () {
 
     });
 
-
     /* ------------------- google-charts ------------------- */
-
 
     google.charts.load('current', {'packages': ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -97,7 +78,7 @@ $(function () {
             height: 160,
             chartArea: {left: 0, top: 10, width: '380', height: '140', fontSize: 0},
             pieHole: 0.7,
-            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center",  maxLines: 3},
+            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 3},
             colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"],
             pieSliceText: "none"
 
@@ -111,8 +92,7 @@ $(function () {
             colors: ["#3EC7C6"]
         };
 
-
-        for(var i=0; i<jsonDataParse.length; i++ ) {
+        for (var i = 0; i < jsonDataParse.length; i++) {
 
             var data = new google.visualization.DataTable(jsonDataParse[i]);
             var chartItem = chartList[i];
@@ -127,7 +107,6 @@ $(function () {
         }
 
     }
-
 
     /* ------------------- show-more ------------------- */
 
@@ -213,6 +192,7 @@ $(function () {
     /* ------------------- Fixed all var ------------------- */
 
     var mainHeader = $("[data-main-header]"),
+        topHeader = $("[data-top-header]"),
         navOther = $("[data-nav-other]"),
         navOtherH = navOther.outerHeight(),
         mainHeaderH = mainHeader.outerHeight(),
@@ -224,43 +204,24 @@ $(function () {
     $(document).on("scroll", function () {
         var documentScroll = $(this).scrollTop();
 
+        /* ------------------- Fixed nav and sidebar ------------------- */
 
+        if (documentScroll > mainHeaderH - 60) {
+            navOther.addClass("it--fixed");
 
-            /* ------------------- Fixed nav and sidebar ------------------- */
-
-            if (documentScroll > mainHeaderH - 32) {
-                navOther.addClass("it--fixed");
-
-            } else {
-                navOther.removeClass("it--fixed");
-            }
-
-
-
-        if (windowSizeMaxAll.matches) {
-
-            var bottomOffser = $("[data-main-footer]").outerHeight();
-
-            $("[data-main-sidebar]").sticky({
-                    topSpacing: 85,
-                    bottomSpacing: bottomOffser + 5
-                }
-            );
-
-
-            
-
-            //
-            //     if (documentScroll > mainHeaderH - 32) {
-            //         mainSidebar.addClass("it--fixed");
-            //         fixSidebar();
-            //         // mainHeader.css("paddingTop", navOtherH);
-            //     } else {
-            //         mainSidebar.removeClass("it--fixed");
-            //         // mainHeader.css("paddingTop", 0);
-            //     }
-            //
+        } else {
+            navOther.removeClass("it--fixed");
         }
+
+        /*      if (windowSizeMaxAll.matches) {*/
+
+        var bottomOffser = $("[data-main-footer]").outerHeight();
+
+        $("[data-main-sidebar]").sticky({
+                topSpacing: 85,
+                bottomSpacing: bottomOffser + 5
+            }
+        );
 
     });
 
@@ -274,35 +235,12 @@ $(function () {
         parent.style.height = parent.clientHeight - childP + "px";
     }
 
-
-
-
-
-/*
-
-    var target = $('[data-pseudo-scroll-line]');
-
-
-    var moove = function (obj, x){
-        $(obj).css({"left" : x - 50 });
-    };
-
-    $("[data-scroll-nav]").on("touchmove", function(e) {
-    moove(target, event.targetTouches[0].clientX);
-
-    });
-
-*/
-
-
     /* ****************************** dropdown-menu ****************************** */
 
     var $trigger = $('[data-trigger="1"]');
     var $nav = $('[data-it-nav]');
 
-
-
-    function showMobileMenu () {
+    function showMobileMenu() {
         $trigger.toggleClass('active');
         mainHeader.toggleClass("it-header--bg");
 
@@ -310,7 +248,7 @@ $(function () {
             $("#it-body--bg-shadow").remove();
 
         } else {
-            $("body").prepend("<div id='it-body--bg-shadow'></div>");
+            $("body").prepend("<div id=\"it-body--bg-shadow\"></div>");
 
         }
 
@@ -324,17 +262,14 @@ $(function () {
 
     }
 
-
     $trigger.on("click", showMobileMenu);
-
 
     /* ****************************** ct-scrollbar****************************** */
 
-
-
-
-
-
 });
-//
-// $("[data-scroll-hide-wrap]").perfectScrollbar();
+
+var container = document.querySelector('[data-scroll-hide-wrap]');
+
+new PerfectScrollbar(container, {
+    minScrollbarLength: 20
+});
