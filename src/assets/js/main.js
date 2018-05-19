@@ -11,7 +11,7 @@ $(function () {
 
         filterWrap.toggleClass("active");
 
-        if ($("[data-filter-item].active").length > 1 ) {
+        if ($("[data-filter-item].active").length > 1) {
             $this.closest(filterWrap).find("[data-filter-item]").removeClass("active");
             $this.addClass("active");
         } else {
@@ -19,8 +19,6 @@ $(function () {
         }
 
     });
-
-
 
     /* ------------------- show-more ------------------- */
 
@@ -42,9 +40,7 @@ $(function () {
 
     });
 
-
     /* ------------------- google-charts ------------------- */
-
 
     google.charts.load('current', {'packages': ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -83,7 +79,7 @@ $(function () {
             height: 160,
             chartArea: {left: 0, top: 10, width: '380', height: '140', fontSize: 0},
             pieHole: 0.7,
-            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center",  maxLines: 3},
+            legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 3},
             colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"],
             pieSliceText: "none"
 
@@ -97,8 +93,7 @@ $(function () {
             colors: ["#3EC7C6"]
         };
 
-
-        for(var i=0; i<jsonDataParse.length; i++ ) {
+        for (var i = 0; i < jsonDataParse.length; i++) {
 
             var data = new google.visualization.DataTable(jsonDataParse[i]);
             var chartItem = chartList[i];
@@ -113,7 +108,6 @@ $(function () {
         }
 
     }
-
 
     /* ------------------- show-more ------------------- */
 
@@ -151,35 +145,113 @@ $(function () {
     });
 
     /* ------------------- show-prompt ------------------- */
+    /*
+        var promtButton = $("[data-token-list]").find("[data-prompt-button]");
+        var tokenPromt = $("[data-token-promt]");
 
+        function promtShow() {
+            var $this = $(this);
+            var tokenList = $this.closest("[data-token-list]");
+            tokenList.find("[data-token-promt]").css("display", "none");
+            tokenList.find(promtButton).removeClass("active");
+
+            var tokenItem = $this.closest("[data-token-item]");
+            tokenItem.find("[data-token-promt]").toggle();
+            $this.toggleClass("active");
+
+        }*/
+
+    /* ------------------- возможно тормоза ттутт  ------------------- */
+
+    /*
+
+
+        function hideOnClickBody() {
+
+            $(document).mouseup(function (e) {// обрабатываем клик в любой точке
+                console.log("работает");
+                if (jQuery(e.target).closest(tokenPromt).length > 0 || jQuery(e.target).closest(promtButton).length) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
+                    return false; // клик по элементу игнорируем
+                }
+
+                else { // клик вне элемента
+                    tokenPromt.hide();
+                    promtButton.removeClass("active");
+                }
+
+            });
+        }
+
+        promtButton.on("click", function () {
+            promtShow();
+            hideOnClickBody();
+        } );
+
+
+    */
     var promtButton = $("[data-token-list]").find("[data-prompt-button]");
-    var tokenPromt = $("[data-token-promt]");
+
 
     function promtShow() {
         var $this = $(this);
+        var tokenPromt = $("[data-token-promt]");
         var tokenList = $this.closest("[data-token-list]");
-        tokenList.find("[data-token-promt]").css("display", "none");
+
+        tokenList.find(tokenPromt).css("display", "none");
         tokenList.find(promtButton).removeClass("active");
 
         var tokenItem = $this.closest("[data-token-item]");
-        tokenItem.find("[data-token-promt]").toggle();
+        tokenItem.find(tokenPromt).toggle();
+        console.log(tokenItem.find(tokenPromt));
         $this.toggleClass("active");
+
+
+
+        if ($("#it-body--bg-transparant").length == 0) {
+
+
+
+            $("body").prepend("<div id=\"it-body--bg-transparant\"></div>");
+            $("#it-body--bg-transparant").css({
+                "width": "100%",
+                "height": "10000%",
+                "background": "transparent",
+                "position": "absolute",
+                "top": "0",
+                "left": "0",
+                "z-index": 999999
+            })
+
+        }
+
+        $("#it-body--bg-transparant").on("click", function () {
+            tokenList.find("[data-token-promt]").css("display", "none");
+            tokenList.find(promtButton).removeClass("active");
+            $("#it-body--bg-transparant").remove();
+        });
+
 
     }
 
+
+
+    /*    function hideOnClickBody() {
+
+            $(document).mouseup(function (e) {// обрабатываем клик в любой точке
+                console.log("работает");
+                if (jQuery(e.target).closest(tokenPromt).length > 0 || jQuery(e.target).closest(promtButton).length) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
+                    return false; // клик по элементу игнорируем
+                }
+
+                else { // клик вне элемента
+                    tokenPromt.hide();
+                    promtButton.removeClass("active");
+                }
+
+            });
+        }*/
+
     promtButton.on("click", promtShow);
-
-    $(document).mouseup(function (e) {// обрабатываем клик в любой точке
-        if (jQuery(e.target).closest(tokenPromt).length > 0 || jQuery(e.target).closest(promtButton).length) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
-            return false; // клик по элементу игнорируем
-        }
-
-        else { // клик вне элемента
-            tokenPromt.hide();
-            promtButton.removeClass("active");
-        }
-
-    });
 
     /* ------------------- scroll to nav item ------------------- */
 
@@ -203,7 +275,6 @@ $(function () {
         topHeaderH = topHeader.outerHeight(),
         navOther = $("[data-nav-other]"),
         navOtherH = navOther.outerHeight(),
-        mainHeaderH = mainHeader.outerHeight(),
         mainSidebar = $("[data-main-sidebar]");
 
 //    var windowSizeMax = window.matchMedia('all and (max-width: 576px)');
@@ -212,24 +283,20 @@ $(function () {
     $(document).on("scroll", function () {
         var documentScroll = $(this).scrollTop();
 
+        /* ------------------- Fixed nav and sidebar ------------------- */
 
+        if (documentScroll > topHeaderH - 5) {
+            navOther.addClass("it--fixed");
+            topHeader.css("marginBottom", navOtherH + "px");
+            mainSidebar.addClass("it--fixed");
+            mainSidebar.css("top", navOtherH + 40 + "px")
 
-            /* ------------------- Fixed nav and sidebar ------------------- */
+        } else {
+            navOther.removeClass("it--fixed");
+            topHeader.css("marginBottom", "0");
+            mainSidebar.removeClass("it--fixed");
 
-            if (documentScroll > topHeaderH - 10) {
-                navOther.addClass("it--fixed");
-                topHeader.css("marginBottom", navOtherH  + "px");
-                mainSidebar.addClass("it--fixed");
-                mainSidebar.css("top", navOtherH  + 40 + "px")
-
-
-            } else {
-                navOther.removeClass("it--fixed");
-                topHeader.css("marginBottom", "0");
-                mainSidebar.removeClass("it--fixed");
-
-            }
-
+        }
 
         if (windowSizeMaxAll.matches) {
 
@@ -249,16 +316,12 @@ $(function () {
         parent.style.height = parent.clientHeight - childP + "px";
     }
 
-
-
     /* ****************************** dropdown-menu ****************************** */
 
     var $trigger = $('[data-trigger="1"]');
     var $nav = $('[data-it-nav]');
 
-
-
-    function showMobileMenu () {
+    function showMobileMenu() {
         $trigger.toggleClass('active');
         mainHeader.toggleClass("it-header--bg");
 
@@ -266,7 +329,7 @@ $(function () {
             $("#it-body--bg-shadow").remove();
 
         } else {
-            $("body").prepend("<div id='it-body--bg-shadow'></div>");
+            ("body").prepend("<div id=\"it-body--bg-shadow\"></div>");
 
         }
 
@@ -280,21 +343,13 @@ $(function () {
 
     }
 
-
     $trigger.on("click", showMobileMenu);
-
 
     /* ****************************** ct-scrollbar****************************** */
 
-
-
-
 });
 
-
-
 var container = document.querySelector('[data-scroll-hide-wrap]');
-
 
 new PerfectScrollbar(container, {
     minScrollbarLength: 20

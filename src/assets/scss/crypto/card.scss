@@ -5,10 +5,12 @@
 .it-card {
   background-color: #ffffff;
   max-width: 363px;
+  z-index: 99999;
   @include desktop {
       position: static !important;
-      padding-bottom: 40px !important;
-      z-index: 0 !important;
+      padding-bottom: 40px ;
+      z-index: 0 ;
+      max-width: 100% ;
   }
 }
 
