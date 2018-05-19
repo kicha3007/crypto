@@ -219,7 +219,7 @@ $(function () {
                 "position": "absolute",
                 "top": "0",
                 "left": "0",
-                "z-index": 999999
+                "z-index": 999
             })
 
         }
@@ -318,7 +318,7 @@ $(function () {
 
     /* ****************************** dropdown-menu ****************************** */
 
-    var $trigger = $('[data-trigger="1"]');
+    var $trigger = $('[data-trigger]');
     var $nav = $('[data-it-nav]');
 
     function showMobileMenu() {
@@ -329,7 +329,7 @@ $(function () {
             $("#it-body--bg-shadow").remove();
 
         } else {
-            ("body").prepend("<div id=\"it-body--bg-shadow\"></div>");
+            $("body").prepend("<div id=\"it-body--bg-shadow\"></div>");
 
         }
 
@@ -352,5 +352,5 @@ $(function () {
 var container = document.querySelector('[data-scroll-hide-wrap]');
 
 new PerfectScrollbar(container, {
-    minScrollbarLength: 20
+    maxScrollbarLength: 50
 });

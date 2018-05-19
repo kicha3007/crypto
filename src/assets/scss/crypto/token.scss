@@ -61,7 +61,7 @@
   border-radius: 50%;
   font-weight: 900;
   cursor: pointer;
-  z-index: 9999999;
+  z-index: 1000;
 }
 
 .it-token__details-prompt-button.active {
@@ -80,7 +80,11 @@
   color: #333333;
   font-size: 12px;
   display: none;
-  z-index: 9999999;
+  z-index: 1000;
+  @include laptop {
+      left: 0;
+     max-width: 100%;
+  }
 }
 
 .it-token__card-outer-wrap {

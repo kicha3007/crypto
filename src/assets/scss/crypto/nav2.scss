@@ -23,6 +23,7 @@
   padding-left: 0;
   @include laptop {
     width: 450px;
+    padding: 5px 0;
   }
 }
 
@@ -196,12 +197,12 @@
 .ps__rail-x,
 .ps__rail-y {
   opacity: 1;
-/*  width: 50px !important;*/
-/*  margin: 0 auto;*/
+  margin-bottom: 0 !important;
 }
 
 #it-main-nav-2__wrap .ps__rail-x .ps__thumb-x {
-
+  border-radius: 0 !important;
+  bottom: 0 !important;
   height: 3px;
   background-color: $main-color;
 
