@@ -20,20 +20,6 @@ $(function () {
 
     });
 
-/*
-    $(document).mouseup(function (e) {// обрабатываем клик в любой точке
-        if (jQuery(e.target).closest(filterWrap).length > 0) { // проверка , произошел ли клик вне элемента, который надо по этому клику скрыть
-            return false; // клик по элементу игнорируем
-        }
-
-        else { // клик вне элемента
-            $this.closest(filterWrap).find("[data-filter-item]").removeClass("active");
-        }
-
-    });
-*/
-
-
 
 
     /* ------------------- show-more ------------------- */
@@ -213,6 +199,8 @@ $(function () {
     /* ------------------- Fixed all var ------------------- */
 
     var mainHeader = $("[data-main-header]"),
+        topHeader = $("[data-top-header]"),
+        topHeaderH = topHeader.outerHeight(),
         navOther = $("[data-nav-other]"),
         navOtherH = navOther.outerHeight(),
         mainHeaderH = mainHeader.outerHeight(),
@@ -228,38 +216,25 @@ $(function () {
 
             /* ------------------- Fixed nav and sidebar ------------------- */
 
-            if (documentScroll > mainHeaderH - 32) {
+            if (documentScroll > topHeaderH - 10) {
                 navOther.addClass("it--fixed");
+                topHeader.css("marginBottom", navOtherH  + "px");
+                mainSidebar.addClass("it--fixed");
+                mainSidebar.css("top", navOtherH  + 40 + "px")
+
 
             } else {
                 navOther.removeClass("it--fixed");
-            }
+                topHeader.css("marginBottom", "0");
+                mainSidebar.removeClass("it--fixed");
 
+            }
 
 
         if (windowSizeMaxAll.matches) {
 
             var bottomOffser = $("[data-main-footer]").outerHeight();
 
-            $("[data-main-sidebar]").sticky({
-                    topSpacing: 85,
-                    bottomSpacing: bottomOffser + 5
-                }
-            );
-
-
-
-
-            //
-            //     if (documentScroll > mainHeaderH - 32) {
-            //         mainSidebar.addClass("it--fixed");
-            //         fixSidebar();
-            //         // mainHeader.css("paddingTop", navOtherH);
-            //     } else {
-            //         mainSidebar.removeClass("it--fixed");
-            //         // mainHeader.css("paddingTop", 0);
-            //     }
-            //
         }
 
     });
@@ -274,25 +249,6 @@ $(function () {
         parent.style.height = parent.clientHeight - childP + "px";
     }
 
-
-
-
-
-/*
-
-    var target = $('[data-pseudo-scroll-line]');
-
-
-    var moove = function (obj, x){
-        $(obj).css({"left" : x - 50 });
-    };
-
-    $("[data-scroll-nav]").on("touchmove", function(e) {
-    moove(target, event.targetTouches[0].clientX);
-
-    });
-
-*/
 
 
     /* ****************************** dropdown-menu ****************************** */
@@ -333,33 +289,8 @@ $(function () {
 
 
 
-
-
 });
 
-/*
-var container = document.querySelector("[data-scroll-hide-wrap]");
-
-// var  ps = new PerfectScrollbar(container);
-
-
-
-const ps = new PerfectScrollbar(container, {
-    wheelSpeed: 2,
-    wheelPropagation: true,
-    minScrollbarLength: 20
-});
-
-ps.perfectScrollbar('update');
-// $("[data-scroll-hide-wrap]").perfectScrollbar(
-*/
-
-
-/*
-new PerfectScrollbar('#it-main-nav-2__wrap', {
-    minScrollbarLength: 200
-});
-*/
 
 
 var container = document.querySelector('[data-scroll-hide-wrap]');
