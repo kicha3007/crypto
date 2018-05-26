@@ -23,6 +23,8 @@
 @import "crypto/article-more";
 @import "crypto/social";
 @import "crypto/guides";
+@import "crypto/invest";
+@import "crypto/categories";
 
 /******************* all-style *******************/
 
@@ -47,13 +49,10 @@
 }
 
 .it-main-page__half--right a:active,
-.it-main-page__half--right a:hover {
+.it-main-page__half--right a:hover,
+.it-main-page__half--right a:visited {
   color: $main-color;
   text-decoration: underline;
-}
-
-.it-main-page__content:visited {
-  color: #1E1E1E;
 }
 
 .it-main-page__content p,
@@ -133,6 +132,11 @@ p {
 .it-main-page__content--bg {
   background-color: #F2F2F2;
 }
+
+.it-main-page__content--bg-2 {
+  background-color: rgba(250, 248, 253, 1);
+}
+
 
 /******************* it-all-style *******************/
 
@@ -257,6 +261,11 @@ figcaption {
   color: #ffffff;
   background-color: $main-color;
   text-decoration: none;
+}
+
+.it-btn--transparent--all-transparent {
+  border: none;
+  background-color: transparent;
 }
 
 .it-main-page__inner-wrap {
