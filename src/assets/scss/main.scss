@@ -25,6 +25,7 @@
 @import "crypto/guides";
 @import "crypto/invest";
 @import "crypto/categories";
+@import "crypto/tranding";
 
 /******************* all-style *******************/
 
@@ -41,6 +42,16 @@
   padding: 100px 10px ;
   position: relative;
   z-index: 999999;
+}
+
+.it-all--indent {
+  margin-bottom: 80px;
+  @include laptop {
+    margin-bottom: 60px;
+  }
+  @include phones {
+    margin-bottom: 40px;
+  }
 }
 
 .it-main-page__half--right a {
@@ -135,6 +146,9 @@ p {
 
 .it-main-page__content--bg-2 {
   background-color: rgba(250, 248, 253, 1);
+  @include phones {
+    background-color: #ffffff;
+  }
 }
 
 
@@ -174,6 +188,14 @@ figcaption {
   margin: 0 auto;
 }
 
+.it-container--full {
+  @include phones {
+    max-width: 100%;
+    padding: 0;
+  }
+
+}
+
 .it-container * {
   box-sizing: border-box;
 }
@@ -188,7 +210,9 @@ figcaption {
 }
 
 
-
+.it-all-title--container {
+  padding: 0 15px;
+}
 
 .it-link {
   color: #333333;
@@ -229,6 +253,10 @@ figcaption {
   text-decoration: none;
   border-radius: 3px;
   position: relative;
+  @include phones {
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+  }
 }
 
 .it-btn:hover {
@@ -263,9 +291,25 @@ figcaption {
   text-decoration: none;
 }
 
-.it-btn--transparent--all-transparent {
+.it-btn--all-transparent {
   border: none;
   background-color: transparent;
+  color: #3EC7C6;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.it-btn--all-transparent:hover {
+   color: #3EC7C6;
+	text-decoration: none;
+  box-shadow: none;
+}
+
+.it-btn--all-transparent:active,
+.it-btn--all-transparent:visited {
+   color: #3EC7C6;
+	text-decoration: none;
+  box-shadow: none;
 }
 
 .it-main-page__inner-wrap {
@@ -326,7 +370,18 @@ figcaption {
   html {
     font-size: 13px;
   }
-
-
 }
 
+.it-categories__arrow {
+  display: none;
+  order: 3;
+  @include phones {
+    display: block;
+  }
+}
+
+.it-categories__buttons--hide {
+  @include phones {
+    display: none;
+  }
+}

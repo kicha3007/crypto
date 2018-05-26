@@ -12,6 +12,9 @@
   @include row-flex();
   overflow: hidden;
   margin-bottom: -40px;
+  @include phones {
+    margin-bottom: -20px;
+  }
 }
 
 .it-invest__item {
@@ -24,6 +27,9 @@
   padding: 3% 3%;
   list-style-type: none;
   margin-bottom: 40px;
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .it-invest__top {

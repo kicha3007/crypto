@@ -168,9 +168,58 @@ $(function () {
     /* ------------------- perfect-scrollbar  ------------------- */
 
     var container = document.querySelector('[data-scroll-hide-wrap]');
-
+if(container) {
     new PerfectScrollbar(container, {
         maxScrollbarLength: 50
     });
+
+}
+
+
+
+    /* ------------------- carousel-new ------------------- */
+
+
+
+
+    $('[data-owl-carousel]').each(function () {
+        var $this = $(this);
+        var itemsCount = $this.data("owlItems");
+        var itemsCountPad = $this.data("owlItemsPad");
+        var itemsMargin = $this.data("owlItemsMargin");
+        var itemsDots = $this.data("owlItemsDots");
+        var itemsLoop = $this.data("owlItemsLoop");
+        var itemsNav = $this.data("owlItemsNav");
+        var itemsAutoplay = $this.data("owlItemsAutoplay");
+        var itemsAutoplayTimeout = $this.data("owlItemsAutoplayTimeout");
+        var itemsAutoplayHoverPause = $this.data("owlItemsAutoplayHoverPause");
+
+        $this.owlCarousel({
+            items: (itemsCount ? itemsCount : 1),
+            margin: (itemsMargin ? itemsMargin : 20),
+            nav: (itemsNav ? itemsNav : true),
+            loop: (itemsLoop ? itemsLoop : true),
+            autoplay: (itemsAutoplay ? itemsAutoplay : true),
+            autoplayTimeout: (itemsAutoplayTimeout ? itemsAutoplayTimeout : 3000),
+            autoplayHoverPause: (itemsAutoplayHoverPause ? itemsAutoplayHoverPause : true),
+            dots: (itemsDots ? itemsDots : false),
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: itemsCountPad ? itemsCountPad : (itemsCount ? itemsCount : 1)
+                },
+                1000: {
+                    items: itemsCount ? itemsCount : 1
+                }
+            }
+        });
+    });
+
+
+
+
+
 
 });

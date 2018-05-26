@@ -2,6 +2,8 @@
 @import "../__mixins";
 @import "../smart-grid";
 
+
+
 .it-categories__wrap {
   overflow: hidden;
 }
@@ -11,6 +13,11 @@
   @include row-flex();
   margin-bottom: -30px;
   overflow: hidden;
+  @include phones {
+    border-top: 1px solid rgba(229, 229, 229, 1);;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
 }
 
 .it-categories__item {
@@ -22,25 +29,55 @@
   background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid rgba(229, 229, 229, 1);
+  border-left: 1px solid rgba(229, 229, 229, 1);
+  border-right: 1px solid rgba(229, 229, 229, 1);
+  border-top: 1px solid rgba(229, 229, 229, 1);;
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+
   align-items: center;
   padding: 0.5% 3%;
+  @include phones {
+    padding: 5px 10px;
+    margin-bottom: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+  }
 }
 
 .it-categories__content {
   flex-grow: 1;
-  flex-basis: 350px;
+  flex-basis: 150px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  padding-right: 10px;
+  padding-right: 1%;
+  order: 1;
+  @include phones {
+    order: 2;
+  }
 }
 
 .it-categories__title {
   color: #1E1E1E;
   font-size: rem(30px);
   font-weight: 500;
-  margin-right: 10px;
+  margin-right: 8px;
+  @include desktop {
+    font-size: rem(26px);
+    flex-basis: 100%;
+  }
+  @include laptop {
+    font-size: rem(22px);
+  }
+  @include tablets {
+    font-size: rem(18px);
+  }
+  @include phones {
+    flex-basis: auto;
+    font-size: 16px;
+  }
 }
 
 .it-categories__value,
@@ -49,6 +86,13 @@
   font-size: rem(18px);
   font-weight: 500;
   line-height: 2;
+  @include laptop {
+    font-size: rem(16px);
+    line-height: 1.4;
+  }
+  @include phones {
+    font-size: 14px;
+  }
 
 }
 
@@ -61,6 +105,17 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  order: 2;
+  @include laptop {
+    max-width: 60px;
+    height: 60px;
+  }
+  @include phones {
+    order: 1;
+    max-width: 40px;
+    height: 40px;
+    margin-right: 20px;
+  }
 }
 
 .it-categories__img {
@@ -73,16 +128,36 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @include phones {
+      justify-content: flex-start;
+  }
 }
 
 .it-categories__buttons {
   max-width: 233px;
   width: 100%;
+  @include phones {
+    max-width: 160px;
+    padding-left: 15px;
+  }
 }
 
 
 .it-categories__buttons--size {
-  max-width: 140px;
-  margin-right: 70px;
+  max-width: 160px;
+  margin-right: 50px;
+}
+
+.it-categories__text {
+  @include phones {
+    display: none;
+  }
+}
+
+.it-categories__brackets {
+  display: none;
+  @include phones {
+    display: inline;
+  }
 }
 

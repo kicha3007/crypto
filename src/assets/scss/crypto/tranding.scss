@@ -1,0 +1,194 @@
+@import "../__vars";
+@import "../__mixins";
+@import "../smart-grid";
+
+/******************* it-tranding *******************/
+
+.it-tranding {
+  overflow: hidden;
+}
+
+.it-tranding__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.it-tranding__item {
+  max-width: 360px;
+  width: 100%;
+  flex-basis: 35%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  list-style-type: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #E5E5E5;
+  position: relative;
+  z-index: 30;
+
+}
+
+.it-tranding__img-box {
+  height: 110px;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.it-tranding__img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.it-tranding__img-logo-box {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #C4C4C4;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.it-tranding__img-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: auto !important;
+
+}
+
+.it-tranding__content {
+  padding: 40px 30px 40px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+
+.it-tranding__title {
+  font-weight: 700;
+  font-size: rem(22px);
+  color: #333333;
+}
+
+.it-tranding__status {
+  font-size: 16px;
+  font-weight: 700;
+  color: $main-color;
+  padding-left: 12px;
+  position: relative;
+  text-transform: uppercase;
+
+}
+
+.it-tranding__status:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: $main-color;
+}
+
+.it-tranding__content {
+  position: relative;
+  padding: 15px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.it-tranding__content-half {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.it-tranding__content-half--left {
+  padding-top: 25px;
+  justify-content: flex-start;
+}
+
+.it-tranding__content-half--right {
+  justify-content: flex-end;
+}
+
+.it-tranding__status--color {
+  color: #F2C94C;
+}
+
+.it-tranding__status--color:before {
+  background-color: #F2C94C;
+}
+
+/******************* it-tranding + owl *******************/
+
+.it-tranding .owl-stage {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  background: #F5F5F5 !important;
+  justify-content: space-between;
+}
+
+.it-tranding .owl-stage-outer {
+  overflow: visible !important;
+  background: #F5F5F5 !important;
+}
+
+.it-tranding .owl-item {
+  margin-bottom: 5px;
+  background: #F5F5F5 !important;
+  max-width: 464px !important;;
+}
+
+.it-tranding .owl-item:not(.active) {
+  opacity: 0.3;
+  background: #F5F5F5 !important;
+}
+
+.it-tranding .box-carousel .owl-nav .owl-prev,
+.it-tranding .box-carousel .owl-nav .owl-next {
+  position: absolute;
+  width: 32px;
+  height: 23px;
+  top: 0;
+  font-size: 0;
+}
+
+.it-tranding .box-carousel .owl-nav .owl-prev:hover,
+.it-tranding .box-carousel .owl-nav .owl-next:hover {
+  opacity: 0.5;
+}
+
+.it-tranding .box-carousel .owl-nav .owl-prev {
+  right: -40px;
+  transform: scale(1);
+}
+
+.it-tranding .box-carousel .owl-nav .owl-next {
+  right: 0;
+  transform: scale(-1);
+}
+
+.it-tranding .box-carousel .owl-nav .owl-prev:after,
+.it-tranding .box-carousel .owl-nav .owl-next:after {
+  content: "";
+  background: url("../img/crypto/tranding/arrow.svg")  center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
