@@ -186,7 +186,9 @@ if(container) {
         var $this = $(this);
         var itemsCount = $this.data("owlItems");
         var itemsCountPad = $this.data("owlItemsPad");
+        var itemsCountMobile = $this.data("owlItemsMobile");
         var itemsMargin = $this.data("owlItemsMargin");
+        var itemsMarginMobile = $this.data("owlItemsMarginMobile");
         var itemsDots = $this.data("owlItemsDots");
         var itemsLoop = $this.data("owlItemsLoop");
         var itemsNav = $this.data("owlItemsNav");
@@ -196,16 +198,17 @@ if(container) {
 
         $this.owlCarousel({
             items: (itemsCount ? itemsCount : 1),
-            margin: (itemsMargin ? itemsMargin : 20),
+            margin: (itemsMargin ? itemsMargin : 40),
             nav: (itemsNav ? itemsNav : true),
             loop: (itemsLoop ? itemsLoop : true),
-            autoplay: (itemsAutoplay ? itemsAutoplay : true),
+            autoplay: (itemsAutoplay ? itemsAutoplay : false),
             autoplayTimeout: (itemsAutoplayTimeout ? itemsAutoplayTimeout : 3000),
             autoplayHoverPause: (itemsAutoplayHoverPause ? itemsAutoplayHoverPause : true),
-            dots: (itemsDots ? itemsDots : false),
+            dots: (itemsDots ? itemsDots : true),
             responsive: {
                 0: {
-                    items: 1
+                    margin: (itemsMarginMobile ? itemsMarginMobile : 10),
+                    items: itemsCountMobile ? itemsCountMobile : 1
                 },
                 600: {
                     items: itemsCountPad ? itemsCountPad : (itemsCount ? itemsCount : 1)

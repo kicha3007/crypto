@@ -379,9 +379,3 @@ figcaption {
     display: block;
   }
 }
-
-.it-categories__buttons--hide {
-  @include phones {
-    display: none;
-  }
-}

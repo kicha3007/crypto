@@ -11,15 +11,14 @@
 .it-tranding__list {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   padding: 0;
-  margin: 0;
+  margin: 0 0 60px;
 }
 
 .it-tranding__item {
   max-width: 360px;
   width: 100%;
-  flex-basis: 35%;
+  //flex-basis: 35%;
   border-radius: 10px;
   background-color: #ffffff;
   list-style-type: none;
@@ -27,13 +26,19 @@
   border: 1px solid #E5E5E5;
   position: relative;
   z-index: 30;
+  height: 100%;
+  @include phones {
+    max-width: 217px;
+
+  }
 
 }
 
 .it-tranding__img-box {
-  height: 110px;
+  height: 70px;
   width: 100%;
   overflow: hidden;
+  border-radius: 10px 10px 0 0;
 
 }
 
@@ -57,6 +62,10 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  @include phones {
+    top: -55px;
+    left: 10px;
+  }
 }
 
 .it-tranding__img-logo {
@@ -78,15 +87,25 @@
   font-weight: 700;
   font-size: rem(22px);
   color: #333333;
+  @include desktop {
+    font-size: 20px;
+  }
+  @include phones {
+    font-size: 16px;
+  }
 }
 
 .it-tranding__status {
-  font-size: 16px;
+  font-size: rem(16px);
   font-weight: 700;
   color: $main-color;
   padding-left: 12px;
   position: relative;
   text-transform: uppercase;
+  @include phones {
+    font-size: 12px;
+  }
+
 
 }
 
@@ -109,20 +128,36 @@
   flex-wrap: wrap;
 }
 
+
 .it-tranding__content-half {
-  flex-grow: 1;
+  @include phones {
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+}
+
+.it-tranding__content-half--top {
   display: flex;
   flex-wrap: wrap;
-}
-
-.it-tranding__content-half--left {
-  padding-top: 25px;
-  justify-content: flex-start;
-}
-
-.it-tranding__content-half--right {
   justify-content: flex-end;
+  flex-grow: 1;
+  flex-basis: 100%;
+  order: 1;
+  @include phones {
+    order: 2;
+  }
 }
+
+.it-tranding__content-half--bottom {
+  order: 2;
+  @include phones {
+    order: 1;
+  }
+}
+
 
 .it-tranding__status--color {
   color: #F2C94C;
@@ -137,24 +172,38 @@
 .it-tranding .owl-stage {
   display: flex !important;
   flex-wrap: wrap !important;
-  background: #F5F5F5 !important;
+ // background: #F5F5F5 !important;
   justify-content: space-between;
+  @include phones {
+
+  }
 }
 
 .it-tranding .owl-stage-outer {
   overflow: visible !important;
-  background: #F5F5F5 !important;
+  //background: #F5F5F5 !important;
+
 }
 
 .it-tranding .owl-item {
   margin-bottom: 5px;
   background: #F5F5F5 !important;
-  max-width: 464px !important;;
+  @include phones {
+    max-width: 217px !important;
+  }
+
+
 }
+
+
 
 .it-tranding .owl-item:not(.active) {
   opacity: 0.3;
   background: #F5F5F5 !important;
+  @include phones {
+    margin-right: 30px!important;
+  }
+
 }
 
 .it-tranding .box-carousel .owl-nav .owl-prev,
@@ -162,7 +211,7 @@
   position: absolute;
   width: 32px;
   height: 23px;
-  top: 0;
+  top: -60px;
   font-size: 0;
 }
 
@@ -172,12 +221,12 @@
 }
 
 .it-tranding .box-carousel .owl-nav .owl-prev {
-  right: -40px;
+  right: 0;
   transform: scale(1);
 }
 
 .it-tranding .box-carousel .owl-nav .owl-next {
-  right: 0;
+  right: 60px;
   transform: scale(-1);
 }
 
@@ -191,4 +240,34 @@
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.it-tranding__buttons-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include phones {
+    justify-content: flex-start;
+  }
+}
+
+.it-tranding__buttons {
+  max-width: 233px;
+  width: 100%;
+  @include phones {
+    max-width: 160px;
+    padding-left: 15px;
+  }
+}
+
+
+.it-tranding__buttons--size {
+  max-width: 160px;
+  margin-right: 50px;
+}
+
+.it-tranding__buttons--hide {
+  @include phones {
+    display: none;
+  }
 }
