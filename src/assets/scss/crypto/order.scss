@@ -1,0 +1,61 @@
+@import "../__vars";
+@import "../__mixins";
+@import "../smart-grid";
+
+.it-order {
+  background-color: #ffffff;
+}
+
+.it-order__wrap {
+  @include row-flex();
+}
+
+.it-order__half {
+
+}
+
+.it-order__half--left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include col();
+  @include size(5);
+  @include size-xs(12);
+  order: 1;
+  @include phones {
+      order: 2;
+  }
+}
+
+.it-order__half--right {
+  @include col();
+  @include size(7);
+  @include size-xs(12);
+  order: 2;
+  @include phones {
+    order: 1;
+  }
+}
+
+.it-order__title {
+  font-weight: 900;
+  font-size: rem(36px);
+  color: #333333;
+  margin-bottom: 25px;
+}
+
+.it-order__desc {
+  font-size: rem(20px);
+  font-weight: 500;
+  color: #4F4F4F;
+  margin-bottom: 40px;
+}
+
+.it-order__buttons {
+  max-width: 230px;
+  width: 100%;
+}
+
+.it-order__img-box {
+
+}
