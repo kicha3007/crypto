@@ -221,8 +221,16 @@ if(container) {
     });
 
 
+    /* ------------------- masonry ------------------- */
 
 
-
+    $(function(){
+        $('[data-masonry-wrap]').masonry({
+            itemSelector : '.it-guides__item',
+            columnWidth: '.it-guides__item',
+            gutter: 30,
+            percentPosition: true
+        });
+    });
 
 });
