@@ -3,7 +3,7 @@
 @import "../smart-grid";
 
 .it-article {
-  padding-top: 40px;
+  padding-top: 45px;
   @include laptop {
     padding-top: 20px;
   }
@@ -12,6 +12,9 @@
 .it-article__wrap {
   @include row-flex();
   border-bottom: 1px solid #DEDEDE ;
+  @include laptop {
+    border-bottom: none;
+  }
 }
 
 .it-article__half {
@@ -28,7 +31,9 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  @include laptop {
+    justify-content: center;
+  }
 }
 
 

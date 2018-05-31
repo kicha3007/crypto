@@ -8,22 +8,20 @@
 }
 
 .it-sale-schedule__wrap {
-  overflow: hidden;
+  position: relative;
+  margin-bottom: 25px;
+
+
 }
 
 .it-sale-schedule__table {
   border-collapse: collapse;
-  overflow-x: auto;
-  display: flex;
-  margin-bottom: 25px;
-  @include laptop {
-    max-width: 655px;
-    min-width: 100%;
-  }
+  //margin-bottom: 25px;
+
 }
 
 .it-sale-schedule__table::-webkit-scrollbar {
-  width: 0 !important;
+ width: 0 !important;
   display: none !important;
 
 }

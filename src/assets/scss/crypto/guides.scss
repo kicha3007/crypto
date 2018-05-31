@@ -4,6 +4,9 @@
 
 .it-guides {
   padding-top: 60px;
+  @include phones {
+    padding-top: 30px;
+  }
 }
 
 .it-guides__main-title {
@@ -27,7 +30,6 @@
   float: left;
   margin-bottom: 20px;
   width: calc(33.333333% - 30px);
-  //max-width: 370px;
   @include laptop {
     width: calc(50% - 30px);
   }

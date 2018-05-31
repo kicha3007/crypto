@@ -25,16 +25,9 @@
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-
-}
-
-
-
-.it-social__img:hover {
-  filter: url(#it-svg-filter--grey);
-  filter: url(/#it-svg-filter--grey);
+  position: relative;
 }
 
 .it-social__img-box {
@@ -43,5 +36,27 @@
 }
 
 .it-social__img {
-  transition: 0.6s;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: 0.2s;
+}
+
+.it-social__img-hov {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: 0.2s;
+}
+
+.it-social__img-box:hover .it-social__img {
+  opacity: 0;
+}
+
+.it-social__img-box:hover .it-social__img-hov {
+  opacity: 1;
 }

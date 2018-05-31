@@ -63,6 +63,8 @@ $(function () {
 
     var $scrollNav = $("[data-scroll-nav]");
 
+    if($scrollNav) {
+
     $scrollNav.on("click", function (e) {
         e.preventDefault();
         var $scrollNavLinkValue = $(this).attr("href");
@@ -73,6 +75,9 @@ $(function () {
         }, 500)
 
     });
+
+
+    }
 
     /* ------------------- Fixed nav and sidebar and steps ------------------- */
 
@@ -86,18 +91,24 @@ $(function () {
     var articleMoreWrap = $("[data-it-article-more-wrap]");
 
     if (articleMoreWrap) {
+
         var articleMoreWrapPos = articleMoreWrap.offset().top,
-            articleMoreWrapH = articleMoreWrap.outerHeight(),
+            articleMoreWrapH = articleMoreWrap.innerHeight(),
+            articleMoreWrapPadTop = articleMoreWrap.css("paddingTop"),
+            articleMoreWrapPadBottom = articleMoreWrap.css("paddingTop"),
+
 
             articleMoreNav = $("[data-it-article-more-nav]"),
-            articleMoreNavH = articleMoreNav.outerHeight();
+            articleMoreNavH = articleMoreNav.innerHeight();
+
+
+
 
     }
 
     window.onscroll = function () {
         var documentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (documentScroll > topHeaderH - 5) {
+        if (documentScroll > topHeaderH ) {
             navOther.addClass("it--fixed");
             topHeader.css("marginBottom", navOtherH + "px");
             mainSidebar.addClass("it--fixed");
@@ -110,41 +121,51 @@ $(function () {
 
         if (articleMoreWrap) {
 
-            if (documentScroll > articleMoreWrapPos && documentScroll < (articleMoreWrapPos + articleMoreWrapH - 480)) {
+            if (documentScroll > articleMoreWrapPos && documentScroll <  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH  )) {
+
                 articleMoreNav.addClass("it--fixed");
-                articleMoreNav.removeAttr('style');
-
-            } else if (documentScroll > (articleMoreWrapPos + articleMoreWrapH - 480)) {
+                articleMoreNav.removeClass("it--absolute");
                 articleMoreNav.css({
-                    position: "absolute",
-                    top: (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - 670 + "px")
+                    top: articleMoreWrapPadTop,
+                    bottom: "auto"
                 });
-            } else {
+
+            } else if (documentScroll >  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - articleMoreWrapPadBottom ) ) {
+
+                articleMoreNav.addClass("it--absolute");
                 articleMoreNav.removeClass("it--fixed");
-                articleMoreNav.removeAttr('style');
+                articleMoreNav.css({
+                    top: "auto",
+                    bottom: articleMoreWrapPadBottom
+                });
+
+             }
+
+              else {
+             articleMoreNav.removeClass("it--fixed");
+              articleMoreNav.removeClass('it--absolute');
+             }
 
 
 
-            }
 
         }
-
     };
 
     /* ------------------- hide-scroll ------------------- */
 
     var scrollParent = document.querySelector('[data-scroll-hide-wrap]');
 
-    if (scrollParent) {
+
 
         var scrollChild = document.querySelector('[data-scroll-hide]');
         var scrollChildP = +scrollChild.offsetHeight - scrollChild.clientHeight;
 
         if (scrollChildP) {
-            scrollParent.style.height = scrollParent.clientHeight - scrollChildP + "px";
+            scrollParent.style.height = scrollParent.clientHeight - scrollChildP  + "px";
         }
 
-    }
+
 
     /* ------------------- dropdown-menu  ------------------- */
 
@@ -177,13 +198,22 @@ $(function () {
 
     /* ------------------- perfect-scrollbar  ------------------- */
 
-    var container = document.querySelector('[data-scroll-hide-wrap]');
-    if (container) {
-        new PerfectScrollbar(container, {
-            maxScrollbarLength: 50
-        });
+    var perfectScrollContainers = document.querySelectorAll('[data-scroll-hide-wrap]');
+    if (perfectScrollContainers) {
 
-    }
+
+        for(var i = 0; i < perfectScrollContainers.length; i++) {
+            new PerfectScrollbar(perfectScrollContainers[i], {
+                maxScrollbarLength: 50,
+                wheelPropagation: true,
+                suppressScrollY: true
+                // useBothWheelAxes: true
+
+            });
+
+        }
+
+     }
 
     /* ------------------- carousel-new ------------------- */
 
@@ -238,16 +268,3 @@ $(function () {
 
 });
 
-/*       var stepItems = document.querySelectorAll("[data-step-item]");
-       for(var i = 0; i < stepItems.length; i++) {
-           var stepItem = stepItems[i];
-           var stepItemH = stepItem.offsetTop;
-           console.log(stepItemH);
-       }
-*/
-// stepItemH = stepItem.offsetTop;
-/*            $("[data-step-item]").each(function () {
-       if (documentScroll > this.offsetTop - 700) {
-           $(this).addClass("active");
-       }
-   })*/
