@@ -3,10 +3,6 @@
 @import "../smart-grid";
 
 .it-article {
-  padding-top: 45px;
-  @include laptop {
-    padding-top: 20px;
-  }
 }
 
 .it-article__wrap {

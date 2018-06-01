@@ -7,6 +7,9 @@
 .it-header {
   margin-bottom: 40px;
   height: 100%;
+  @include phones {
+    margin-bottom: 20px;
+  }
 }
 
 .it-header.it-header--bg {
