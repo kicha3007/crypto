@@ -99,37 +99,6 @@
 }
 
 
-.it-token__card-outer-item div div svg  rect+ g {
-
-  width: 100% !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-}
-
-.it-token__card-outer-item div div svg>   g>  rect {
-
-  width: 100% !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-}
-
-.it-token__card-outer-item div div svg>   g g {
-  display: inline-block !important;
-  align-items: center !important;
-  width: 80px !important;
-  max-width: 80px !important;
-  flex-grow: 1!important;
-
-  margin-bottom: 20px !important;
-}
-
-
-.it-token__card-outer-item div div svg>   g  {
-
-  width: 100% !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-}
 
 
 
@@ -183,8 +152,50 @@
   background-color: #F2994A;
 }
 
-.it-token__card-title {
-  font-size: rem(16px);
-  font-weight: 500;
-  margin-bottom: 25px;
+
+
+
+
+/*
+
+.it-token__card-chart svg> g> rect> g {
+  stroke: red !important;
+  stroke-width: 90px !important;
 }
+
+
+.it-token__card-chart div div svg  rect+ g {
+
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  stroke: red !important;
+}
+
+.it-token__card-chart div div svg>   g>  rect {
+
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+
+}
+
+.it-token__card-chart div div svg>   g g {
+  display: inline-block !important;
+  align-items: center !important;
+  width: 80px !important;
+  max-width: 80px !important;
+  flex-grow: 1!important;
+  stroke: red !important;
+  margin-bottom: 20px !important;
+}
+
+
+.it-token__card-chart div div svg>   g  {
+
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  stroke: red !important;
+}
+*/

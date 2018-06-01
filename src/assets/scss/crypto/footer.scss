@@ -57,3 +57,12 @@
 .it-footer  .it-footer-mobile__btn {
   padding: 11.5px 10px;
 }
+
+
+.it-footer--indent {
+  display: none;
+  @include phones {
+    height: 60px;
+    display: block;
+  }
+}

@@ -27,6 +27,7 @@
 @import "crypto/categories";
 @import "crypto/tranding";
 @import "crypto/order";
+@import "crypto/chart";
 
 /******************* all-style *******************/
 
@@ -130,11 +131,16 @@ p {
   content: "";
   width: 12px;
   height: 8px;
-  top: 50%;
+  top: 12px;
   right: 0;
   margin-top: -4px;
   transition: .2s;
   background: url("../img/crypto/base/arrow.png") center no-repeat;
+  @include phones {
+    top: auto;
+    bottom: 4px
+  }
+
 }
 
 .it-main-page__all-more.active .it-main-page__all-more-text:after {
@@ -239,21 +245,22 @@ figcaption {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.25;
   text-align: center;
   user-select: none;
   border: none;
   padding: 16.5px 10px;
   font-size: 14px;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s;
   background-color: $main-color;
   color: #ffffff;
-  text-transform: none;
+  text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
   border-radius: 3px;
   position: relative;
+  letter-spacing: 1px;
   @include phones {
     padding-top: 11.5px;
     padding-bottom: 11.5px;

@@ -1,6 +1,6 @@
 /* ------------------- google-charts ------------------- */
 
-
+/*
 
 google.charts.load('current', {'packages': ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -9,9 +9,9 @@ function drawChart() {
 
 
 
-    /* ------------------- Charts------------------- */
+    /!* ------------------- Charts------------------- *!/
 
-    var jsonData = '[{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners"},{"v":3}]},{"c":[{"v":"Presale"},{"v":1}]},{"c":[{"v":"Crowdsale"},{"v":1}]},{"c":[{"v":"Developers"},{"v":1}]},{"c":[{"v":"Bounty campaign"},{"v":2}]},{"c":[{"v":"Partnership"},{"v":2}]}]},{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
+    var jsonData = '{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
 
     var jsonData2 = '[{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners"},{"v":3}]},{"c":[{"v":"Presale"},{"v":1}]},{"c":[{"v":"Crowdsale"},{"v":1}]},{"c":[{"v":"Developers"},{"v":1}]},{"c":[{"v":"Bounty campaign"},{"v":2}]},{"c":[{"v":"Partnership"},{"v":2}]}]},{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
     var jsonDataParse = JSON.parse(jsonData);
@@ -24,10 +24,11 @@ function drawChart() {
 
     var options = {
         height: 160,
-        chartArea: {left: 0, top: 10, width: '380', height: '140', fontSize: 0},
+        chartArea: {left: 0, top: 10, width: '160', height: '140', fontSize: 0},
         pieHole: 0.7,
-        legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 3},
-        colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"],
+       // legend: {position: 'right', textStyle: {color: '#4F4F4F', fontSize: 16}, alignment: "center", maxLines: 3},
+        legend: 'none',
+        // colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"],
         pieSliceText: "none"
 
     };
@@ -54,8 +55,68 @@ function drawChart() {
 
     }
 
-}
+}*/
 
+google.charts.load('current', {'packages': ['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+/*
+    [{
+        "cols": [{"id": "", "label": "Token", "type": "string"}, {"id": "", "label": "Value", "type": "number"}],
+        "rows": [{"c": [{"v": "Miners"}, {"v": 3}]}, {"c": [{"v": "Presale"}, {"v": 1}]}, {"c": [{"v": "Crowdsale"}, {"v": 1}]}, {"c": [{"v": "Developers"}, {"v": 1}]}, {"c": [{"v": "Bounty campaign"}, {"v": 2}]}, {"c": [{"v": "Partnership"}, {"v": 2}]}]
+    }, {
+        "cols": [{"id": "", "label": "Token", "type": "string"}, {"id": "", "label": "Value", "type": "number"}],
+        "rows": [{"c": [{"v": "Miners2"}, {"v": 3}]}, {"c": [{"v": "Presale2"}, {"v": 1}]}, {"c": [{"v": "Crowdsale2"}, {"v": 1}]}, {"c": [{"v": "Developers2"}, {"v": 1}]}, {"c": [{"v": "Bounty campaign2"}, {"v": 2}]}, {"c": [{"v": "Partnership2"}, {"v": 2}]}]
+    }]
+*/
+
+    /* ------------------- Charts------------------- */
+
+    // var jsonData = '[{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners"},{"v":3}]},{"c":[{"v":"Presale"},{"v":1}]},{"c":[{"v":"Crowdsale"},{"v":1}]},{"c":[{"v":"Developers"},{"v":1}]},{"c":[{"v":"Bounty campaign"},{"v":2}]},{"c":[{"v":"Partnership"},{"v":2}]}]},{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
+
+    var chartList = document.querySelectorAll('[data-it-chart]');
+
+    var options = {
+        'width':220,
+        'height':220,
+        chartArea: {left: 7, top: 5, width: '200', height: '200', fontSize: 0},
+        pieHole: 0.4,
+        legend: 'none',
+        pieSliceText: {color: 'black',  fontSize: 20},
+        tooltip: { trigger: 'selection', isHtml: true, text: 'percentage' },
+        colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
+
+
+};
+
+    for (var v = 0; v < chartList.length; v++) {
+
+        var jsonData = chartList[v].getAttribute("data-it-chart");
+        var jsonDataParse = JSON.parse(jsonData);
+
+
+        var data = new google.visualization.DataTable(jsonDataParse[v]);
+        console.log(data);
+        var chartItem = chartList[v];
+
+        var chart = new google.visualization.PieChart(chartItem);
+
+
+
+
+        chart.draw(data, options);
+
+    }
+
+    // for (var i = 0; i < jsonDataParse.length; i++) {
+    //
+    //
+    //
+    //
+    // }
+}
 
 /* ------------------- show-prompt  ------------------- */
 

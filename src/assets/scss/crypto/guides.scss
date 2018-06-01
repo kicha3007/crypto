@@ -6,6 +6,7 @@
   padding-top: 60px;
   @include phones {
     padding-top: 30px;
+
   }
 }
 
@@ -16,7 +17,7 @@
   color: #1E1E1E;
 }
 
-.it-guides__wrap {
+.it-guides__list {
   padding: 0 0 30px;
   @include clearfix;
   margin-bottom: -20px;
@@ -30,6 +31,7 @@
   float: left;
   margin-bottom: 20px;
   width: calc(33.333333% - 30px);
+  transition: 0.2s;
   @include laptop {
     width: calc(50% - 30px);
   }
@@ -38,16 +40,36 @@
   }
 }
 
+.it-guides__item:hover .it-guides__title {
+  color: #3EC7C6;
+}
+
+
+.it-guides__item:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
 
 .it-guides .grid-sizer,
 .grid-item {
 
 }
 
-.grid-item--width2 {  }
+
 
 .it-guides__inner-item {
   margin: 0 auto;
+  text-decoration: none;
+}
+
+.it-guides__inner-item:hover {
+
+	text-decoration: none;
+}
+
+.it-guides__inner-item:active,
+.it-guides__inner-item:visited {
+
+	text-decoration: none;
 }
 
 .it-guides__img-box {
@@ -75,6 +97,7 @@
   margin-bottom: 10px;
   display: block;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 .it-guides__title:hover {
@@ -169,4 +192,12 @@
   @include laptop {
     font-size: 14px;
   }
+}
+
+.it-guides__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 230px;
+  width: 100%;
 }
