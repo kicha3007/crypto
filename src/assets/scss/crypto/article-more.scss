@@ -28,6 +28,16 @@
 
 }
 
+.it-article-more__nav.stop {
+  position: relative;
+  z-index: 101;
+}
+
+.it-article-more__nav.sticky {
+  position: fixed;
+  z-index: 101;
+}
+
 .it-article-more__wrap {
   @include row-flex();
   padding-bottom: 50px;

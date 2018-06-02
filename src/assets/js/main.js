@@ -88,22 +88,27 @@ $(function () {
         navOtherH = navOther.outerHeight(),
         mainSidebar = $("[data-main-sidebar]");
 
-    var articleMoreWrap = $("[data-it-article-more-wrap]");
 
-    if (articleMoreWrap) {
+
+    // var articleMoreWrap = $("[data-it-article-more-wrap]");
+
+ /*   if (articleMoreWrap) {
 
         var articleMoreWrapPos = articleMoreWrap.offset().top,
-            articleMoreWrapH = articleMoreWrap.innerHeight(),
+            // articleMoreWrapH = articleMoreWrap.innerHeight(),
             articleMoreWrapPadTop = articleMoreWrap.css("paddingTop"),
-            articleMoreWrapPadBottom = articleMoreWrap.css("paddingTop"),
+            //articleMoreWrapPadBottom = articleMoreWrap.css("paddingTop"),
 
-            articleMoreNav = $("[data-it-article-more-nav]"),
-            articleMoreNavH = articleMoreNav.innerHeight();
+            elementStopScroll = $("[data-stop-scroll-nav]"),
+            elementStopScrollPos = elementStopScroll.offset().top,
 
-        var articleMoreWrapPadBottomNumber = articleMoreWrapPadBottom.substring(0,2);
+            articleMoreNav = $("[data-it-article-more-nav]");
+            // articleMoreNavH = articleMoreNav.innerHeight();
+
+        // var articleMoreWrapPadBottomNumber = articleMoreWrapPadBottom.substring(0,2);
 
 
-    }
+    }*/
 
     window.onscroll = function () {
         var documentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -118,25 +123,27 @@ $(function () {
             mainSidebar.removeClass("it--fixed");
         }
 
-        if (articleMoreWrap) {
+      /*  if (articleMoreWrap) {
 
-            if (documentScroll > articleMoreWrapPos && documentScroll <  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - articleMoreWrapPadBottomNumber  )) {
+            if (documentScroll > articleMoreWrapPos && documentScroll <  elementStopScrollPos) {
 
                 articleMoreNav.addClass("it--fixed");
                 articleMoreNav.removeClass("it--absolute");
                 articleMoreNav.css({
-                    top: articleMoreWrapPadTop,
-                    bottom: "auto"
+                    top: articleMoreWrapPadTop
+                    // bottom: "auto"
                 });
 
-            } else if (documentScroll >  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - articleMoreWrapPadBottomNumber ) ) {
-                console.log("stopScroll");
+            } else if (documentScroll >  elementStopScrollPos) {
+
 
                 articleMoreNav.addClass("it--absolute");
                 articleMoreNav.removeClass("it--fixed");
+                var articleMoreNavPosX = articleMoreNav.offsetTop;
+                console.log(articleMoreNavPosX);
                 articleMoreNav.css({
-                    top: "auto",
-                    bottom: articleMoreWrapPadBottomNumber
+                    top: "auto"
+                    // bottom: articleMoreWrapPadBottomNumber + "px"
                 });
 
              }
@@ -146,8 +153,14 @@ $(function () {
               articleMoreNav.removeClass('it--absolute');
              }
 
-        }
+        }*/
+
+
+
     };
+
+
+
 
     /* ------------------- hide-scroll ------------------- */
 
@@ -254,14 +267,20 @@ $(function () {
 
     /* ------------------- masonry ------------------- */
 
-    $(function () {
+
         $('[data-masonry-wrap]').masonry({
             itemSelector: '.it-guides__item',
             columnWidth: '.it-guides__item',
             gutter: 30,
             percentPosition: true
         });
-    });
+
+
+
+
+
 
 });
+
+
 
