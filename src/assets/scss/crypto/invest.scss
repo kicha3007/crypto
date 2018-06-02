@@ -106,3 +106,10 @@
     display: block;
   }
 }
+
+.it-invest__item--hide-desktop {
+  display: none;
+  @include phones {
+    display: block;
+  }
+}
