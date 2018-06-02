@@ -1,5 +1,7 @@
 /* ------------------- google-charts ------------------- */
 
+
+
 /*
 
 google.charts.load('current', {'packages': ['corechart']});
@@ -17,7 +19,7 @@ function drawChart() {
     var jsonDataParse = JSON.parse(jsonData);
     var jsonDataParse2 = JSON.parse(jsonData2);
 
-    var chartList = document.querySelectorAll('[data-it-donutchart]');
+    var chartGraph = document.querySelectorAll('[data-it-donutchart]');
     var chartCardList = document.querySelectorAll('[data-it-cardchart]');
 
 
@@ -44,7 +46,7 @@ function drawChart() {
     for (var i = 0; i < jsonDataParse.length; i++) {
 
         var data = new google.visualization.DataTable(jsonDataParse[i]);
-        var chartItem = chartList[i];
+        var chartItem = chartGraph[i];
         var chart = new google.visualization.PieChart(chartItem);
         chart.draw(data, options);
 
@@ -57,66 +59,78 @@ function drawChart() {
 
 }*/
 
+/* ------------------- Charts------------------- */
+
 google.charts.load('current', {'packages': ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
-/*
-    [{
-        "cols": [{"id": "", "label": "Token", "type": "string"}, {"id": "", "label": "Value", "type": "number"}],
-        "rows": [{"c": [{"v": "Miners"}, {"v": 3}]}, {"c": [{"v": "Presale"}, {"v": 1}]}, {"c": [{"v": "Crowdsale"}, {"v": 1}]}, {"c": [{"v": "Developers"}, {"v": 1}]}, {"c": [{"v": "Bounty campaign"}, {"v": 2}]}, {"c": [{"v": "Partnership"}, {"v": 2}]}]
-    }, {
-        "cols": [{"id": "", "label": "Token", "type": "string"}, {"id": "", "label": "Value", "type": "number"}],
-        "rows": [{"c": [{"v": "Miners2"}, {"v": 3}]}, {"c": [{"v": "Presale2"}, {"v": 1}]}, {"c": [{"v": "Crowdsale2"}, {"v": 1}]}, {"c": [{"v": "Developers2"}, {"v": 1}]}, {"c": [{"v": "Bounty campaign2"}, {"v": 2}]}, {"c": [{"v": "Partnership2"}, {"v": 2}]}]
-    }]
-*/
+    var chartGraph = document.querySelectorAll('[data-it-chart]');
+    var chartWraps = document.querySelectorAll('[data-it-chart-wrap]');
 
-    /* ------------------- Charts------------------- */
 
-    // var jsonData = '[{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners"},{"v":3}]},{"c":[{"v":"Presale"},{"v":1}]},{"c":[{"v":"Crowdsale"},{"v":1}]},{"c":[{"v":"Developers"},{"v":1}]},{"c":[{"v":"Bounty campaign"},{"v":2}]},{"c":[{"v":"Partnership"},{"v":2}]}]},{"cols": [{"id":"","label":"Token", "type":"string"},{"id":"","label":"Value", "type":"number"}],"rows": [{"c":[{"v":"Miners2"},{"v":3}]},{"c":[{"v":"Presale2"},{"v":1}]},{"c":[{"v":"Crowdsale2"},{"v":1}]},{"c":[{"v":"Developers2"},{"v":1}]},{"c":[{"v":"Bounty campaign2"},{"v":2}]},{"c":[{"v":"Partnership2"},{"v":2}]}]}]';
-
-    var chartList = document.querySelectorAll('[data-it-chart]');
 
     var options = {
-        'width':220,
-        'height':220,
+        'width': 220,
+        'height': 220,
         chartArea: {left: 7, top: 5, width: '200', height: '200', fontSize: 0},
         pieHole: 0.4,
         legend: 'none',
-        pieSliceText: {color: 'black',  fontSize: 20},
-        tooltip: { trigger: 'selection', isHtml: true, text: 'percentage' },
+        pieSliceText: {color: 'black', fontSize: 20},
+        tooltip: {trigger: 'selection', isHtml: true, text: 'percentage'},
         colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
+    };
 
+    for ( var i = 0; i < chartGraph.length; i++) {
 
-};
-
-    for (var v = 0; v < chartList.length; v++) {
-
-        var jsonData = chartList[v].getAttribute("data-it-chart");
-        var jsonDataParse = JSON.parse(jsonData);
-
-
-        var data = new google.visualization.DataTable(jsonDataParse[v]);
-        console.log(data);
-        var chartItem = chartList[v];
-
+        var jsonDataParse = JSON.parse(chartGraph[i].getAttribute("data-it-chart"));
+        var data = new google.visualization.DataTable(jsonDataParse);
+        var chartItem = chartGraph[i];
         var chart = new google.visualization.PieChart(chartItem);
-
-
-
 
         chart.draw(data, options);
 
+
+        var chartItemList = chartWraps[i].querySelector('[data-it-chart-list]');
+
+        var chartItemValue = jsonDataParse["rows"];
+
+        for( var cnt = 0; cnt < chartItemValue.length; cnt++ ) {
+            chartItemList.innerHTML  += '<li class="it-chart__item">' + jsonDataParse["rows"][cnt]["c"][0]["v"] +  ' </li>';
+        }
+
+
     }
 
-    // for (var i = 0; i < jsonDataParse.length; i++) {
-    //
-    //
-    //
-    //
-    // }
+
+
 }
+
+
+/*
+
+{
+    "cols"
+:
+    [{"id": "", "label": "Token", "type": "string"}, {"id": "", "label": "Value", "type": "number"}],
+
+
+    "rows"
+:
+    [
+    {"c": [{"v": "Miners2"}, {"v": 3}]},
+
+
+     {"c": [{"v": "Presale2"},  {"v": 1}]},
+       {"c": [{"v": "Crowdsale2"},  {"v": 1}]},
+       {"c": [{"v": "Developers2"},
+         {"v": 1}]}, {"c": [{"v": "Bounty campaign2"},
+          {"v": 2}]}, {"c": [{"v": "Partnership2"},
+           {"v": 2}]}]
+}
+
+*/
 
 /* ------------------- show-prompt  ------------------- */
 

@@ -97,11 +97,10 @@ $(function () {
             articleMoreWrapPadTop = articleMoreWrap.css("paddingTop"),
             articleMoreWrapPadBottom = articleMoreWrap.css("paddingTop"),
 
-
             articleMoreNav = $("[data-it-article-more-nav]"),
             articleMoreNavH = articleMoreNav.innerHeight();
 
-
+        var articleMoreWrapPadBottomNumber = articleMoreWrapPadBottom.substring(0,2);
 
 
     }
@@ -121,7 +120,7 @@ $(function () {
 
         if (articleMoreWrap) {
 
-            if (documentScroll > articleMoreWrapPos && documentScroll <  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH  )) {
+            if (documentScroll > articleMoreWrapPos && documentScroll <  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - articleMoreWrapPadBottomNumber  )) {
 
                 articleMoreNav.addClass("it--fixed");
                 articleMoreNav.removeClass("it--absolute");
@@ -130,13 +129,14 @@ $(function () {
                     bottom: "auto"
                 });
 
-            } else if (documentScroll >  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - articleMoreWrapPadBottom ) ) {
+            } else if (documentScroll >  (articleMoreWrapPos + articleMoreWrapH - articleMoreNavH - articleMoreWrapPadBottomNumber ) ) {
+                console.log("stopScroll");
 
                 articleMoreNav.addClass("it--absolute");
                 articleMoreNav.removeClass("it--fixed");
                 articleMoreNav.css({
                     top: "auto",
-                    bottom: articleMoreWrapPadBottom
+                    bottom: articleMoreWrapPadBottomNumber
                 });
 
              }
@@ -145,9 +145,6 @@ $(function () {
              articleMoreNav.removeClass("it--fixed");
               articleMoreNav.removeClass('it--absolute');
              }
-
-
-
 
         }
     };
