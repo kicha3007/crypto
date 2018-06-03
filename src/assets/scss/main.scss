@@ -56,6 +56,16 @@
   }
 }
 
+.it-all--top-indent {
+  margin-top: 80px;
+  @include laptop {
+    margin-top: 60px;
+  }
+  @include phones {
+    margin-top: 40px;
+  }
+}
+
 .it-main-page__half--right a {
   text-decoration: underline;
   color: #1E1E1E;
@@ -214,6 +224,24 @@ figcaption {
   font-weight: 500;
   color: #1E1E1E;
   padding: 0;
+}
+
+.it-main-page__title-size .it-all-title {
+  font-size: rem(36px);
+  font-weight: 900;
+  color: #1E1E1E;
+  margin-top: 90px;
+  margin-bottom: 40px;
+  @include laptop {
+    margin-top: 70px;
+    margin-bottom: 35px;
+  }
+  @include phones {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+  }
 }
 
 

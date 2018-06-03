@@ -62,7 +62,7 @@
 .it-footer--indent {
   display: none;
   @include phones {
-    height: 60px;
+    height: 80px;
     display: block;
   }
 }

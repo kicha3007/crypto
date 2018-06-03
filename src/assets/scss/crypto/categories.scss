@@ -48,6 +48,10 @@
   text-decoration: none;
   padding: 5px 35px;
   transition: 0.2s;
+  @include phones {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .it-categories__link:hover {
@@ -190,7 +194,7 @@
   max-width: 233px;
   width: 100%;
   @include phones {
-    max-width: 160px;
+    max-width: 175px;
     padding-left: 15px;
   }
 }

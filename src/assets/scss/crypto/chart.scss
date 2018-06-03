@@ -9,10 +9,18 @@
 }
 
 .it-chart__wrap {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
+
+.it-chart__outer-item {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 
 .it-chart__view {
   max-width: 200px;
