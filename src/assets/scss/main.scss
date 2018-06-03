@@ -246,7 +246,10 @@ figcaption {
 
 
 .it-all-title--container {
-  padding: 0 15px;
+  @include phones {
+    padding: 0 15px;
+  }
+
 }
 
 .it-link {

@@ -72,12 +72,12 @@ function drawChart() {
 
 
     var options = {
-        'width': 220,
-        'height': 220,
-        chartArea: {left: 7, top: 5, width: '200', height: '200', fontSize: 0},
-        pieHole: 0.4,
+        'width': 230,
+        'height': 230,
+        chartArea: {left: 15, top: 15, width: '200', height: '200', fontSize: 0},
+        pieHole: 0.5,
         legend: 'none',
-        pieSliceText: {color: 'black', fontSize: 20},
+        pieSliceTextStyle: {color: '#ffffff', fontSize: 12},
         tooltip: {trigger: 'selection', isHtml: true, text: 'percentage'},
         colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
     };
