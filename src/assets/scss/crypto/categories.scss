@@ -5,14 +5,12 @@
 
 
 .it-categories__wrap {
-  overflow: hidden;
 }
 
 .it-categories__list {
   padding: 0 0 40px;
   @include row-flex();
   margin-bottom: -30px;
-  overflow: hidden;
   @include phones {
     border-top: 1px solid rgba(229, 229, 229, 1);;
     margin-bottom: 0;
@@ -27,23 +25,53 @@
   margin-bottom: 30px;
   list-style-type: none;
   background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
   border-left: 1px solid rgba(229, 229, 229, 1);
   border-right: 1px solid rgba(229, 229, 229, 1);
   border-top: 1px solid rgba(229, 229, 229, 1);;
   border-bottom: 1px solid rgba(229, 229, 229, 1);
 
-  align-items: center;
-  padding: 0.5% 3%;
   @include phones {
-    padding: 5px 10px;
     margin-bottom: 0;
     border-top: none;
     border-left: none;
     border-right: none;
 
   }
+}
+
+
+.it-categories__link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px 35px;
+  transition: 0.2s;
+}
+
+.it-categories__link:hover {
+  text-decoration: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.it-categories__link:active,
+.it-categories__link:visited {
+  text-decoration: none;
+}
+
+.it-categories__link:hover {
+  background-color: #3EC7C6;
+}
+
+.it-categories__link:hover .it-categories__title {
+  color: #ffffff;
+}
+
+.it-categories__link:hover .it-categories__value,
+.it-categories__link:hover .it-categories__title,
+.it-categories__link:hover .it-categories__value span {
+  color: #ffffff;
 }
 
 .it-categories__content {
@@ -64,6 +92,7 @@
   font-size: rem(30px);
   font-weight: 500;
   margin-right: 8px;
+  transition: 0.2s;
   @include desktop {
     font-size: rem(26px);
     flex-basis: 100%;
@@ -86,6 +115,7 @@
   font-size: rem(18px);
   font-weight: 500;
   line-height: 2;
+  transition: 0.2s;
   @include laptop {
     font-size: rem(16px);
     line-height: 1.4;
@@ -97,8 +127,7 @@
 }
 
 .it-categories__img-box {
-  max-width: 100px;
-  width: 100%;
+  width: 100px;
   height: 100px;
   overflow: hidden;
   display: flex;
@@ -106,6 +135,7 @@
   justify-content: center;
   align-items: center;
   order: 2;
+
   @include laptop {
     max-width: 60px;
     height: 60px;
@@ -118,11 +148,34 @@
   }
 }
 
+.it-categories__inner-img-box {
+  position: relative;
+}
+
 .it-categories__img {
   display: block;
   max-width: 100%;
   height: auto;
+  transition: 0.2s;
+
 }
+
+.it-categories__img--hov {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+}
+
+.it-categories__link:hover .it-categories__img {
+  opacity: 0;
+}
+
+.it-categories__link:hover .it-categories__img.it-categories__img--hov {
+  opacity: 1;
+}
+
 
 .it-categories__buttons-wrap {
   display: flex;
