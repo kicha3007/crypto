@@ -166,6 +166,7 @@ $(function () {
 
     var scrollParent = document.querySelector('[data-scroll-hide-wrap]');
 
+    if(scrollParent) {
 
 
         var scrollChild = document.querySelector('[data-scroll-hide]');
@@ -174,6 +175,12 @@ $(function () {
         if (scrollChildP) {
             scrollParent.style.height = scrollParent.clientHeight - scrollChildP  + "px";
         }
+
+
+
+
+    }
+
 
 
 

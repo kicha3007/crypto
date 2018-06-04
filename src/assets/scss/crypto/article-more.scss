@@ -73,7 +73,7 @@
   border-left: 3px solid $main-color;
   padding: 0 0 80px 30px;
   position: static;
-  z-index: 99999;
+  z-index: 1000;
   @include phones {
 
     display: none;

@@ -4,5 +4,5 @@ console.log(articleMoreWrapPadTop);
 
 
 $("[data-it-article-more-nav]", "[data-it-article-more-wrap]").stick_in_parent({
-   offset_top: 62
+   offset_top: 100
 });
