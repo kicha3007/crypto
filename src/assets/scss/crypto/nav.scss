@@ -12,6 +12,7 @@
     z-index: 1000;
     width: 100%;
     background-color: #ffffff;
+    height: 100vh;
 
   }
 
@@ -30,6 +31,7 @@
   z-index: 1000;
   margin: 0;
   overflow: visible;
+
   @include tablets {
     padding-left: 35px;
 
@@ -80,7 +82,7 @@
   color: #6D6D6D;
   transition: .2s;
   @include tablets {
-    padding-right: 28px;
+    padding-right: 20px;
   }
   @include phones {
     color: #4F4F4F;
@@ -137,7 +139,6 @@
   @include phones {
     top: 100%;
     position: static;
-    margin-bottom: 0;
     min-width: 100%;
     margin-bottom: 10px;
 
@@ -240,16 +241,23 @@
   width: 12px;
   height: 8px;
   top: 50%;
-  right: 18px;
+  right: 32px;
   margin-top: -4px;
   transition: .2s;
   background: url("../img/crypto/nav/arrow.png") center no-repeat;
   @include tablets {
-    right: 15px;
+    right: 8px;
   }
   @include phones {
     display: none;
 
+  }
+}
+
+.it-main-nav__list li a:first-child:nth-last-child(2) {
+  padding-right: 50px;
+  @include tablets {
+    padding-right: 20px;
   }
 }
 

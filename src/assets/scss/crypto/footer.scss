@@ -7,24 +7,19 @@
   padding: 21.5px 0;
   background-color: #ffffff;
   @include phones {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    padding: 9px 0;
+    padding: 10px 0;
+    margin-top: 30px;
   }
+
 }
 
 .it-footer__inner-wrap {
   text-align: center;
-  @include phones {
-    display: none;
-  }
 }
 
 .it-footer__logo {
   min-width: 270px;
+  margin-bottom: 10px;
 }
 
 .it-footer__desc {
@@ -37,10 +32,18 @@
   flex-wrap: wrap;
   margin: 0 -5px;
   overflow: hidden;
+  background-color: #ffffff;
+  padding: 15px 10px;
   @include phones {
     display: flex;
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    border-top: 1px solid #E5E5E5;
   }
+
 }
 
 .it-footer-mobile__half {
@@ -56,6 +59,8 @@
 
 .it-footer  .it-footer-mobile__btn {
   padding: 11.5px 10px;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 
@@ -65,4 +70,9 @@
     height: 80px;
     display: block;
   }
+}
+
+.it-footer-mobile__buttons {
+  max-width: 150px;
+  width: 100%;
 }

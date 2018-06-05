@@ -1,4 +1,7 @@
+
+
 $(function () {
+
 
     /* ------------------- filter-options ------------------- */
 
@@ -63,19 +66,18 @@ $(function () {
 
     var $scrollNav = $("[data-scroll-nav]");
 
-    if($scrollNav) {
+    if ($scrollNav) {
 
-    $scrollNav.on("click", function (e) {
-        e.preventDefault();
-        var $scrollNavLinkValue = $(this).attr("href");
-        var $scrollNavItem = $($scrollNavLinkValue);
-        var $scrollNavItemPosition = $scrollNavItem.offset().top;
-        $("html, body").animate({
-            scrollTop: $scrollNavItemPosition
-        }, 500)
+        $scrollNav.on("click", function (e) {
+            e.preventDefault();
+            var $scrollNavLinkValue = $(this).attr("href");
+            var $scrollNavItem = $($scrollNavLinkValue);
+            var $scrollNavItemPosition = $scrollNavItem.offset().top;
+            $("html, body").animate({
+                scrollTop: $scrollNavItemPosition
+            }, 500)
 
-    });
-
+        });
 
     }
 
@@ -88,94 +90,39 @@ $(function () {
         navOtherH = navOther.outerHeight(),
         mainSidebar = $("[data-main-sidebar]");
 
-
-
     // var articleMoreWrap = $("[data-it-article-more-wrap]");
 
- /*   if (articleMoreWrap) {
-
-        var articleMoreWrapPos = articleMoreWrap.offset().top,
-            // articleMoreWrapH = articleMoreWrap.innerHeight(),
-            articleMoreWrapPadTop = articleMoreWrap.css("paddingTop"),
-            //articleMoreWrapPadBottom = articleMoreWrap.css("paddingTop"),
-
-            elementStopScroll = $("[data-stop-scroll-nav]"),
-            elementStopScrollPos = elementStopScroll.offset().top,
-
-            articleMoreNav = $("[data-it-article-more-nav]");
-            // articleMoreNavH = articleMoreNav.innerHeight();
-
-        // var articleMoreWrapPadBottomNumber = articleMoreWrapPadBottom.substring(0,2);
-
-
-    }*/
 
     window.onscroll = function () {
         var documentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        if (documentScroll > topHeaderH ) {
+        if (documentScroll > topHeaderH) {
             navOther.addClass("it--fixed");
             topHeader.css("marginBottom", navOtherH + "px");
-            mainSidebar.addClass("it--fixed");
-            mainSidebar.css("top", navOtherH + 40 + "px")
+            // mainSidebar.addClass("it--fixed");
+            // mainSidebar.css("top", navOtherH + 40 + "px")
         } else {
             navOther.removeClass("it--fixed");
             topHeader.css("marginBottom", "0");
-            mainSidebar.removeClass("it--fixed");
         }
-
-      /*  if (articleMoreWrap) {
-
-            if (documentScroll > articleMoreWrapPos && documentScroll <  elementStopScrollPos) {
-
-                articleMoreNav.addClass("it--fixed");
-                articleMoreNav.removeClass("it--absolute");
-                articleMoreNav.css({
-                    top: articleMoreWrapPadTop
-                    // bottom: "auto"
-                });
-
-            } else if (documentScroll >  elementStopScrollPos) {
-
-
-                articleMoreNav.addClass("it--absolute");
-                articleMoreNav.removeClass("it--fixed");
-                var articleMoreNavPosX = articleMoreNav.offsetTop;
-                console.log(articleMoreNavPosX);
-                articleMoreNav.css({
-                    top: "auto"
-                    // bottom: articleMoreWrapPadBottomNumber + "px"
-                });
-
-             }
-
-              else {
-             articleMoreNav.removeClass("it--fixed");
-              articleMoreNav.removeClass('it--absolute');
-             }
-
-        }*/
-
-
 
     };
 
-
-
+    $("[data-main-sidebar]").stick_in_parent({
+        offset_top: navOtherH + 40
+    });
 
     /* ------------------- hide-scroll ------------------- */
 
-    var scrollParent = document.querySelector('[data-scroll-hide-wrap]');
-
-
-
-        var scrollChild = document.querySelector('[data-scroll-hide]');
-        var scrollChildP = +scrollChild.offsetHeight - scrollChild.clientHeight;
-
-        if (scrollChildP) {
-            scrollParent.style.height = scrollParent.clientHeight - scrollChildP  + "px";
-        }
-
-
+    // var scrollParent = document.querySelector('[data-scroll-hide-wrap]');
+    //
+    //
+    //
+    // var scrollChild = document.querySelector('[data-scroll-hide]');
+    // var scrollChildP = +scrollChild.offsetHeight - scrollChild.clientHeight;
+    //
+    // if (scrollChildP) {
+    //     scrollParent.style.height = scrollParent.clientHeight - scrollChildP + "px";
+    // }
 
     /* ------------------- dropdown-menu  ------------------- */
 
@@ -211,8 +158,7 @@ $(function () {
     var perfectScrollContainers = document.querySelectorAll('[data-scroll-hide-wrap]');
     if (perfectScrollContainers) {
 
-
-        for(var i = 0; i < perfectScrollContainers.length; i++) {
+        for (var i = 0; i < perfectScrollContainers.length; i++) {
             new PerfectScrollbar(perfectScrollContainers[i], {
                 maxScrollbarLength: 50,
                 wheelPropagation: true,
@@ -223,7 +169,7 @@ $(function () {
 
         }
 
-     }
+    }
 
     /* ------------------- carousel-new ------------------- */
 
@@ -245,14 +191,14 @@ $(function () {
             items: (itemsCount ? itemsCount : 1),
             margin: (itemsMargin ? itemsMargin : 40),
             nav: (itemsNav ? itemsNav : true),
-            loop: (itemsLoop ? itemsLoop : true),
+            loop: (itemsLoop ? itemsLoop : false),
             autoplay: (itemsAutoplay ? itemsAutoplay : false),
             autoplayTimeout: (itemsAutoplayTimeout ? itemsAutoplayTimeout : 3000),
             autoplayHoverPause: (itemsAutoplayHoverPause ? itemsAutoplayHoverPause : true),
             dots: (itemsDots ? itemsDots : true),
             responsive: {
                 0: {
-                    margin: (itemsMarginMobile ? itemsMarginMobile : 10),
+                    margin: (itemsMarginMobile ? itemsMarginMobile : 20),
                     items: itemsCountMobile ? itemsCountMobile : 1
                 },
                 600: {
@@ -265,20 +211,16 @@ $(function () {
         });
     });
 
+
+
     /* ------------------- masonry ------------------- */
 
-
-        $('[data-masonry-wrap]').masonry({
-            itemSelector: '.it-guides__item',
-            columnWidth: '.it-guides__item',
-            gutter: 30,
-            percentPosition: true
-        });
-
-
-
-
-
+    $('[data-masonry-wrap]').masonry({
+        itemSelector: '.it-guides__item',
+        columnWidth: '.it-guides__item',
+        gutter: 30,
+        percentPosition: true
+    });
 
 });
 

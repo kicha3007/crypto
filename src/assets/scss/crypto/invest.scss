@@ -12,7 +12,7 @@
   @include row-flex();
   margin-bottom: -40px;
   @include phones {
-    margin-bottom: -20px;
+    margin: 0 -5px -20px;
   }
 }
 
@@ -27,7 +27,8 @@
   list-style-type: none;
   margin-bottom: 40px;
   @include phones {
-    margin-bottom: 20px;
+    margin: 0 5px 20px;
+    width: calc(50% - 10px);
   }
 }
 
@@ -168,7 +169,8 @@
 
 .it-invest__item--hide-desktop {
   display: none;
-  @include phones {
+  @include laptop {
     display: block;
   }
 }
+

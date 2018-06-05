@@ -50,10 +50,13 @@
 }
 
 .it-tranding__img-box {
-  height: 70px;
+  height: 110px;
   width: 100%;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
+  @include phones {
+    height: 70px;
+  }
 
 }
 
@@ -61,6 +64,7 @@
   max-width: 100%;
   height: auto;
   display: block;
+  //width: auto !important;
 }
 
 .it-tranding__img-logo-box {
@@ -91,12 +95,6 @@
 
 }
 
-.it-tranding__content {
-  padding: 40px 30px 40px;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
-}
 
 .it-tranding__title {
   font-weight: 700;
@@ -112,7 +110,7 @@
 }
 
 .it-tranding__status {
-  font-size: rem(16px);
+  font-size: rem(14px);
   font-weight: 700;
   color: $main-color;
   padding-left: 12px;
@@ -142,17 +140,26 @@
   padding: 15px 20px 20px;
   display: flex;
   flex-wrap: wrap;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  @include phones {
+    min-height: 70px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    align-items: flex-end;
+  }
+
 }
 
 
 .it-tranding__content-half {
-  @include phones {
-    flex-grow: 1;
-    flex-basis: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
+  //@include phones {
+  //  flex-grow: 1;
+  //  flex-basis: 50%;
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //  align-items: flex-end;
+  //}
 }
 
 .it-tranding__content-half--top {
@@ -161,17 +168,11 @@
   justify-content: flex-end;
   flex-grow: 1;
   flex-basis: 100%;
-  order: 1;
-  @include phones {
-    order: 2;
-  }
+
 }
 
 .it-tranding__content-half--bottom {
-  order: 2;
-  @include phones {
-    order: 1;
-  }
+
 }
 
 
@@ -183,12 +184,29 @@
   background-color: #F2C94C;
 }
 
+.it-tranding__link {
+  display: block;
+  text-decoration: none;
+}
+
+.it-tranding__link:hover {
+	text-decoration: none;
+}
+
+.it-tranding__link:active,
+.it-tranding__link:visited {
+	text-decoration: none;
+}
+
 /******************* it-tranding + owl *******************/
 
 .it-tranding .owl-stage {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: space-between;
+  @include phones {
+    justify-content: flex-start;
+  }
 
 }
 
@@ -246,7 +264,7 @@
 .it-tranding .box-carousel .owl-nav .owl-prev:after,
 .it-tranding .box-carousel .owl-nav .owl-next:after {
   content: "";
-  background-image: url("../img/crypto/tranding/arrow.png");
+  background-image: url("../img/crypto/tranding/arrow-hov.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -259,9 +277,9 @@
   transition: 0.2s;
 }
 
-.it-tranding .box-carousel .owl-nav .owl-prev:hover:after,
-.it-tranding .box-carousel .owl-nav .owl-next:hover:after {
-  background-image: url("../img/crypto/tranding/arrow-hov.png");
+.it-tranding .box-carousel .owl-nav .owl-prev.disabled:after,
+.it-tranding .box-carousel .owl-nav .owl-next.disabled:after {
+  background-image: url("../img/crypto/tranding/arrow.png");
 }
 
 .it-tranding__buttons-wrap {

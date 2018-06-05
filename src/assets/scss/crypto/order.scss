@@ -80,3 +80,20 @@
   padding: 20px 20px;
 
 }
+
+.it-order__img-box {
+  @include phones {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.it-order__img {
+  @include phones {
+    min-width: 100%;
+    display: block;
+    height: auto;
+  }
+}

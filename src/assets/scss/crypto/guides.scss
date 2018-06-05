@@ -58,7 +58,6 @@
 }
 
 .it-guides__inner-item:hover {
-
 	text-decoration: none;
 }
 
@@ -72,11 +71,24 @@
   height: 179px;
   overflow: hidden;
   display: block;
+  flex-grow: 1;
+  @include phones {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
 }
 
 .it-guides__img {
   display: block;
+  width: 100%;
+  height: auto;
+  @include phones {
+    max-width: 100%;
+    width: auto;
+
+  }
 
 }
 
@@ -84,6 +96,7 @@
   padding: 18.5px 25px;
   border: 1px solid #DEDEDE;
   min-height: 150px;
+  flex-grow: 1;
 }
 
 .it-guides__title {
@@ -109,11 +122,12 @@
 
 .it-guides__desc {
   color: #4F4F4F;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   margin-bottom: 15px;
   text-decoration: none;
   display: block;
+
 }
 
 .it-guides__desc:hover {
@@ -156,8 +170,8 @@
   position: absolute;
   top: -1px;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-size: 100%;
   @include laptop {
     width: 10px;
