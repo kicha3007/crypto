@@ -205,7 +205,7 @@
   flex-wrap: wrap !important;
   justify-content: space-between;
   @include phones {
-    justify-content: flex-start;
+    justify-content: space-around;
   }
 
 }
@@ -252,13 +252,14 @@
 
 
 .it-tranding .box-carousel .owl-nav .owl-prev {
-  right: 0;
-  transform: scale(1);
+  right: 60px;
+  transform: scale(-1);
 }
 
 .it-tranding .box-carousel .owl-nav .owl-next {
-  right: 60px;
-  transform: scale(-1);
+  right: 0;
+  transform: scale(1);
+
 }
 
 .it-tranding .box-carousel .owl-nav .owl-prev:after,

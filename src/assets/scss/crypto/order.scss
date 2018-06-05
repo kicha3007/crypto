@@ -84,9 +84,7 @@
 .it-order__img-box {
   @include phones {
     overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+
   }
 }
 
