@@ -1,7 +1,5 @@
 /* ------------------- google-charts ------------------- */
 
-
-
 /*
 
 google.charts.load('current', {'packages': ['corechart']});
@@ -69,8 +67,6 @@ function drawChart() {
     var chartGraph = document.querySelectorAll('[data-it-chart]');
     var chartWraps = document.querySelectorAll('[data-it-chart-wrap]');
 
-
-
     var options = {
         'width': 230,
         'height': 230,
@@ -82,7 +78,7 @@ function drawChart() {
         colors: ["#4F4F4F", "#5C61DB", "#3EC7C6", "#EB5757", "#F2C94C", "#F2994A"]
     };
 
-    for ( var i = 0; i < chartGraph.length; i++) {
+    for (var i = 0; i < chartGraph.length; i++) {
 
         var jsonDataParse = JSON.parse(chartGraph[i].getAttribute("data-it-chart"));
         var data = new google.visualization.DataTable(jsonDataParse);
@@ -91,26 +87,17 @@ function drawChart() {
 
         chart.draw(data, options);
 
-
         var chartItemList = chartWraps[i].querySelector('[data-it-chart-list]');
 
         var chartItemValue = jsonDataParse["rows"];
 
-        for( var cnt = 0; cnt < chartItemValue.length; cnt++ ) {
-            chartItemList.innerHTML  += '<li class="it-chart__item">' + jsonDataParse["rows"][cnt]["c"][0]["v"] +  ' </li>';
+        for (var cnt = 0; cnt < chartItemValue.length; cnt++) {
+            chartItemList.innerHTML += '<li class="it-chart__item">' + jsonDataParse["rows"][cnt]["c"][0]["v"] + ' </li>';
         }
-
 
     }
 
-
-
-
-
-
-
 }
-
 
 /*
 
@@ -138,41 +125,100 @@ function drawChart() {
 
 /* ------------------- show-prompt  ------------------- */
 
-var promtButton = $("[data-token-list]").find("[data-prompt-button]");
+// var promtButton = $("[data-token-list]").find("[data-prompt-button]");
+//
+// function promtShow() {
+//     var $this = $(this);
+//     var tokenPromt = $("[data-token-promt]");
+//     var tokenList = $this.closest("[data-token-list]");
+//
+//     tokenList.find(tokenPromt).css("display", "none");
+//     tokenList.find(promtButton).removeClass("active");
+//
+//     var tokenItem = $this.closest("[data-token-item]");
+//     tokenItem.find(tokenPromt).toggle();
+//     $this.toggleClass("active");
+//
+//     if ($("#it-body--bg-transparant").length == 0) {
+//
+//         $("body").prepend("<div id=\"it-body--bg-transparant\"></div>");
+//         $("#it-body--bg-transparant").css({
+//             "width": "100%",
+//             "height": "10000%",
+//             "background": "transparent",
+//             "position": "absolute",
+//             "top": "0",
+//             "left": "0",
+//             "z-index": 999
+//         })
+//
+//     }
+//
+//     $("#it-body--bg-transparant").on("click", function () {
+//         tokenList.find("[data-token-promt]").css("display", "none");
+//         tokenList.find(promtButton).removeClass("active");
+//         $("#it-body--bg-transparant").remove();
+//     });
+//
+// }
+//
+// promtButton.on("click", promtShow);
+//
 
-function promtShow() {
-    var $this = $(this);
-    var tokenPromt = $("[data-token-promt]");
-    var tokenList = $this.closest("[data-token-list]");
+/* ------------------- show-prompt-new  ------------------- */
 
-    tokenList.find(tokenPromt).css("display", "none");
-    tokenList.find(promtButton).removeClass("active");
+var tokenList = document.querySelector("[data-token-list]");
 
-    var tokenItem = $this.closest("[data-token-item]");
-    tokenItem.find(tokenPromt).toggle();
-    $this.toggleClass("active");
+tokenList.addEventListener("click", showPormpt, false);
 
-    if ($("#it-body--bg-transparant").length == 0) {
+function showPormpt(e) {
 
-        $("body").prepend("<div id=\"it-body--bg-transparant\"></div>");
-        $("#it-body--bg-transparant").css({
-            "width": "100%",
-            "height": "10000%",
-            "background": "transparent",
-            "position": "absolute",
-            "top": "0",
-            "left": "0",
-            "z-index": 999
-        })
+    var target = e.target;
+    var promptButtons = document.querySelectorAll("[data-prompt-button]");
 
+
+
+
+        for (var i = 0; i < promptButtons.length; i++) {
+
+        var promptButton = promptButtons[i];
+        var promptPopup = promptButton.closest("[data-token-item]").querySelector("[data-token-promt]");
+
+        if (target != promptButton && target != promptPopup) {
+            promptButton.classList.remove("active");
+            promptPopup.classList.remove("active");
+        } else {
+            target.classList.toggle("active");
+            promptPopup.classList.toggle("active");
+        }
+
+
+        //     function documentClosePromtPopup(event) {
+        //
+        //         if(event.target.hasAttribute("[data-prompt-button]"))  {
+        //            console.log(1);
+        //             // promptButton.classList.remove("active");
+        //             // document.body.removeEventListener("click", documentClosePromtPopup, false);
+        //         }
+        //     }
+        //
+        //     console.log(promptButton.classList.contains("active"));
+        //
+        // if (promptButton.classList.contains("active").length) {
+        //     console.log(222);
+        //     document.body.addEventListener("click", documentClosePromtPopup, false)
+        // }
     }
 
-    $("#it-body--bg-transparant").on("click", function () {
-        tokenList.find("[data-token-promt]").css("display", "none");
-        tokenList.find(promtButton).removeClass("active");
-        $("#it-body--bg-transparant").remove();
-    });
+
+
+
+
+
+
+
+
+
+
 
 }
-
-promtButton.on("click", promtShow);
