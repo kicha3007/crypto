@@ -171,15 +171,14 @@ var tokenList = document.querySelector("[data-token-list]");
 
 tokenList.addEventListener("click", showPormpt, false);
 
+var promptButtons = document.querySelectorAll("[data-prompt-button]");
+
 function showPormpt(e) {
 
     var target = e.target;
-    var promptButtons = document.querySelectorAll("[data-prompt-button]");
 
 
-
-
-        for (var i = 0; i < promptButtons.length; i++) {
+    for (var i = 0; i < promptButtons.length; i++) {
 
         var promptButton = promptButtons[i];
         var promptPopup = promptButton.closest("[data-token-item]").querySelector("[data-token-promt]");
@@ -190,28 +189,68 @@ function showPormpt(e) {
         } else {
             target.classList.toggle("active");
             promptPopup.classList.toggle("active");
+            document.body.removeEventListener("click", documentClosePromtPopup, false);
         }
 
 
-        //     function documentClosePromtPopup(event) {
-        //
-        //         if(event.target.hasAttribute("[data-prompt-button]"))  {
-        //            console.log(1);
-        //             // promptButton.classList.remove("active");
-        //             // document.body.removeEventListener("click", documentClosePromtPopup, false);
-        //         }
-        //     }
-        //
-        //     console.log(promptButton.classList.contains("active"));
-        //
-        // if (promptButton.classList.contains("active").length) {
-        //     console.log(222);
-        //     document.body.addEventListener("click", documentClosePromtPopup, false)
-        // }
+        if (promptButton.classList.contains("active")) {
+
+            document.body.addEventListener("click", documentClosePromtPopup, false);
+
+        }
+
     }
 
 
+}
 
+function documentClosePromtPopup(event) {
+
+    if (!event.target.hasAttribute("data-prompt-button") && !event.target.hasAttribute("data-token-promt")) {
+        document.querySelector("[data-prompt-button].active").classList.remove("active");
+        document.querySelector("[data-token-promt].active").classList.remove("active");
+        document.body.removeEventListener("click", documentClosePromtPopup, false);
+    }
+}
+
+
+/* ------------------- show-half-button  ------------------- */
+
+var halfHideAllHeight = 60 + "px";
+
+var halfHideObgect = document.querySelectorAll("[data-token-list]");
+
+for(var i = 0; i < halfHideObgect.length; i++ ) {
+    var halfHeightObgect =  halfHideObgect[i];
+    halfHeightObgect.style.height = halfHideAllHeight;
+}
+
+var showHalfButton = document.querySelector("[data-show-more-half]");
+
+
+showHalfButton.addEventListener("click", showMoreHalfBlock, false);
+
+function showMoreHalfBlock (e) {
+    e.preventDefault();
+    this.classList.toggle("active");
+
+    var showHalfText = this.getAttribute("data-show-more-half");
+    var showHalfInner = this.querySelector("[data-show-more-half-text]");
+    var showHalfInnerText = showHalfInner.innerHTML;
+
+    showHalfInner.innerHTML = showHalfText;
+    this.setAttribute("data-show-more-half", showHalfInnerText);
+
+    var showLink = this.getAttribute("href");
+
+    var showLinkBlock = document.querySelector(showLink);
+
+    if(showLinkBlock.style.height == "auto") {
+        showLinkBlock.style.height = halfHideAllHeight;
+    } else {
+        showLinkBlock.style.height = "auto";
+
+    }
 
 
 

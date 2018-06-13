@@ -17,24 +17,33 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .it-token__details-item {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
   max-width: 305px;
   width: 100%;
   position: relative;
+  @include phones {
+    padding-right: 15px;
+  }
 
 }
 
 .it-token__details-key {
   font-size: rem(16px);
   color: #4F4F4F;
-  margin-right: 5px;
+  margin-right: 20px;
+
+  position: relative;
+  display: inline;
+  @include phones {
+    position: static;
+    margin-right: 2px;
+  }
 }
 
 .it-token__details-value {
@@ -43,25 +52,34 @@
   color: #4F4F4F;
   padding-right: 20px;
   position: relative;
+  display: inline;
+  word-wrap: break-word;
 }
 
 .it-token__details-prompt-button {
   position: absolute;
-  top: -3px;
-  right: 0;
+  top: 3px;
+  right: -17px;
   width: 14px;
   height: 14px;
   font-size: 10px;
   border: 1px solid #1E1E1E;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align: center;
   border-radius: 50%;
   font-weight: 900;
   cursor: pointer;
   z-index: 1000;
+  word-wrap: break-word;
+  @include phones {
+      right: 0;
+  }
+}
+
+.it-token__dots {
+  margin-right: 5px;
 }
 
 .it-token__details-prompt-button.active {
@@ -71,7 +89,7 @@
 
 .it-token__details-prompt {
   position: absolute;
-  top: -74px;
+  bottom: calc(100% + 5px);
   left: 100%;
   width: 390px;
   background-color: #F2F2F2;
@@ -80,10 +98,17 @@
   color: #333333;
   font-size: 12px;
   display: none;
-  z-index: 1000;
+  font-weight: 400;
+  z-index: 5000;
   @include laptop {
-      left: 0;
-     max-width: 100%;
+     width: 250px;
+  }
+  @include tablets {
+    width: 150px;
+  }
+  @include phones {
+      left: auto;
+      right: calc(100% + 10px);;
   }
 }
 
